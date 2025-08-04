@@ -1,0 +1,368 @@
+/* src/styles/components/header.css */
+
+/* ===================================
+   Base Layer - Header Foundation
+   =================================== */
+@layer base {
+  .header {
+    @apply fixed w-full top-0 z-50 shadow-sm;
+    background-color: var(--color-surface);
+  }
+  
+  .header-nav {
+    @apply container mx-auto px-4 lg:px-8;
+  }
+  
+  .header-container {
+    @apply flex justify-between items-center h-16;
+  }
+}
+
+/* ===================================
+   Component Layer - Header Components
+   =================================== */
+@layer components {
+  /* Logo Section */
+  .header-logo {
+    @apply flex items-center space-x-2;
+  }
+  
+  .header-logo-icon {
+    @apply text-3xl;
+    color: var(--color-primary);
+  }
+  
+  .header-logo-text {
+    @apply text-2xl font-bold;
+    color: var(--color-text);
+  }
+  
+  /* Desktop Navigation Menu */
+  .header-menu {
+    @apply hidden md:flex items-center space-x-8;
+  }
+  
+  /* Navigation Link */
+  .header-nav-link {
+    @apply font-medium transition-colors flex items-center space-x-1.5;
+    color: var(--color-text-muted);
+    --icon-transform: scale(1);
+  }
+  
+  .header-nav-link:hover {
+    color: var(--color-primary);
+    --icon-transform: scale(1.1);
+  }
+  
+  .header-nav-icon {
+    @apply text-lg transition-transform duration-200;
+    transform: var(--icon-transform);
+  }
+  
+  /* CTA Button */
+  .header-cta-button {
+    @apply px-6 py-2 rounded-full transition-all duration-200 flex items-center space-x-2;
+    background-color: var(--color-primary);
+    color: white;
+    --btn-transform: translateY(0);
+    --icon-rotation: rotate(0deg);
+  }
+  
+  .header-cta-button:hover {
+    background-color: var(--color-primary-dark);
+    @apply shadow-lg;
+    --btn-transform: translateY(-2px);
+    --icon-rotation: rotate(12deg);
+  }
+  
+  .header-cta-button {
+    transform: var(--btn-transform);
+  }
+  
+  .header-cta-icon {
+    @apply text-lg transition-transform duration-200;
+    transform: var(--icon-rotation);
+  }
+  
+  /* Mobile Menu Button */
+  .header-mobile-btn {
+    @apply md:hidden p-2 rounded-lg transition-colors;
+    color: var(--color-text);
+  }
+  
+  .header-mobile-btn:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  }
+  
+  .header-mobile-icon {
+    @apply text-2xl;
+  }
+  
+  /* Mobile Menu Container */
+  .header-mobile-menu {
+    @apply md:hidden pb-4;
+    background-color: var(--color-surface);
+  }
+  
+  .header-mobile-menu.hidden {
+    @apply hidden;
+  }
+  
+  /* Mobile Menu Link */
+  .header-mobile-link {
+    @apply block py-2 transition-all duration-200;
+    color: var(--color-text-muted);
+    padding-left: 0;
+  }
+  
+  .header-mobile-link:hover {
+    color: var(--color-primary);
+    padding-left: 0.5rem;
+  }
+}
+
+/* ===================================
+   Variant-Specific Adjustments
+   =================================== */
+@layer utilities {
+  /* SpeedYellow variant - High contrast adjustments */
+  [data-current-variant="speedyellow"] .header-cta-button {
+    background-color: var(--color-secondary);
+    color: white;
+  }
+  
+  [data-current-variant="speedyellow"] .header-cta-button:hover {
+    background-color: var(--color-secondary-dark);
+  }
+  
+  /* UnitBrown variant - Use secondary for CTA */
+  [data-current-variant="unitbrown"] .header-cta-button {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+  }
+  
+  [data-current-variant="unitbrown"] .header-cta-button:hover {
+    background-color: var(--color-secondary-dark);
+  }
+  
+  /* JetStream variant - Dark theme adjustments */
+  [data-current-variant="jetstream"] .header {
+    background-color: var(--color-secondary);
+  }
+  
+  [data-current-variant="jetstream"] .header-logo-text,
+  [data-current-variant="jetstream"] .header-nav-link,
+  [data-current-variant="jetstream"] .header-mobile-link {
+    color: var(--color-surface);
+  }
+  
+  [data-current-variant="jetstream"] .header-nav-link:hover,
+  [data-current-variant="jetstream"] .header-mobile-link:hover {
+    color: var(--color-primary);
+  }
+  
+  /* TurboOrange variant - Vibrant adjustments */
+  [data-current-variant="turboorange"] .header-logo-icon {
+    color: var(--color-primary);
+  }
+  
+  [data-current-variant="turboorange"] .header-cta-button {
+    background-color: var(--color-secondary);
+  }
+  
+  /* PrimeLogix variant - Corporate style */
+  [data-current-variant="primelogix"] .header {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  [data-current-variant="primelogix"] .header-cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+  }
+  
+  /* Nusantara variant - Patriotic theme */
+  [data-current-variant="nusantara"] .header-logo-icon {
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* ===================================
+   Header States & Behaviors
+   =================================== */
+/* Scrolled state */
+.header--scrolled {
+  @apply shadow-lg;
+  background-color: color-mix(in srgb, var(--color-surface) 95%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+/* Active page indicator */
+.header-nav-link--active {
+  color: var(--color-primary);
+  @apply font-semibold;
+}
+
+.header-nav-link--active .header-nav-icon {
+  transform: scale(1.1);
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-animate-slide-down {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Mobile menu animation */
+@keyframes mobileMenuOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-mobile-menu:not(.hidden) {
+  animation: mobileMenuOpen 0.3s ease-out;
+}
+
+/* ===================================
+   Hover Effects Without Group
+   =================================== */
+/* Navigation link hover effects */
+.header-nav-link {
+  position: relative;
+}
+
+.header-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.header-nav-link:hover::after {
+  width: 100%;
+}
+
+/* CTA button hover effects */
+.header-cta-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-cta-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.header-cta-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .header-menu {
+    @apply space-x-6;
+  }
+  
+  .header-cta-button {
+    @apply px-4 py-1.5 text-sm;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-logo-icon {
+    @apply text-2xl;
+  }
+  
+  .header-logo-text {
+    @apply text-xl;
+  }
+  
+  .header-container {
+    @apply h-14;
+  }
+}
+
+/* ===================================
+   Dark Mode Support
+   =================================== */
+@media (prefers-color-scheme: dark) {
+  .header {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+  .header {
+    @apply relative shadow-none border-b border-gray-300;
+    position: relative !important;
+  }
+  
+  .header-mobile-btn,
+  .header-mobile-menu {
+    @apply hidden;
+  }
+}
+
+/* ===================================
+   Accessibility Enhancements
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+  .header-nav-icon,
+  .header-cta-icon,
+  .header-cta-button,
+  .header-nav-link::after,
+  .header-cta-button::before {
+    transition: none !important;
+  }
+  
+  .header-animate-slide-down,
+  .header-mobile-menu {
+    animation: none !important;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.header-nav-link:focus-visible,
+.header-cta-button:focus-visible,
+.header-mobile-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}

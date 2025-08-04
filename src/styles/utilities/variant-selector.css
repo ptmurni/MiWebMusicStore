@@ -1,0 +1,160 @@
+/* Variant Selector Styles */
+#variant-selector {
+  z-index: 9999;
+}
+
+/* Variant Button */
+#variant-toggle-btn {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Variant Options Popup */
+#variant-options {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Show/Hide Animation */
+#variant-options.show {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+
+#variant-options.hide {
+  transform: scale(0) !important;
+  opacity: 0 !important;
+}
+
+/* Tailwind scale and opacity utilities */
+.scale-100 {
+  transform: scale(1) !important;
+}
+
+.scale-0 {
+  transform: scale(0) !important;
+}
+
+.opacity-100 {
+  opacity: 1 !important;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+/* Variant Option Hover Effects */
+.variant-option:hover {
+  transform: translateX(4px);
+}
+
+.variant-option.active {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border: 2px solid #8b5cf6;
+}
+
+.variant-option.active .variant-active {
+  display: block !important;
+}
+
+/* Smooth Scroll for Options */
+#variant-options::-webkit-scrollbar {
+  width: 4px;
+}
+
+#variant-options::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 2px;
+}
+
+#variant-options::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 2px;
+}
+
+#variant-options::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  #variant-selector {
+    bottom: 1rem;
+    left: 1rem;
+  }
+  
+  #variant-options {
+    min-width: 280px;
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+/* Accessibility */
+#variant-toggle-btn:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+.variant-option:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* Loading State */
+.variant-option.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.variant-option.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #8b5cf6;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: variant-spin 1s linear infinite;
+}
+
+@keyframes variant-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dynamic Theme Button Colors */
+[data-current-variant="fastpurple"] #variant-toggle-btn {
+  background: linear-gradient(135deg, #4D148C 0%, #6B1FB2 100%);
+}
+
+[data-current-variant="speedyellow"] #variant-toggle-btn {
+  background: linear-gradient(135deg, #FFCC00 0%, #D40511 100%);
+}
+
+[data-current-variant="unitbrown"] #variant-toggle-btn {
+  background: linear-gradient(135deg, #351C15 0%, #FFB500 100%);
+}
+
+[data-current-variant="turboorange"] #variant-toggle-btn {
+  background: linear-gradient(135deg, #FF6600 0%, #E64100 100%);
+}
+
+[data-current-variant="skyarrow"] #variant-toggle-btn {
+  background: linear-gradient(135deg, #0051A5 0%, #00AEEF 100%);
+}
+
+[data-current-variant="jetstream"] #variant-toggle-btn {
+  background: linear-gradient(135deg, #E11F26 0%, #1A1A1A 100%);
+}
+
+[data-current-variant="primelogix"] #variant-toggle-btn {
+  background: linear-gradient(135deg, #FF9900 0%, #232F3E 100%);
+}
+
+[data-current-variant="nusantara"] #variant-toggle-btn {
+  background: linear-gradient(135deg, #F26522 0%, #005BAA 100%);
+}

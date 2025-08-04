@@ -1,0 +1,137 @@
+<!-- Variant Selector Floating Button -->
+<div id="variant-selector" class="fixed bottom-6 left-6 z-50">
+    <!-- Variant Button -->
+    <button 
+        id="variant-toggle-btn" 
+        class="bg-purple-600 hover:bg-purple-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
+        aria-label="Change Variant"
+        title="Pilih Varian / Select Variant"
+    >
+        <div class="flex items-center space-x-2">
+            <iconify-icon icon="heroicons:swatch" class="text-xl group-hover:rotate-12 transition-transform duration-300"></iconify-icon>
+            <span id="current-variant-display" class="font-bold text-sm">DEFAULT</span>
+        </div>
+    </button>
+
+    <!-- Variant Options Popup -->
+    <div 
+        id="variant-options" 
+        class="absolute bottom-16 left-0 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform scale-0 opacity-0 transition-all duration-300 origin-bottom-left"
+        style="min-width: 240px;"
+    >
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-purple-600 to-pink-600 p-4">
+            <div class="flex items-center space-x-2 text-white">
+                <iconify-icon icon="heroicons:musical-note" class="text-xl"></iconify-icon>
+                <span class="font-bold">Music Themes</span>
+            </div>
+        </div>
+
+        <!-- Variant Options -->
+        <div class="p-2">
+            <!-- Electric Rock -->
+            <button 
+                class="variant-option w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-purple-50 transition-all duration-200 group" 
+                data-variant="rockelectric"
+                data-name="Electric Rock"
+            >
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center text-white font-bold text-sm">
+                    🎸
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">Electric Rock</div>
+                    <div class="text-sm text-gray-500">Rock & Roll vibes</div>
+                </div>
+                <iconify-icon icon="heroicons:check-circle-solid" class="text-green-500 text-lg hidden variant-active"></iconify-icon>
+            </button>
+
+            <!-- Smooth Jazz (Default) -->
+            <button 
+                class="variant-option w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-purple-50 transition-all duration-200 group" 
+                data-variant="jazzyblue"
+                data-name="Smooth Jazz"
+            >
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+                    🎷
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">Smooth Jazz</div>
+                    <div class="text-sm text-gray-500">Jazz modern (Default)</div>
+                </div>
+                <iconify-icon icon="heroicons:check-circle-solid" class="text-green-500 text-lg hidden variant-active"></iconify-icon>
+            </button>
+
+            <!-- Pop Shine -->
+            <button 
+                class="variant-option w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-purple-50 transition-all duration-200 group" 
+                data-variant="popshine"
+                data-name="Pop Shine"
+            >
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-blue-500 flex items-center justify-center text-white font-bold text-sm">
+                    🌟
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">Pop Shine</div>
+                    <div class="text-sm text-gray-500">Pop hits bright</div>
+                </div>
+                <iconify-icon icon="heroicons:check-circle-solid" class="text-green-500 text-lg hidden variant-active"></iconify-icon>
+            </button>
+
+            <!-- Classic Gold -->
+            <button 
+                class="variant-option w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-purple-50 transition-all duration-200 group" 
+                data-variant="classicgold"
+                data-name="Classic Gold"
+            >
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-600 to-amber-800 flex items-center justify-center text-white font-bold text-sm">
+                    🎻
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">Classic Gold</div>
+                    <div class="text-sm text-gray-500">Orchestra klassik</div>
+                </div>
+                <iconify-icon icon="heroicons:check-circle-solid" class="text-green-500 text-lg hidden variant-active"></iconify-icon>
+            </button>
+
+            <!-- Neon EDM -->
+            <button 
+                class="variant-option w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-purple-50 transition-all duration-200 group" 
+                data-variant="edmneon"
+                data-name="Neon EDM"
+            >
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-blue-600 flex items-center justify-center text-white font-bold text-sm">
+                    🕺
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">Neon EDM</div>
+                    <div class="text-sm text-gray-500">Electronic dance</div>
+                </div>
+                <iconify-icon icon="heroicons:check-circle-solid" class="text-green-500 text-lg hidden variant-active"></iconify-icon>
+            </button>
+
+            <!-- Rasta Vibes -->
+            <button 
+                class="variant-option w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-purple-50 transition-all duration-200 group" 
+                data-variant="rastavibes"
+                data-name="Rasta Vibes"
+            >
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-red-500 via-yellow-500 to-green-500 flex items-center justify-center text-white font-bold text-sm">
+                    🟩🟨🟥
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">Rasta Vibes</div>
+                    <div class="text-sm text-gray-500">Reggae roots</div>
+                </div>
+                <iconify-icon icon="heroicons:check-circle-solid" class="text-green-500 text-lg hidden variant-active"></iconify-icon>
+            </button>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="bg-gray-50 p-3 border-t border-gray-100">
+            <div class="text-xs text-gray-500 text-center">
+                <iconify-icon icon="heroicons:information-circle" class="mr-1"></iconify-icon>
+                Music theme will be saved
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<!-- Language Selector Floating Button -->
+<div id="language-selector" class="fixed bottom-6 right-6 z-50">
+    <!-- Language Button -->
+    <button 
+        id="lang-toggle-btn" 
+        class="bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
+        aria-label="Change Language"
+        title="Pilih Bahasa / Select Language"
+    >
+        <div class="flex items-center space-x-2">
+            <iconify-icon icon="heroicons:language" class="text-xl group-hover:rotate-12 transition-transform duration-300"></iconify-icon>
+            <span id="current-lang-display" class="font-bold text-sm">ID</span>
+        </div>
+    </button>
+
+    <!-- Language Options Popup -->
+    <div 
+        id="lang-options" 
+        class="absolute bottom-16 right-0 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform scale-0 opacity-0 transition-all duration-300 origin-bottom-right"
+        style="min-width: 200px;"
+    >
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-4">
+            <div class="flex items-center space-x-2 text-white">
+                <iconify-icon icon="heroicons:language" class="text-xl"></iconify-icon>
+                <span class="font-bold">Pilih Bahasa</span>
+            </div>
+        </div>
+
+        <!-- Language Options -->
+        <div class="p-2">
+            <!-- Indonesian -->
+            <button 
+                class="lang-option w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-indigo-50 transition-all duration-200 group" 
+                data-lang="id"
+                data-name="Bahasa Indonesia"
+            >
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white font-bold text-sm">
+                    🇮🇩
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">Bahasa Indonesia</div>
+                    <div class="text-sm text-gray-500">Default</div>
+                </div>
+                <iconify-icon icon="heroicons:check-circle-solid" class="text-green-500 text-lg hidden lang-active"></iconify-icon>
+            </button>
+
+            <!-- English -->
+            <button 
+                class="lang-option w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-indigo-50 transition-all duration-200 group" 
+                data-lang="en"
+                data-name="English"
+            >
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">
+                    🇬🇧
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">English</div>
+                    <div class="text-sm text-gray-500">International</div>
+                </div>
+                <iconify-icon icon="heroicons:check-circle-solid" class="text-green-500 text-lg hidden lang-active"></iconify-icon>
+            </button>
+
+            <!-- Malaysian -->
+            <button 
+                class="lang-option w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-indigo-50 transition-all duration-200 group" 
+                data-lang="ms"
+                data-name="Bahasa Malaysia"
+            >
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-500 to-red-500 flex items-center justify-center text-white font-bold text-sm">
+                    🇲🇾
+                </div>
+                <div class="flex-1 text-left">
+                    <div class="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">Bahasa Malaysia</div>
+                    <div class="text-sm text-gray-500">Regional</div>
+                </div>
+                <iconify-icon icon="heroicons:check-circle-solid" class="text-green-500 text-lg hidden lang-active"></iconify-icon>
+            </button>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="bg-gray-50 p-3 border-t border-gray-100">
+            <div class="text-xs text-gray-500 text-center">
+                <iconify-icon icon="heroicons:information-circle" class="mr-1"></iconify-icon>
+                Preference will be saved
+            </div>
+        </div>
+    </div>
+</div>

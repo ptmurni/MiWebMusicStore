@@ -1,0 +1,163 @@
+/* src/styles/components/breadcrumb-section.css */
+
+/* ===================================
+   Base Layer - Root Configuration
+   =================================== */
+@layer base {
+  /* Breadcrumb Section Base */
+  .breadcrumb-section {
+    @apply py-4 border-b mt-16;
+    background-color: var(--color-surface);
+    border-color: color-mix(in srgb, var(--color-text) 10%, transparent);
+  }
+  
+  .breadcrumb-container {
+    @apply container mx-auto px-4 lg:px-8;
+  }
+  
+  .breadcrumb-list {
+    @apply flex flex-wrap items-center;
+  }
+}
+
+/* ===================================
+   Component Layer - Breadcrumb Components
+   =================================== */
+@layer components {
+  /* Breadcrumb Item */
+  .breadcrumb-item {
+    @apply flex items-center;
+  }
+  
+  /* Breadcrumb Link */
+  .breadcrumb-link {
+    @apply flex items-center space-x-1 py-1 px-2 rounded-md transition-all duration-200;
+    color: var(--color-text-muted);
+  }
+  
+  .breadcrumb-link:hover {
+    color: var(--color-primary);
+    background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  }
+  
+  /* Home Link Special */
+  .breadcrumb-home {
+    @apply pl-0;
+  }
+  
+  /* Breadcrumb Icon */
+  .breadcrumb-icon {
+    @apply text-lg;
+  }
+  
+  /* Separator */
+  .breadcrumb-separator {
+    @apply mx-1;
+  }
+  
+  .breadcrumb-separator-icon {
+    @apply text-sm;
+    color: color-mix(in srgb, var(--color-text) 30%, transparent);
+  }
+  
+  /* Current Page */
+  .breadcrumb-current {
+    @apply font-medium;
+  }
+  
+  .breadcrumb-text {
+    @apply py-1 px-2;
+    color: var(--color-text);
+  }
+  
+  /* Mobile Truncation */
+  .breadcrumb-item:not(.breadcrumb-current):not(:first-child) {
+    @apply hidden sm:flex;
+  }
+  
+  .breadcrumb-separator:not(:last-of-type) {
+    @apply hidden sm:block;
+  }
+  
+  /* Mobile Current Indicator */
+  @media (max-width: 640px) {
+    .breadcrumb-list::before {
+      content: '...';
+      @apply mx-2 text-gray-400;
+      display: inline-block;
+    }
+    
+    .breadcrumb-item:first-child + .breadcrumb-separator {
+      @apply hidden;
+    }
+  }
+}
+
+/* ===================================
+   Variant Specific Adjustments
+   =================================== */
+@layer utilities {
+  /* SpeedYellow Variant */
+  [data-current-variant="speedyellow"] .breadcrumb-section {
+    background-color: #FFFEF7;
+  }
+  
+  [data-current-variant="speedyellow"] .breadcrumb-link:hover {
+    color: var(--color-secondary);
+    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+  }
+  
+  /* UnitBrown Variant */
+  [data-current-variant="unitbrown"] .breadcrumb-link:hover {
+    color: var(--color-secondary);
+    background-color: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+  }
+  
+  /* JetStream Variant */
+  [data-current-variant="jetstream"] .breadcrumb-section {
+    background-color: #FAFAFA;
+    border-color: rgba(225, 31, 38, 0.1);
+  }
+  
+  /* Nusantara Variant */
+  [data-current-variant="nusantara"] .breadcrumb-section {
+    background-color: #FFF9F5;
+  }
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 768px) {
+  .breadcrumb-section {
+    @apply py-3;
+  }
+  
+  .breadcrumb-link {
+    @apply text-sm;
+  }
+}
+
+@media (min-width: 641px) {
+  .breadcrumb-list::before {
+    display: none;
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+  .breadcrumb-section {
+    @apply border-gray-300;
+    background: white !important;
+  }
+  
+  .breadcrumb-link {
+    @apply text-gray-600;
+  }
+  
+  .breadcrumb-text {
+    @apply text-black font-bold;
+  }
+}

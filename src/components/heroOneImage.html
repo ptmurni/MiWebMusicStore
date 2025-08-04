@@ -1,0 +1,121 @@
+<!-- heroOneImage.html -->
+<!-- Hero Section with Image -->
+<section id="beranda" class="hero-section heroOneImage">
+    <div class="hero-container">
+        <div class="hero-grid">
+            <!-- Content Column (Same as original) -->
+            <div class="hero-content">
+                <!-- Badge -->  
+                <div class="hero-badge hero-animate-fade-in">
+                    <iconify-icon 
+                        icon="heroicons:sparkles-solid" 
+                        class="hero-badge-icon"
+                    ></iconify-icon>
+                    <span class="hero-badge-text" data-translate="hero.subtitle">
+                        Pengiriman Cepat & Aman
+                    </span>
+                </div>
+                
+                <!-- Title -->
+                <h1 class="hero-title hero-animate-fade-in hero-delay-1">
+                    <span data-translate="hero.title">
+                        Kirim Paket ke Seluruh Indonesia dengan
+                    </span> 
+                    <span class="hero-title-highlight" data-translate="hero.titleHighlight">
+                        MiWebMusicStore
+                    </span>
+                </h1>
+                
+                <!-- Description -->
+                <p class="hero-description hero-animate-fade-in hero-delay-2" 
+                   data-translate="hero.description">
+                    Platform logistik terpercaya dengan jangkauan terluas, teknologi tracking 
+                    real-time, dan harga kompetitif.
+                </p>
+                
+                <!-- Buttons -->
+                <div class="hero-button-group hero-animate-slide-up hero-delay-3">
+                    <button class="hero-btn-primary">
+                        <iconify-icon icon="heroicons:calculator-solid"></iconify-icon>
+                        <span data-translate="hero.checkRateBtn">Cek Ongkir</span>
+                    </button>
+                    <button class="hero-btn-secondary">
+                        <iconify-icon icon="heroicons:play-circle-solid"></iconify-icon>
+                        <span data-translate="hero.watchDemoBtn">Lihat Demo</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Image Column (Replaced Illustration) -->
+            <div class="hero-illustration hero-animate-fade-in hero-delay-4">
+                <div class="heroOneImage__image-wrapper">
+                    <!-- Main Image -->
+                    <img 
+                        src="src/assets/img/hero.png" 
+                        alt="MiWebMusicStore - Armada pengiriman modern"
+                        class="heroOneImage__image"
+                        loading="eager"
+                    />
+                    
+                    <!-- Image Overlay -->
+                    <div class="heroOneImage__image-overlay"></div>
+                    
+                    <!-- Decorative Frame -->
+                    <div class="heroOneImage__image-frame"></div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="heroOneImage__image-badge">
+                        <iconify-icon 
+                            icon="heroicons:check-badge" 
+                            class="heroOneImage__badge-icon"
+                        ></iconify-icon>
+                        <span class="heroOneImage__badge-text">Trusted Partner</span>
+                    </div>
+                    
+                    <!-- Stats Overlay -->
+                    <div class="heroOneImage__stats">
+                        <div class="heroOneImage__stat-item">
+                            <div class="heroOneImage__stat-number">50K+</div>
+                            <div class="heroOneImage__stat-label">Pelanggan</div>
+                        </div>
+                        <div class="heroOneImage__stat-item">
+                            <div class="heroOneImage__stat-number">8K+</div>
+                            <div class="heroOneImage__stat-label">Kota</div>
+                        </div>
+                        <div class="heroOneImage__stat-item">
+                            <div class="heroOneImage__stat-number">24/7</div>
+                            <div class="heroOneImage__stat-label">Layanan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Script for lazy loading with fallback -->
+<script>
+    // Image loading with error handling
+    document.addEventListener('DOMContentLoaded', function() {
+        const heroImage = document.querySelector('.heroOneImage__image');
+        const imageWrapper = document.querySelector('.heroOneImage__image-wrapper');
+        
+        if (heroImage && imageWrapper) {
+            // Add loading state
+            imageWrapper.classList.add('loading');
+            
+            // Handle image load
+            heroImage.addEventListener('load', function() {
+                imageWrapper.classList.remove('loading');
+            });
+            
+            // Handle image error with fallback
+            heroImage.addEventListener('error', function() {
+                console.error('Hero image failed to load, using fallback');
+                this.src = '/assets/images/hero-fallback.jpg';
+                // Or use a placeholder service
+                // this.src = 'https://via.placeholder.com/800x600/4D148C/FFFFFF?text=MiWebMusicStore';
+            });
+        }
+    });
+</script>

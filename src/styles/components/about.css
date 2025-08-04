@@ -1,0 +1,56 @@
+/* src/styles/components/about-section.css */
+
+/* ===================================
+   Base Layer - Root Configuration
+   =================================== */
+@layer base {
+/* about-section.css */
+.about-section {
+  @apply py-16 bg-white;
+}
+.about-container {
+  @apply container mx-auto px-4;
+}
+.about-grid {
+  @apply grid lg:grid-cols-2 gap-12 items-center;
+}
+.about-img-wrapper {
+  @apply relative;
+}
+.about-img-bg {
+  @apply absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-3xl opacity-20 blur-3xl;
+}
+.about-img {
+  @apply relative rounded-3xl shadow-2xl;
+}
+.about-content {
+  @apply space-y-6;
+}
+.about-title {
+  @apply text-indigo-600 font-semibold mb-2;
+}
+.about-heading {
+  @apply text-3xl lg:text-4xl font-bold text-gray-900 mb-4;
+}
+.about-desc {
+  @apply text-gray-600 text-lg;
+}
+.about-features {
+  @apply space-y-4;
+}
+.about-feature {
+  @apply flex space-x-4;
+}
+.about-feature-icon-indigo {
+  @apply flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center;
+}
+.about-feature-icon-purple {
+  @apply flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center;
+}
+.about-feature-icon-green {
+  @apply flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center;
+}
+.about-feature-title {
+  @apply font-semibold text-gray-900 mb-1;
+}
+}

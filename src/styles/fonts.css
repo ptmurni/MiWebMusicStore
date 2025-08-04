@@ -1,0 +1,52 @@
+/* Local Font Imports for MiWebNews Themes */
+
+/* Roboto family - for Default theme */
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
+
+/* Roboto Slab - for Default theme headings */
+@import '@fontsource/roboto-slab/400.css';
+@import '@fontsource/roboto-slab/700.css';
+
+/* Inter family - for Professional theme */
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+/* Merriweather - for Professional theme headings */
+@import '@fontsource/merriweather/300.css';
+@import '@fontsource/merriweather/400.css';
+@import '@fontsource/merriweather/700.css';
+@import '@fontsource/merriweather/900.css';
+
+/* Font Face Definitions for Theme System */
+:root {
+  /* Default Theme Fonts */
+  --font-roboto: 'Roboto', 'system-ui', sans-serif;
+  --font-roboto-slab: 'Roboto Slab', 'Georgia', serif;
+  
+  /* Professional Theme Fonts */
+  --font-inter: 'Inter', 'Arial', sans-serif;
+  --font-merriweather: 'Merriweather', 'Georgia', serif;
+  
+  /* System Fonts (already available) */
+  --font-helvetica: 'Helvetica Neue', 'Arial', sans-serif;
+  --font-sf-pro-text: 'SF Pro Text', 'system-ui', sans-serif;
+  --font-sf-pro-display: 'SF Pro Display', 'system-ui', sans-serif;
+  
+  /* Fallback fonts for Guardian and BBC themes */
+  --font-guardian-sans: 'Guardian Text Sans', 'Arial', sans-serif;
+  --font-guardian-serif: 'Guardian Egyptian', 'Georgia', serif;
+  --font-bbc-sans: 'Reith Sans', 'Arial', sans-serif;
+  --font-bbc-serif: 'Reith Serif', 'Times', serif;
+}
+
+/* Base font optimization */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

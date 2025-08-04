@@ -1,0 +1,545 @@
+/* src/styles/components/footer.css */
+
+/* ===================================
+   Base Layer - Footer Section Foundation
+   =================================== */
+@layer base {
+  .footer-section {
+    @apply relative overflow-hidden;
+    background-color: var(--color-secondary, #232323);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .footer-container {
+    @apply container mx-auto px-4 py-16;
+  }
+  
+  .footer-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8;
+  }
+}
+
+/* ===================================
+   Component Layer - Footer Components
+   =================================== */
+@layer components {
+  /* Company Info Section */
+  .footer-company {
+    @apply lg:col-span-2;
+  }
+  
+  .footer-logo {
+    @apply flex items-center space-x-2 mb-4;
+  }
+  
+  .footer-logo-icon {
+    @apply text-2xl;
+    color: var(--color-primary, #5b4b8a);
+  }
+  
+  .footer-logo-text {
+    @apply text-xl font-bold;
+    color: white;
+  }
+  
+  .footer-tagline {
+    @apply mb-6;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+  
+  /* Social Links */
+  .footer-social {
+    @apply flex space-x-4;
+  }
+  
+  .footer-social-link {
+    @apply w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-social-link:hover {
+    transform: translateY(-2px);
+    background-color: var(--color-primary, #5b4b8a);
+  }
+  
+  .footer-social-icon {
+    @apply text-xl;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .footer-social-link:hover .footer-social-icon {
+    color: white;
+  }
+  
+  /* Column Sections */
+  .footer-column {
+    @apply space-y-4;
+  }
+  
+  .footer-column-title {
+    @apply font-semibold mb-4;
+    color: white;
+  }
+  
+  .footer-column-list {
+    @apply space-y-2;
+  }
+  
+  .footer-column-link {
+    @apply transition-all duration-200 inline-block;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .footer-column-link:hover {
+    color: var(--color-primary, #5b4b8a);
+    transform: translateX(4px);
+  }
+  
+  /* Bottom Section */
+  .footer-bottom {
+    @apply border-t mt-12 pt-8;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-bottom-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 mb-8;
+  }
+  
+  .footer-bottom-section {
+    @apply space-y-4;
+  }
+  
+  .footer-bottom-title {
+    @apply font-semibold;
+    color: white;
+  }
+  
+  /* Badges */
+  .footer-badges {
+    @apply flex flex-wrap gap-3;
+  }
+  
+  .footer-badge {
+    @apply px-4 py-2 rounded-lg text-sm transition-all duration-200 flex items-center space-x-2;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .footer-badge:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+  }
+  
+  .footer-badge-icon {
+    @apply text-base;
+  }
+  
+  /* Copyright */
+  .footer-copyright {
+    @apply text-center text-sm;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .footer-copyright-brand {
+    color: var(--color-primary, #5b4b8a);
+    font-weight: 500;
+  }
+  
+  /* Background Pattern */
+  .footer-pattern {
+    @apply absolute inset-0 opacity-5 pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+/* ===================================
+   Utilities Layer - Variant Specific
+   =================================== */
+@layer utilities {
+  /* Rock Electric variant */
+  [data-current-variant="rockelectric"] .footer-section {
+    background-color: var(--color-background, #191b1f);
+  }
+  
+  [data-current-variant="rockelectric"] .footer-logo-icon,
+  [data-current-variant="rockelectric"] .footer-copyright-brand {
+    color: var(--color-accent, #ffd600);
+  }
+  
+  [data-current-variant="rockelectric"] .footer-social-link:hover {
+    background-color: var(--color-accent, #ffd600);
+  }
+  
+  [data-current-variant="rockelectric"] .footer-social-link:hover .footer-social-icon {
+    color: var(--color-background, #191b1f);
+  }
+  
+  /* EDM Neon variant */
+  [data-current-variant="edmneon"] .footer-section {
+    background: linear-gradient(180deg, 
+      var(--color-background, #18182b) 0%, 
+      color-mix(in srgb, var(--color-primary) 10%, var(--color-background)) 100%
+    );
+  }
+  
+  [data-current-variant="edmneon"] .footer-social-link {
+    box-shadow: 0 0 10px rgba(0, 255, 176, 0.2);
+  }
+  
+  [data-current-variant="edmneon"] .footer-social-link:hover {
+    background-color: var(--color-primary, #00ffb0);
+    box-shadow: 0 0 20px rgba(0, 255, 176, 0.5);
+  }
+  
+  [data-current-variant="edmneon"] .footer-badge {
+    border: 1px solid rgba(0, 255, 176, 0.3);
+  }
+  
+  [data-current-variant="edmneon"] .footer-badge:hover {
+    border-color: var(--color-primary, #00ffb0);
+    box-shadow: 0 0 10px rgba(0, 255, 176, 0.3);
+  }
+  
+  /* Pop Shine variant */
+  [data-current-variant="popshine"] .footer-section {
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--color-primary) 90%, black) 0%, 
+      color-mix(in srgb, var(--color-secondary) 90%, black) 100%
+    );
+  }
+  
+  [data-current-variant="popshine"] .footer-logo-icon {
+    background: linear-gradient(45deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Classic Gold variant */
+  [data-current-variant="classicgold"] .footer-section {
+    background-color: var(--color-primary, #a67c52);
+  }
+  
+  [data-current-variant="classicgold"] .footer-logo-icon {
+    color: var(--color-secondary, #e3c16f);
+  }
+  
+  [data-current-variant="classicgold"] .footer-social-link:hover {
+    background-color: var(--color-secondary, #e3c16f);
+  }
+  
+  [data-current-variant="classicgold"] .footer-social-link:hover .footer-social-icon {
+    color: var(--color-primary, #a67c52);
+  }
+  
+  /* Rasta Vibes variant */
+  [data-current-variant="rastavibes"] .footer-section {
+    background-color: var(--color-text, #232323);
+  }
+  
+  [data-current-variant="rastavibes"] .footer-social-link--facebook:hover {
+    background-color: var(--color-primary, #e02424);
+  }
+  
+  [data-current-variant="rastavibes"] .footer-social-link--instagram:hover {
+    background-color: var(--color-secondary, #ffd600);
+  }
+  
+  [data-current-variant="rastavibes"] .footer-social-link--youtube:hover {
+    background-color: var(--color-accent, #00a651);
+  }
+  
+  [data-current-variant="rastavibes"] .footer-social-link--tiktok:hover {
+    background-color: var(--color-primary, #e02424);
+  }
+  
+  [data-current-variant="rastavibes"] .footer-social-link:hover .footer-social-icon {
+    color: white;
+  }
+  
+  /* Jazz Blue variant */
+  [data-current-variant="jazzyblue"] .footer-section {
+    background: linear-gradient(180deg, 
+      var(--color-primary, #5b4b8a) 0%, 
+      color-mix(in srgb, var(--color-primary) 80%, black) 100%
+    );
+  }
+  
+  [data-current-variant="jazzyblue"] .footer-social-link {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  [data-current-variant="jazzyblue"] .footer-social-link:hover {
+    transform: translateY(-4px) rotate(-5deg);
+  }
+}
+
+/* ===================================
+   Social Media Brand Colors
+   =================================== */
+.footer-social-link--facebook:hover {
+  background-color: #1877f2;
+}
+
+.footer-social-link--instagram:hover {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.footer-social-link--youtube:hover {
+  background-color: #ff0000;
+}
+
+.footer-social-link--tiktok:hover {
+  background-color: #000000;
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatPattern {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, -30px);
+  }
+}
+
+/* Apply entrance animations */
+.footer-company,
+.footer-column {
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.footer-company { animation-delay: 0.1s; }
+.footer-column:nth-child(2) { animation-delay: 0.2s; }
+.footer-column:nth-child(3) { animation-delay: 0.3s; }
+.footer-column:nth-child(4) { animation-delay: 0.4s; }
+
+.footer-bottom {
+  animation: fadeInUp 0.8s ease-out 0.5s;
+  animation-fill-mode: both;
+}
+
+/* Pattern animation */
+.footer-pattern {
+  animation: floatPattern 30s ease-in-out infinite;
+}
+
+/* Social icon hover bounce */
+@keyframes iconBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.footer-social-link:hover .footer-social-icon {
+  animation: iconBounce 0.4s ease-out;
+}
+
+/* ===================================
+   Interactive States
+   =================================== */
+/* Link underline effect */
+.footer-column-link {
+  position: relative;
+}
+
+.footer-column-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-primary, #5b4b8a);
+  transition: width 0.3s ease;
+}
+
+.footer-column-link:hover::after {
+  width: 100%;
+}
+
+/* Badge hover effect */
+.footer-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-badge::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  transition: left 0.6s ease;
+}
+
+.footer-badge:hover::before {
+  left: 100%;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .footer-grid {
+    @apply gap-6;
+  }
+  
+  .footer-column-title {
+    @apply text-lg;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+    @apply py-12;
+  }
+  
+  .footer-grid {
+    @apply grid-cols-1 gap-8;
+  }
+  
+  .footer-company {
+    @apply text-center;
+  }
+  
+  .footer-logo {
+    @apply justify-center;
+  }
+  
+  .footer-social {
+    @apply justify-center;
+  }
+  
+  .footer-column {
+    @apply text-center;
+  }
+  
+  .footer-column-link:hover {
+    transform: none;
+  }
+  
+  .footer-bottom-grid {
+    @apply grid-cols-1 gap-6;
+  }
+  
+  .footer-badges {
+    @apply justify-center;
+  }
+  
+  .footer-badge {
+    @apply px-3 py-1.5 text-xs;
+  }
+}
+
+/* ===================================
+   Accessibility & Focus States
+   =================================== */
+.footer-social-link:focus-visible,
+.footer-column-link:focus-visible {
+  outline: 2px solid var(--color-primary, #5b4b8a);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .footer-section {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .footer-bottom {
+    border-color: #fff;
+  }
+  
+  .footer-badge,
+  .footer-social-link {
+    border: 1px solid #fff;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .footer-company,
+  .footer-column,
+  .footer-bottom,
+  .footer-pattern,
+  .footer-social-link,
+  .footer-social-icon,
+  .footer-column-link,
+  .footer-badge {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .footer-column-link::after,
+  .footer-badge::before {
+    display: none;
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+  .footer-section {
+    @apply py-8 bg-white text-black;
+    background: none !important;
+  }
+  
+  .footer-social,
+  .footer-badges,
+  .footer-pattern {
+    @apply hidden;
+  }
+  
+  .footer-column-link {
+    color: #000;
+  }
+  
+  .footer-bottom {
+    @apply border-t border-gray-300;
+  }
+  
+  .footer-copyright {
+    color: #000;
+  }
+}
+
+/* ===================================
+   Dark Mode Support
+   =================================== */
+@media (prefers-color-scheme: dark) {
+  .footer-badge {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .footer-badge:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

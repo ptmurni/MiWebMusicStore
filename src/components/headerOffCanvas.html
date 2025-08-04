@@ -1,0 +1,143 @@
+<!-- headerOffCanvas.html -->
+<!-- Navigation Header with Off-Canvas Menu -->
+<header class="headerOffCanvas header header-animate-slide-down">
+    <nav class="header-nav">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="header-logo">
+                <iconify-icon 
+                    icon="heroicons:musical-note-solid" 
+                    class="header-logo-icon"
+                ></iconify-icon>
+                <span class="header-logo-text" data-translate="navigation.brand">MiWebMusic Store</span>
+            </div>
+
+            <!-- Desktop Menu (unchanged) -->
+            <div class="header-menu">
+                <!-- Beranda -->
+                <a href="#beranda" class="header-nav-link header-nav-link--active">
+                    <iconify-icon 
+                        icon="heroicons:home" 
+                        class="header-nav-icon"
+                    ></iconify-icon>
+                    <span data-translate="navigation.home">Beranda</span>
+                </a>
+                
+                <!-- Produk -->
+                <a href="#products" class="header-nav-link">
+                    <iconify-icon 
+                        icon="heroicons:shopping-bag" 
+                        class="header-nav-icon"
+                    ></iconify-icon>
+                    <span data-translate="navigation.products">Produk</span>
+                </a>
+                
+                <!-- Kategori -->
+                <a href="#categories" class="header-nav-link">
+                    <iconify-icon 
+                        icon="heroicons:squares-2x2" 
+                        class="header-nav-icon"
+                    ></iconify-icon>
+                    <span data-translate="navigation.categories">Kategori</span>
+                </a>
+                
+                <!-- Tentang -->
+                <a href="#about" class="header-nav-link">
+                    <iconify-icon 
+                        icon="heroicons:information-circle" 
+                        class="header-nav-icon"
+                    ></iconify-icon>
+                    <span data-translate="navigation.about">Tentang</span>
+                </a>
+                
+                <!-- Kontak -->
+                <a href="#contact" class="header-nav-link">
+                    <iconify-icon 
+                        icon="heroicons:envelope" 
+                        class="header-nav-icon"
+                    ></iconify-icon>
+                    <span data-translate="navigation.contact">Kontak</span>
+                </a>
+                
+                <!-- Button Keranjang -->
+                <button class="header-cta-button">
+                    <iconify-icon 
+                        icon="heroicons:shopping-cart" 
+                        class="header-cta-icon"
+                    ></iconify-icon>
+                    <span data-translate="navigation.callToAction">Keranjang (0)</span>
+                </button>
+            </div>
+
+            <!-- Off-Canvas Toggle Button -->
+            <button id="offcanvas-toggle" class="headerOffCanvas__toggle md:hidden" aria-label="Toggle menu">
+                <div class="headerOffCanvas__hamburger">
+                    <span class="headerOffCanvas__hamburger-line"></span>
+                    <span class="headerOffCanvas__hamburger-line"></span>
+                    <span class="headerOffCanvas__hamburger-line"></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- Off-Canvas Overlay -->
+<div id="offcanvas-overlay" class="headerOffCanvas__overlay"></div>
+
+<!-- Off-Canvas Panel -->
+<aside id="offcanvas-panel" class="headerOffCanvas__panel">
+    <!-- Panel Header -->
+    <div class="headerOffCanvas__panel-header">
+        <div class="headerOffCanvas__panel-logo">
+            <iconify-icon 
+                icon="heroicons:musical-note-solid" 
+                class="headerOffCanvas__panel-logo-icon"
+            ></iconify-icon>
+            <span class="headerOffCanvas__panel-logo-text" data-translate="navigation.brand">MiWebMusic Store</span>
+        </div>
+        <button id="offcanvas-close" class="headerOffCanvas__close" aria-label="Close menu">
+            <iconify-icon icon="heroicons:x-mark" class="text-2xl"></iconify-icon>
+        </button>
+    </div>
+    
+    <!-- Panel Navigation -->
+    <nav class="headerOffCanvas__nav">
+        <a href="#beranda" class="headerOffCanvas__nav-link headerOffCanvas__nav-link--active">
+            <iconify-icon icon="heroicons:home" class="headerOffCanvas__nav-icon"></iconify-icon>
+            <span class="headerOffCanvas__nav-text" data-translate="navigation.home">Beranda</span>
+            <iconify-icon icon="heroicons:chevron-right" class="text-lg opacity-50"></iconify-icon>
+        </a>
+        
+        <a href="#products" class="headerOffCanvas__nav-link">
+            <iconify-icon icon="heroicons:shopping-bag" class="headerOffCanvas__nav-icon"></iconify-icon>
+            <span class="headerOffCanvas__nav-text" data-translate="navigation.products">Produk</span>
+            <iconify-icon icon="heroicons:chevron-right" class="text-lg opacity-50"></iconify-icon>
+        </a>
+        
+        <a href="#categories" class="headerOffCanvas__nav-link">
+            <iconify-icon icon="heroicons:squares-2x2" class="headerOffCanvas__nav-icon"></iconify-icon>
+            <span class="headerOffCanvas__nav-text" data-translate="navigation.categories">Kategori</span>
+            <iconify-icon icon="heroicons:chevron-right" class="text-lg opacity-50"></iconify-icon>
+        </a>
+        
+        <a href="#about" class="headerOffCanvas__nav-link">
+            <iconify-icon icon="heroicons:information-circle" class="headerOffCanvas__nav-icon"></iconify-icon>
+            <span class="headerOffCanvas__nav-text" data-translate="navigation.about">Tentang</span>
+            <iconify-icon icon="heroicons:chevron-right" class="text-lg opacity-50"></iconify-icon>
+        </a>
+        
+        <a href="#contact" class="headerOffCanvas__nav-link">
+            <iconify-icon icon="heroicons:envelope" class="headerOffCanvas__nav-icon"></iconify-icon>
+            <span class="headerOffCanvas__nav-text" data-translate="navigation.contact">Kontak</span>
+            <iconify-icon icon="heroicons:chevron-right" class="text-lg opacity-50"></iconify-icon>
+        </a>
+    </nav>
+    
+    <!-- Panel Footer -->
+    <div class="headerOffCanvas__panel-footer">
+        <button class="headerOffCanvas__cta">
+            <iconify-icon icon="heroicons:shopping-cart" class="text-lg"></iconify-icon>
+            <span data-translate="navigation.callToAction">Keranjang (0)</span>
+        </button>
+    </div>
+</aside>

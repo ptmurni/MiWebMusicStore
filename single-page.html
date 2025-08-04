@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiWebMusicStore - Solusi Pengiriman Terpercaya</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+</head>
+<body class="bg-gray-50" data-variant="" data-current-variant="">
+    <!-- Component containers -->
+    <div id="language-selector-component"></div>
+    <div id="variant-selector-component"></div>
+    <div id="headerOffCanvas-component"></div>
+    <div id="breadcrumb-component"></div>
+    <div id="content-area-component"></div>
+
+    <!-- <div id="header-component"></div> Tidak ditampilkan didemo silahkan pilih diantara header-components atau headerOffCanvas-->
+    <!-- <div id="hero-component"></div> Tidak ditampilkan di demo bisa menjadi varian untuk Hero -->
+    <!-- <div id="heroOneImage-component"></div> -->
+    <!-- <div id="features-component"></div> -->
+    <!-- <div id="tracking-component"></div> Component dibuat tapi belum bisa digunakan -->
+    <!-- <div id="services-component"></div> -->
+    <!-- <div id="stats-component"></div>
+    <div id="about-component"></div>
+    <div id="cta-component"></div>
+    <div id="contact-component"></div> -->
+    <div id="footer-component"></div>
+
+    <!-- Load language system first (independent) -->
+    <script type="module" src="/src/scripts/managers/LanguageManager.js"></script>
+    
+    <!-- Load variant system (independent) -->
+    <script type="module" src="/src/scripts/managers/VariantManager.js"></script>
+    
+    <!-- Load language selector (independent) -->
+    <script type="module" src="/src/scripts/components/LanguageSelector.js"></script>
+    
+    <!-- Load variant selector (independent) -->
+    <script type="module" src="/src/scripts/components/VariantSelector.js"></script>
+
+    <!-- Load HeaderOff Canvas-->
+    <script type="module" src="/src/scripts/components/headerOffCanvas.js"></script>
+    
+    <!-- Load main app (without language/variant dependencies) -->
+    <script type="module" src="/src/scripts/main.js"></script>
+    
+    <!-- Set Default Variant Script -->
+    <script type="module">
+        import { variantConfig } from '/src/scripts/configs/variant.config.js';
+        
+        // Set default variant on body load
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const defaultVariant = variantConfig.defaultVariant;
+            
+            console.log(`🎨 Setting default variant: ${defaultVariant}`);
+            body.setAttribute('data-variant', defaultVariant);
+            
+            // Also dispatch event for other components that might need to know
+            window.dispatchEvent(new CustomEvent('defaultVariantSet', {
+                detail: { variant: defaultVariant }
+            }));
+        });
+    </script>
+    
+    <!-- Component Loader Script -->
+    <script>
+        // Function to load component
+        async function loadComponent(componentName, containerId) {
+            try {
+                console.log(`🔧 Loading component: ${componentName}`);
+                const response = await fetch(`/src/components/${componentName}.html`);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+                console.log(`✅ Component loaded: ${componentName}`);
+            } catch (error) {
+                console.error(`❌ Error loading component ${componentName}:`, error);
+            }
+        }
+
+        // Load all components
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('🔧 Loading components...');
+            
+            const components = [
+                { name: 'language-selector', id: 'language-selector-component' },
+                { name: 'variant-selector', id: 'variant-selector-component' },
+                { name: 'headerOffCanvas', id: 'headerOffCanvas-component' },
+                { name: 'breadcrumb', id: 'breadcrumb-component' },
+                { name: 'content-area', id: 'content-area-component' },
+                // { name: 'header', id: 'header-component' }, dibuat sebagai opsi demo
+                // { name: 'hero', id: 'hero-component' }, //  dibuat sebagai opsi demo
+                // { name: 'heroOneImage', id: 'heroOneImage-component' },
+                // { name: 'features-strip', id: 'features-component' },
+                // { name: 'tracking', id: 'tracking-component' }, // Component dibuat tapi belum bisa digunakan
+                // { name: 'services', id: 'services-component' },
+                // { name: 'stats', id: 'stats-component' },
+                // { name: 'about', id: 'about-component' },
+                // { name: 'cta', id: 'cta-component' },
+                // { name: 'contact', id: 'contact-component' },
+                { name: 'footer', id: 'footer-component' }
+            ];
+
+            // Load components in parallel
+            const loadPromises = components.map(component => 
+                loadComponent(component.name, component.id)
+            );
+
+            await Promise.all(loadPromises);
+            console.log('✅ All components loaded successfully');
+
+            // Trigger a custom event to signal components are loaded
+            window.dispatchEvent(new CustomEvent('componentsLoaded'));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+/* src/styles/components/features.css */
+
+/* ===================================
+   Base Layer - Features Section Foundation
+   =================================== */
+@layer base {
+  .features-section {
+    @apply py-16 bg-white;
+    background-color: var(--color-surface, #fff);
+  }
+  
+  .features-container {
+    @apply container mx-auto px-4;
+  }
+  
+  .features-header {
+    @apply text-center mb-12;
+  }
+  
+  .features-title {
+    @apply text-3xl lg:text-4xl font-bold mb-4;
+    color: var(--color-text, #232323);
+  }
+  
+  .features-subtitle {
+    @apply text-xl mb-2;
+    color: var(--color-text-muted, #7c6baf);
+  }
+  
+  .features-description {
+    @apply text-gray-600 max-w-2xl mx-auto;
+    color: var(--color-text-muted, #7c6baf);
+  }
+}
+
+/* ===================================
+   Component Layer - Features Cards
+   =================================== */
+@layer components {
+  /* Grid Layout */
+  .features-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+  }
+  
+  /* Feature Card */
+  .features-card {
+    @apply text-center space-y-4 p-6 rounded-xl transition-all duration-300;
+    background-color: transparent;
+    position: relative;
+  }
+  
+  .features-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    background-color: var(--color-background, #f9f6f2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .features-card:hover::before {
+    opacity: 1;
+  }
+  
+  .features-card > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Icon Wrapper */
+  .features-icon-wrapper {
+    @apply w-16 h-16 rounded-2xl flex items-center justify-center mx-auto transition-all duration-300;
+  }
+  
+  .features-card:hover .features-icon-wrapper {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Icon color variants */
+  .features-icon-wrapper--indigo {
+    @apply bg-indigo-100;
+    background-color: color-mix(in srgb, var(--color-primary) 15%, white);
+  }
+  
+  .features-icon-wrapper--green {
+    @apply bg-green-100;
+    background-color: color-mix(in srgb, var(--color-success) 15%, white);
+  }
+  
+  .features-icon-wrapper--purple {
+    @apply bg-purple-100;
+    background-color: color-mix(in srgb, var(--color-secondary) 15%, white);
+  }
+  
+  .features-icon-wrapper--orange {
+    @apply bg-orange-100;
+    background-color: color-mix(in srgb, var(--color-accent) 15%, white);
+  }
+  
+  /* Icon */
+  .features-icon {
+    @apply text-3xl transition-transform duration-300;
+  }
+  
+  .features-icon-wrapper--indigo .features-icon {
+    @apply text-indigo-600;
+    color: var(--color-primary, #5b4b8a);
+  }
+  
+  .features-icon-wrapper--green .features-icon {
+    @apply text-green-600;
+    color: var(--color-success, #2ecc71);
+  }
+  
+  .features-icon-wrapper--purple .features-icon {
+    @apply text-purple-600;
+    color: var(--color-secondary, #ffd86b);
+  }
+  
+  .features-icon-wrapper--orange .features-icon {
+    @apply text-orange-600;
+    color: var(--color-accent, #d72660);
+  }
+  
+  .features-card:hover .features-icon {
+    transform: rotate(10deg) scale(1.1);
+  }
+  
+  /* Card Content */
+  .features-card-title {
+    @apply text-xl font-semibold;
+    color: var(--color-text, #232323);
+  }
+  
+  .features-card-desc {
+    @apply text-gray-600;
+    color: var(--color-text-muted, #7c6baf);
+    line-height: 1.6;
+  }
+}
+
+/* ===================================
+   Utilities Layer - Variant Specific
+   =================================== */
+@layer utilities {
+  /* EDM Neon variant - Dark theme */
+  [data-current-variant="edmneon"] .features-section {
+    background-color: var(--color-background, #18182b);
+  }
+  
+  [data-current-variant="edmneon"] .features-card::before {
+    background-color: var(--color-surface, #23234b);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  [data-current-variant="edmneon"] .features-card:hover::before {
+    border-color: var(--color-primary, #00ffb0);
+    box-shadow: 0 0 20px rgba(0, 255, 176, 0.2);
+  }
+  
+  [data-current-variant="edmneon"] .features-icon-wrapper {
+    box-shadow: 0 0 15px rgba(0, 255, 176, 0.3);
+  }
+  
+  /* Rock Electric variant */
+  [data-current-variant="rockelectric"] .features-section {
+    background-color: var(--color-surface, #23272a);
+  }
+  
+  [data-current-variant="rockelectric"] .features-card::before {
+    background: linear-gradient(135deg, 
+      transparent 0%, 
+      color-mix(in srgb, var(--color-accent) 10%, transparent) 100%
+    );
+  }
+  
+  [data-current-variant="rockelectric"] .features-icon-wrapper--indigo,
+  [data-current-variant="rockelectric"] .features-icon-wrapper--green,
+  [data-current-variant="rockelectric"] .features-icon-wrapper--purple,
+  [data-current-variant="rockelectric"] .features-icon-wrapper--orange {
+    background-color: color-mix(in srgb, var(--color-accent) 20%, var(--color-surface));
+  }
+  
+  /* Classic Gold variant */
+  [data-current-variant="classicgold"] .features-icon-wrapper {
+    @apply border border-gray-200;
+  }
+  
+  [data-current-variant="classicgold"] .features-card:hover .features-icon-wrapper {
+    border-color: var(--color-secondary, #e3c16f);
+    background: linear-gradient(135deg, 
+      white 0%, 
+      color-mix(in srgb, var(--color-secondary) 10%, white) 100%
+    );
+  }
+  
+  /* Pop Shine variant - Colorful gradients */
+  [data-current-variant="popshine"] .features-icon-wrapper--indigo {
+    background: linear-gradient(135deg, #ff4c98 0%, #ff8fc0 100%);
+  }
+  
+  [data-current-variant="popshine"] .features-icon-wrapper--green {
+    background: linear-gradient(135deg, #06d6a0 0%, #7effd4 100%);
+  }
+  
+  [data-current-variant="popshine"] .features-icon-wrapper--purple {
+    background: linear-gradient(135deg, #00b7ff 0%, #6fdbff 100%);
+  }
+  
+  [data-current-variant="popshine"] .features-icon-wrapper--orange {
+    background: linear-gradient(135deg, #ffe156 0%, #fff599 100%);
+  }
+  
+  [data-current-variant="popshine"] .features-icon {
+    color: white !important;
+  }
+  
+  /* Rasta Vibes variant - Sequential colors */
+  [data-current-variant="rastavibes"] .features-card:nth-child(1) .features-icon-wrapper {
+    background-color: color-mix(in srgb, var(--color-primary) 20%, white);
+  }
+  
+  [data-current-variant="rastavibes"] .features-card:nth-child(2) .features-icon-wrapper {
+    background-color: color-mix(in srgb, var(--color-secondary) 20%, white);
+  }
+  
+  [data-current-variant="rastavibes"] .features-card:nth-child(3) .features-icon-wrapper {
+    background-color: color-mix(in srgb, var(--color-accent) 20%, white);
+  }
+  
+  [data-current-variant="rastavibes"] .features-card:nth-child(4) .features-icon-wrapper {
+    background-color: color-mix(in srgb, var(--color-primary) 20%, white);
+  }
+  
+  /* Jazz Blue variant - Smooth animations */
+  [data-current-variant="jazzyblue"] .features-card:hover .features-icon-wrapper {
+    animation: jazzFloat 2s ease-in-out infinite;
+  }
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes jazzFloat {
+  0%, 100% { transform: translateY(-4px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(91, 75, 138, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(91, 75, 138, 0);
+  }
+}
+
+/* Apply entrance animations */
+.features-card {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.features-card:nth-child(1) { animation-delay: 0.1s; }
+.features-card:nth-child(2) { animation-delay: 0.2s; }
+.features-card:nth-child(3) { animation-delay: 0.3s; }
+.features-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Icon pulse animation on hover */
+.features-card:hover .features-icon-wrapper--indigo {
+  animation: pulseGlow 1.5s infinite;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .features-title {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  .features-subtitle {
+    @apply text-lg;
+  }
+  
+  .features-grid {
+    @apply gap-6;
+  }
+}
+
+@media (max-width: 640px) {
+  .features-title {
+    @apply text-xl;
+  }
+  
+  .features-subtitle {
+    @apply text-base;
+  }
+  
+  .features-description {
+    @apply text-sm;
+  }
+  
+  .features-card {
+    @apply p-4;
+  }
+  
+  .features-icon-wrapper {
+    @apply w-14 h-14;
+  }
+  
+  .features-icon {
+    @apply text-2xl;
+  }
+  
+  .features-card-title {
+    @apply text-lg;
+  }
+  
+  .features-card-desc {
+    @apply text-sm;
+  }
+  
+  .features-grid {
+    @apply grid-cols-1;
+  }
+}
+
+/* ===================================
+   Accessibility & Focus States
+   =================================== */
+.features-card:focus-visible {
+  outline: 2px solid var(--color-primary, #5b4b8a);
+  outline-offset: 4px;
+  border-radius: 0.75rem;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .features-card {
+    @apply border-2 border-gray-300;
+  }
+  
+  .features-card:hover {
+    @apply border-gray-900;
+  }
+  
+  .features-icon-wrapper {
+    @apply border-2 border-gray-700;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .features-card,
+  .features-icon-wrapper,
+  .features-icon,
+  .features-card::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===================================
+   Dark Mode Support
+   =================================== */
+@media (prefers-color-scheme: dark) {
+  .features-section {
+    background-color: var(--color-background, #1a1a1a);
+  }
+  
+  .features-card::before {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+  .features-section {
+    @apply py-8;
+  }
+  
+  .features-grid {
+    @apply grid-cols-2 gap-4;
+  }
+  
+  .features-card {
+    @apply border border-gray-300 p-4;
+  }
+  
+  .features-icon-wrapper {
+    @apply border border-gray-400;
+  }
+}

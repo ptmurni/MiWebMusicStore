@@ -1,0 +1,94 @@
+/* src/styles/components/brands.css */
+
+/* ===================================
+   Base Layer - Brands Section Foundation
+   =================================== */
+@layer base {
+  .brands-section {
+    @apply py-16 bg-gray-50;
+    background-color: var(--color-background, #f9f6f2);
+  }
+  .brands-container {
+    @apply container mx-auto px-4;
+  }
+  .brands-title {
+    @apply text-center mb-12;
+  }
+  .brands-title-text {
+    @apply text-3xl lg:text-4xl font-bold mb-4;
+    color: var(--color-text, #232323);
+  }
+  .brands-title-desc {
+    @apply text-xl text-gray-600;
+    color: var(--color-text-muted, #7c6baf);
+  }
+}
+
+/* ===================================
+   Component Layer - Brands Grid & Card
+   =================================== */
+@layer components {
+  .brands-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center;
+  }
+  .brands-card {
+    @apply flex items-center justify-center p-4 bg-white rounded-xl transition-shadow hover:shadow-lg;
+    background-color: var(--color-surface, #fff);
+  }
+  .brands-logo {
+    @apply h-12 grayscale transition-all;
+    filter: grayscale(1);
+  }
+  .brands-card:hover .brands-logo {
+    filter: grayscale(0);
+  }
+}
+
+/* ===================================
+   Utilities Layer - Variant & Responsive
+   =================================== */
+@layer utilities {
+  /* Example: dark background for EDM variant */
+  [data-current-variant="edmneon"] .brands-section {
+    background-color: var(--color-background, #18182b);
+  }
+  [data-current-variant="edmneon"] .brands-card {
+    background-color: var(--color-surface, #23234b);
+  }
+  /* Add more variant-specific tweaks if needed */
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .brands-title-text {
+    @apply text-2xl;
+  }
+  .brands-grid {
+    @apply gap-6;
+  }
+}
+@media (max-width: 640px) {
+  .brands-title-text {
+    @apply text-xl;
+  }
+  .brands-grid {
+    @apply grid-cols-2 gap-4;
+  }
+  .brands-card {
+    @apply p-2;
+  }
+  .brands-logo {
+    @apply h-8;
+  }
+}
+
+/* ===================================
+   Accessibility & Focus
+   =================================== */
+.brands-card:focus-visible {
+  outline: 2px solid var(--color-primary, #5b4b8a);
+  outline-offset: 2px;
+  border-radius: 0.75rem;
+}

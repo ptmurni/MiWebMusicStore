@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "title": "MiWebMusicStore - Trusted Shipping Solutions",
+    "description": "Trusted logistics platform with widest coverage, real-time tracking technology, and competitive pricing"
+  },
+  "navigation": {
+    "brand": "MiWebMusicStore",
+    "home": "Home",
+    "services": "Services",
+    "tracking": "Tracking",
+    "about": "About",
+    "contact": "Contact",
+    "callToAction": "Contact Us"
+  },
+  "hero": {
+    "title": "Ship Packages Throughout Indonesia with MiWebMusicStore",
+    "subtitle": "Fast & Secure Shipping",
+    "description": "Trusted logistics platform with widest coverage, real-time tracking technology, and competitive pricing.",
+    "titleHighlight": "MiWebMusicStore",
+    "checkRateBtn": "Check Rates",
+    "watchDemoBtn": "Watch Demo",
+    "heroImageTitle": "MiWebMusicStore",
+    "heroImageSubtitle": "Trusted Logistics Solution"
+  },
+  "features": {
+    "title": "Our Service Excellence",
+    "subtitle": "Why choose MiWebMusicStore",
+    "description": "We provide the best logistics services with various advantages designed to meet your business needs.",
+    "items": {
+      "safe": "100% Safe",
+      "service247": "24/7 Service",
+      "cities": "8000+ Cities",
+      "bestPrice": "Best Price"
+    }
+  },
+  "tracking": {
+    "title": "Track Your Package",
+    "subtitle": "Enter tracking number to check delivery status",
+    "description": "Monitor your package journey in real-time with our advanced tracking system integrated directly with our entire fleet.",
+    "placeholder": "Example: MWL123456789",
+    "trackBtn": "Track Now",
+    "statusTitle": "Delivery Status",
+    "statusMessage": "Your package is on the way to the destination address."
+  },
+  "services": {
+    "title": "Our Premium Services",
+    "subtitle": "Shipping solutions for every business need",
+    "description": "MiWebMusicStore provides various logistics services tailored to modern business needs, from express delivery to warehousing services.",
+    "items": [
+      {
+        "title": "Express Same Day",
+        "description": "Same-day express delivery for Greater Jakarta area"
+      },
+      {
+        "title": "Regular Cargo",
+        "description": "Economic shipping for bulk goods"
+      },
+      {
+        "title": "Warehouse Service",
+        "description": "Warehousing service with modern management system"
+      },
+      {
+        "title": "International",
+        "description": "International shipping to over 200 countries"
+      }
+    ],
+    "learnMore": "Learn More"
+  },
+  "stats": {
+    "title": "Our Service Statistics",
+    "subtitle": "Numbers that prove customer trust",
+    "description": "With over 13 years of experience, we have served thousands of customers throughout Indonesia with full dedication.",
+    "items": {
+      "customers": "Active Customers",
+      "branches": "Branches & Agents",
+      "fleet": "Active Fleet",
+      "provinces": "Provinces Covered"
+    }
+  },
+  "about": {
+    "title": "Trusted Logistics Partner Since 2010",
+    "subtitle": "About Us",
+    "description": "MiWebMusicStore has been a trusted partner for thousands of businesses in Indonesia. With more than 13 years of experience, we continue to innovate to provide the best logistics services.",
+    "features": [
+      {
+        "title": "Trusted & Licensed",
+        "description": "Has all official operational permits from the government"
+      },
+      {
+        "title": "Latest Technology",
+        "description": "Real-time GPS tracking system and API integration"
+      },
+      {
+        "title": "Customer Support 24/7",
+        "description": "Support team ready to help whenever you need"
+      }
+    ],
+    "viewProfileBtn": "View Full Profile",
+    "imageTitle": "About MiWebMusicStore",
+    "imageSubtitle": "Trusted Logistics Company"
+  },
+  "cta": {
+    "title": "Ready to Grow Your Business?",
+    "subtitle": "Join thousands of businesses that have trusted their shipping to us",
+    "description": "Get the best logistics solutions at competitive prices and professional service from our experienced team.",
+    "registerBtn": "Register Now",
+    "consultationBtn": "Free Consultation"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have questions? Our team is ready to help you",
+    "description": "Don't hesitate to contact us through various available communication channels. Our customer service team is ready to serve you 24/7.",
+    "info": {
+      "officeTitle": "Head Office",
+      "officeAddress": "Jl. Logistik Raya No. 88\nSouth Jakarta 12345",
+      "phoneTitle": "Phone",
+      "phoneNumber": "(021) 1234-5678\n0812-3456-7890 (WhatsApp)",
+      "emailTitle": "Email",
+      "emailAddress": "info@MiWebMusicStore.id\nsupport@MiWebMusicStore.id"
+    },
+    "form": {
+      "title": "Send Message",
+      "subtitle": "Fill out the form below and we will contact you soon",
+      "fields": {
+        "nameLabel": "Full Name",
+        "namePlaceholder": "Enter your full name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "name@email.com",
+        "phoneLabel": "Phone Number",
+        "phonePlaceholder": "08xxxxxxxxxx",
+        "subjectLabel": "Subject",
+        "subjectPlaceholder": "Select subject",
+        "subjectOptions": {
+          "serviceInfo": "Service Information",
+          "shipping": "Shipping Issues",
+          "partnership": "Business Partnership",
+          "complaint": "Complaint",
+          "other": "Other"
+        },
+        "messageLabel": "Message",
+        "messagePlaceholder": "Write your message here..."
+      },
+      "agreement": {
+        "text": "I agree to the",
+        "privacyPolicy": "privacy policy",
+        "termsOfService": "terms of service",
+        "suffix": "of MiWebMusicStore."
+      },
+      "submitBtn": "Send Message",
+      "required": "*"
+    }
+  },
+  "footer": {
+    "title": "MiWebMusicStore",
+    "subtitle": "Trusted Logistics Partner",
+    "description": "Trusted logistics partner for Indonesian business advancement",
+    "sections": {
+      "services": {
+        "title": "Services",
+        "items": [
+          "Express Same Day",
+          "Regular Cargo",
+          "Warehouse Service",
+          "International Shipping"
+        ]
+      },
+      "company": {
+        "title": "Company",
+        "items": [
+          "About Us",
+          "Careers",
+          "Business Partners",
+          "Privacy Policy"
+        ]
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Get the latest updates from us",
+        "emailPlaceholder": "Your Email"
+      }
+    },
+    "copyright": "© 2025 MiWebMusicStore. All rights reserved. | Powered by Tailwind CSS 4.1.11"
+  },
+    "languages": {
+    "en": "English",
+    "id": "Indonesia",
+    "ms": "Melayu"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "reset": "Reset"
+  }
+}

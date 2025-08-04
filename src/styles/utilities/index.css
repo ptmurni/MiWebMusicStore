@@ -1,0 +1,11 @@
+/* ===========================================
+   UTILITIES LAYER
+   Helper classes and utilities
+   =========================================== */
+
+/* Import utility components */
+@import "./animations.css";
+@import "./helpers.css";
+
+/* Note: language-selector.css is imported directly in LanguageSelector.js module
+   to maintain component independence */

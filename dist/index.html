@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiWebMusicStore - Toko Alat Musik Terlengkap di Indonesia</title>
+  <meta name="description" content="Jual alat musik berkualitas dengan harga terbaik. Guitar, keyboard, drum, dan berbagai alat musik lainnya. Garansi resmi dan gratis konsultasi.">
+  
+  <!-- Import styles through Vite -->
+  <script type="module" crossorigin src="/assets/index-COsS-z3i.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Cef0hG6l.css">
+</head>
+<body class="font-sans antialiased bg-gray-50" data-variant="" data-current-variant="">
+    <!-- Component containers Stand alone -->
+    <div id="language-selector-component"></div>
+    <div id="variant-selector-component"></div>
+    <div id="header-component"></div>
+    <!-- Component containers manage by components.js -->
+    <div id="hero-component"></div>
+    <div id="features-component"></div>
+    <div id="categories-component"></div>
+    <div id="products-component"></div>
+    <div id="stats-component"></div>
+    <div id="brands-component"></div>
+    <div id="about-component"></div>
+    <div id="testimonials-component"></div>
+    <div id="newsletter-component"></div>
+    <div id="cta-component"></div>
+    <div id="contact-component"></div>
+    <div id="footer-component"></div>
+
+    <!-- Load language system first (independent) -->
+    
+    <!-- Load variant system (independent) -->
+    
+    <!-- Load language selector (independent) -->
+    
+    <!-- Load variant selector (independent) -->
+    
+    <!-- Load main app (without language/variant dependencies) -->
+    
+    <!-- Set Default Variant Script -->
+    
+    <!-- Component Loader Script -->
+    <script>
+        // Function to load component
+        async function loadComponent(componentName, containerId) {
+            try {
+                console.log(`🔧 Loading component: ${componentName}`);
+                const response = await fetch(`/src/components/${componentName}.html`);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+                console.log(`✅ Component loaded: ${componentName}`);
+            } catch (error) {
+                console.error(`❌ Error loading component ${componentName}:`, error);
+            }
+        }
+
+        // Load all components
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('🔧 Loading components...');
+            
+            const components = [
+                { name: 'language-selector', id: 'language-selector-component' },
+                { name: 'variant-selector', id: 'variant-selector-component' },
+                { name: 'header', id: 'header-component' },
+                { name: 'hero', id: 'hero-component' },
+                { name: 'features', id: 'features-component' },
+                { name: 'categories', id: 'categories-component' },
+                { name: 'products', id: 'products-component' },
+                { name: 'stats', id: 'stats-component' },
+                { name: 'brands', id: 'brands-component' },
+                { name: 'about', id: 'about-component' },
+                { name: 'testimonials', id: 'testimonials-component' },
+                { name: 'newsletter', id: 'newsletter-component' },
+                { name: 'cta', id: 'cta-component' },
+                { name: 'contact', id: 'contact-component' },
+                { name: 'footer', id: 'footer-component' }
+            ];
+
+            // Load components in parallel
+            const loadPromises = components.map(component => 
+                loadComponent(component.name, component.id)
+            );
+
+            await Promise.all(loadPromises);
+            console.log('✅ All components loaded successfully');
+
+            // Trigger a custom event to signal components are loaded
+            window.dispatchEvent(new CustomEvent('componentsLoaded'));
+        });
+    </script>
+</body>
+</html>

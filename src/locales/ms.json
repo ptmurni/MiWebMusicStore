@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "title": "MiWebMusicStore - Penyelesaian Penghantaran Dipercayai",
+    "description": "Platform logistik dipercayai dengan liputan terluas, teknologi penjejakan masa nyata, dan harga kompetitif"
+  },
+  "navigation": {
+    "brand": "MiWebMusicStore",
+    "home": "Laman Utama",
+    "services": "Perkhidmatan",
+    "tracking": "Penjejakan",
+    "about": "Tentang Kami",
+    "contact": "Hubungi",
+    "callToAction": "Hubungi Kami"
+  },
+  "hero": {
+    "title": "Hantar Bungkusan ke Seluruh Indonesia dengan MiWebMusicStore",
+    "subtitle": "Penghantaran Pantas & Selamat",
+    "description": "Platform logistik dipercayai dengan liputan terluas, teknologi penjejakan masa nyata, dan harga kompetitif.",
+    "titleHighlight": "MiWebMusicStore",
+    "checkRateBtn": "Semak Kadar",
+    "watchDemoBtn": "Lihat Demo",
+    "heroImageTitle": "MiWebMusicStore",
+    "heroImageSubtitle": "Penyelesaian Logistik Dipercayai"
+  },
+  "features": {
+    "title": "Kecemerlangan Perkhidmatan Kami",
+    "subtitle": "Mengapa pilih MiWebMusicStore",
+    "description": "Kami menyediakan perkhidmatan logistik terbaik dengan pelbagai kelebihan yang direka untuk memenuhi keperluan perniagaan anda.",
+    "items": {
+      "safe": "100% Selamat",
+      "service247": "Perkhidmatan 24/7",
+      "cities": "8000+ Bandar",
+      "bestPrice": "Harga Terbaik"
+    }
+  },
+  "tracking": {
+    "title": "Jejak Bungkusan Anda",
+    "subtitle": "Masukkan nombor penjejakan untuk menyemak status penghantaran",
+    "description": "Pantau perjalanan bungkusan anda secara masa nyata dengan sistem penjejakan canggih kami yang disepadukan terus dengan seluruh armada.",
+    "placeholder": "Contoh: MWL123456789",
+    "trackBtn": "Jejak Sekarang",
+    "statusTitle": "Status Penghantaran",
+    "statusMessage": "Bungkusan anda sedang dalam perjalanan ke alamat destinasi."
+  },
+  "services": {
+    "title": "Perkhidmatan Unggul Kami",
+    "subtitle": "Penyelesaian penghantaran untuk setiap keperluan perniagaan",
+    "description": "MiWebMusicStore menyediakan pelbagai perkhidmatan logistik yang disesuaikan dengan keperluan perniagaan moden, dari penghantaran ekspres hingga perkhidmatan pergudangan.",
+    "items": [
+      {
+        "title": "Ekspres Hari Sama",
+        "description": "Penghantaran ekspres pada hari yang sama untuk kawasan Lembah Klang"
+      },
+      {
+        "title": "Kargo Biasa",
+        "description": "Penghantaran ekonomi untuk barangan dalam kuantiti besar"
+      },
+      {
+        "title": "Perkhidmatan Gudang",
+        "description": "Perkhidmatan pergudangan dengan sistem pengurusan moden"
+      },
+      {
+        "title": "Antarabangsa",
+        "description": "Penghantaran antarabangsa ke lebih 200 negara"
+      }
+    ],
+    "learnMore": "Ketahui Lebih Lanjut"
+  },
+  "stats": {
+    "title": "Statistik Perkhidmatan Kami",
+    "subtitle": "Angka yang membuktikan kepercayaan pelanggan",
+    "description": "Dengan pengalaman lebih dari 13 tahun, kami telah melayani ribuan pelanggan di seluruh Indonesia dengan dedikasi penuh.",
+    "items": {
+      "customers": "Pelanggan Aktif",
+      "branches": "Cawangan & Ejen",
+      "fleet": "Armada Aktif",
+      "provinces": "Wilayah Terliputi"
+    }
+  },
+  "about": {
+    "title": "Rakan Logistik Dipercayai Sejak 2010",
+    "subtitle": "Tentang Kami",
+    "description": "MiWebMusicStore telah menjadi rakan dipercayai bagi ribuan perniagaan di Indonesia. Dengan pengalaman lebih dari 13 tahun, kami terus berinovasi untuk memberikan perkhidmatan logistik terbaik.",
+    "features": [
+      {
+        "title": "Dipercayai & Berlesen",
+        "description": "Memiliki semua permit operasi rasmi dari kerajaan"
+      },
+      {
+        "title": "Teknologi Terkini",
+        "description": "Sistem penjejakan GPS masa nyata dan integrasi API"
+      },
+      {
+        "title": "Sokongan Pelanggan 24/7",
+        "description": "Pasukan sokongan sedia membantu bila-bila masa anda perlukan"
+      }
+    ],
+    "viewProfileBtn": "Lihat Profil Penuh",
+    "imageTitle": "Tentang MiWebMusicStore",
+    "imageSubtitle": "Syarikat Logistik Dipercayai"
+  },
+  "cta": {
+    "title": "Sedia Meningkatkan Perniagaan Anda?",
+    "subtitle": "Sertai ribuan perniagaan yang telah mempercayakan penghantaran mereka kepada kami",
+    "description": "Dapatkan penyelesaian logistik terbaik dengan harga kompetitif dan perkhidmatan profesional dari pasukan berpengalaman kami.",
+    "registerBtn": "Daftar Sekarang",
+    "consultationBtn": "Konsultasi Percuma"
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Ada soalan? Pasukan kami sedia membantu anda",
+    "description": "Jangan teragak-agak untuk menghubungi kami melalui pelbagai saluran komunikasi yang tersedia. Pasukan khidmat pelanggan kami sedia melayani anda 24/7.",
+    "info": {
+      "officeTitle": "Pejabat Pusat",
+      "officeAddress": "Jl. Logistik Raya No. 88\nJakarta Selatan 12345",
+      "phoneTitle": "Telefon",
+      "phoneNumber": "(021) 1234-5678\n0812-3456-7890 (WhatsApp)",
+      "emailTitle": "E-mel",
+      "emailAddress": "info@MiWebMusicStore.id\nsupport@MiWebMusicStore.id"
+    },
+    "form": {
+      "title": "Hantar Mesej",
+      "subtitle": "Isi borang di bawah dan kami akan menghubungi anda segera",
+      "fields": {
+        "nameLabel": "Nama Penuh",
+        "namePlaceholder": "Masukkan nama penuh anda",
+        "emailLabel": "E-mel",
+        "emailPlaceholder": "nama@email.com",
+        "phoneLabel": "Nombor Telefon",
+        "phonePlaceholder": "08xxxxxxxxxx",
+        "subjectLabel": "Subjek",
+        "subjectPlaceholder": "Pilih subjek",
+        "subjectOptions": {
+          "serviceInfo": "Maklumat Perkhidmatan",
+          "shipping": "Isu Penghantaran",
+          "partnership": "Perkongsian Perniagaan",
+          "complaint": "Aduan",
+          "other": "Lain-lain"
+        },
+        "messageLabel": "Mesej",
+        "messagePlaceholder": "Tulis mesej anda di sini..."
+      },
+      "agreement": {
+        "text": "Saya bersetuju dengan",
+        "privacyPolicy": "dasar privasi",
+        "termsOfService": "terma perkhidmatan",
+        "suffix": "MiWebMusicStore."
+      },
+      "submitBtn": "Hantar Mesej",
+      "required": "*"
+    }
+  },
+  "footer": {
+    "title": "MiWebMusicStore",
+    "subtitle": "Rakan Logistik Dipercayai",
+    "description": "Rakan logistik dipercayai untuk kemajuan perniagaan Indonesia",
+    "sections": {
+      "services": {
+        "title": "Perkhidmatan",
+        "items": [
+          "Ekspres Hari Sama",
+          "Kargo Biasa",
+          "Perkhidmatan Gudang",
+          "Penghantaran Antarabangsa"
+        ]
+      },
+      "company": {
+        "title": "Syarikat",
+        "items": [
+          "Tentang Kami",
+          "Kerjaya",
+          "Rakan Perniagaan",
+          "Dasar Privasi"
+        ]
+      },
+      "newsletter": {
+        "title": "Surat Berita",
+        "description": "Dapatkan kemas kini terkini dari kami",
+        "emailPlaceholder": "E-mel Anda"
+      }
+    },
+    "copyright": "© 2025 MiWebMusicStore. Hak cipta terpelihara. | Dikuasakan oleh Tailwind CSS 4.1.11"
+  },
+  "languages": {
+    "en": "English",
+    "id": "Indonesia",
+    "ms": "Melayu"
+  },
+  "common": {
+    "loading": "Memuatkan...",
+    "error": "Ralat berlaku",
+    "success": "Berjaya",
+    "cancel": "Batal",
+    "confirm": "Sahkan",
+    "close": "Tutup",
+    "save": "Simpan",
+    "delete": "Padam",
+    "edit": "Sunting",
+    "view": "Lihat",
+    "back": "Kembali",
+    "next": "Seterusnya",
+    "previous": "Sebelumnya",
+    "submit": "Hantar",
+    "reset": "Set Semula"
+  }
+}

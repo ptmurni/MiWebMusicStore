@@ -1,0 +1,241 @@
+/* src/styles/components/hero-one-image.css */
+
+/* ===================================
+   Import base hero styles
+   =================================== */
+@import './hero.css';
+
+/* ===================================
+   Hero One Image Specific Styles
+   =================================== */
+@layer components {
+  /* Image Column Override */
+  .heroOneImage .hero-illustration {
+    @apply block; /* Override hidden on mobile */
+  }
+  
+  /* Hero Image Container */
+  .heroOneImage__image-wrapper {
+    @apply relative w-full h-full min-h-[400px] lg:min-h-[500px];
+    @apply rounded-2xl overflow-hidden shadow-2xl;
+  }
+  
+  /* Hero Image */
+  .heroOneImage__image {
+    @apply w-full h-full object-cover;
+    filter: brightness(0.95);
+  }
+  
+  /* Image Overlay for better contrast */
+  .heroOneImage__image-overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary) 20%, transparent),
+      color-mix(in srgb, var(--color-primary-dark) 10%, transparent)
+    );
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+  }
+  
+  /* Image Frame/Border */
+  .heroOneImage__image-frame {
+    @apply absolute inset-4 border-2 rounded-xl pointer-events-none;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Floating Badge on Image */
+  .heroOneImage__image-badge {
+    @apply absolute top-6 right-6 px-4 py-2 rounded-full;
+    @apply flex items-center space-x-2 backdrop-blur-md;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .heroOneImage__badge-icon {
+    @apply text-lg;
+    color: var(--color-secondary);
+  }
+  
+  .heroOneImage__badge-text {
+    @apply text-sm font-semibold text-white;
+  }
+  
+  /* Stats Overlay */
+  .heroOneImage__stats {
+    @apply absolute bottom-6 left-6 right-6;
+    @apply grid grid-cols-3 gap-4;
+  }
+  
+  .heroOneImage__stat-item {
+    @apply text-center backdrop-blur-md rounded-lg p-3;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .heroOneImage__stat-number {
+    @apply text-2xl font-bold text-white;
+  }
+  
+  .heroOneImage__stat-label {
+    @apply text-xs text-white opacity-90;
+  }
+}
+
+/* ===================================
+   Variant-Specific Image Adjustments
+   =================================== */
+@layer utilities {
+  /* SpeedYellow variant - High contrast overlay */
+  [data-current-variant="speedyellow"] .heroOneImage__image-overlay {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-secondary) 30%, transparent),
+      transparent
+    );
+    opacity: 0.4;
+  }
+  
+  /* UnitBrown variant - Warm overlay */
+  [data-current-variant="unitbrown"] .heroOneImage__image-overlay {
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-primary) 40%, transparent),
+      color-mix(in srgb, var(--color-secondary) 20%, transparent)
+    );
+    mix-blend-mode: soft-light;
+  }
+  
+  /* JetStream variant - Dark overlay */
+  [data-current-variant="jetstream"] .heroOneImage__image-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.2)
+    );
+    mix-blend-mode: normal;
+  }
+  
+  /* SkyArrow variant - Blue tint */
+  [data-current-variant="skyarrow"] .heroOneImage__image {
+    filter: brightness(1.05) saturate(1.1);
+  }
+  
+  /* TurboOrange variant - Vibrant overlay */
+  [data-current-variant="turboorange"] .heroOneImage__image-overlay {
+    background: radial-gradient(
+      circle at top right,
+      color-mix(in srgb, var(--color-primary) 30%, transparent),
+      transparent
+    );
+  }
+  
+  /* Nusantara variant - Patriotic frame */
+  [data-current-variant="nusantara"] .heroOneImage__image-frame {
+    border-width: 3px;
+    border-image: linear-gradient(
+      45deg,
+      var(--color-primary),
+      var(--color-secondary),
+      var(--color-primary)
+    ) 1;
+  }
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .heroOneImage .hero-grid {
+    @apply gap-8;
+  }
+  
+  .heroOneImage__image-wrapper {
+    @apply min-h-[350px];
+  }
+  
+  .heroOneImage__stats {
+    @apply grid-cols-3 gap-2;
+  }
+  
+  .heroOneImage__stat-item {
+    @apply p-2;
+  }
+  
+  .heroOneImage__stat-number {
+    @apply text-xl;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroOneImage .hero-illustration {
+    @apply mt-8;
+  }
+  
+  .heroOneImage__image-wrapper {
+    @apply min-h-[300px] rounded-xl;
+  }
+  
+  .heroOneImage__image-badge {
+    @apply top-4 right-4 px-3 py-1.5;
+  }
+  
+  .heroOneImage__stats {
+    @apply hidden;
+  }
+}
+
+/* ===================================
+   Animation Enhancements
+   =================================== */
+/* Parallax effect on scroll */
+@supports (transform: translateY(0)) {
+  .heroOneImage__image {
+    will-change: transform;
+    transition: transform 0.5s ease-out;
+  }
+  
+  .heroOneImage__image-wrapper:hover .heroOneImage__image {
+    transform: scale(1.05);
+  }
+}
+
+/* Image reveal animation */
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heroOneImage__image {
+  animation: imageReveal 1s ease-out;
+}
+
+/* ===================================
+   Loading State
+   =================================== */
+.heroOneImage__image-wrapper.loading {
+  @apply bg-gray-200 animate-pulse;
+}
+
+.heroOneImage__image-wrapper.loading::after {
+  content: '';
+  @apply absolute inset-0 flex items-center justify-center;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

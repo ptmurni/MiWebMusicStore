@@ -1,0 +1,535 @@
+/* src/styles/components/newsletter.css */
+
+/* ===================================
+   Base Layer - Newsletter Section Foundation
+   =================================== */
+@layer base {
+  .newsletter-section {
+    @apply py-16 relative overflow-hidden;
+    background-color: var(--color-primary, #5b4b8a);
+  }
+  
+  .newsletter-container {
+    @apply container mx-auto px-4;
+  }
+  
+  .newsletter-content {
+    @apply max-w-4xl mx-auto text-center relative z-10;
+  }
+  
+  .newsletter-title {
+    @apply text-3xl lg:text-4xl font-bold mb-4;
+    color: white;
+  }
+  
+  .newsletter-subtitle {
+    @apply text-xl mb-8;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* ===================================
+   Component Layer - Newsletter Components
+   =================================== */
+@layer components {
+  /* Form Container */
+  .newsletter-form {
+    @apply flex flex-col gap-4 max-w-lg mx-auto;
+  }
+  
+  .newsletter-form-group {
+    @apply flex flex-col sm:flex-row gap-4;
+  }
+  
+  /* Input Wrapper */
+  .newsletter-input-wrapper {
+    @apply flex-1 relative;
+  }
+  
+  .newsletter-input-icon {
+    @apply absolute left-4 top-1/2 transform -translate-y-1/2 text-xl text-gray-500;
+  }
+  
+  /* Email Input */
+  .newsletter-input {
+    @apply w-full px-12 py-4 rounded-xl text-gray-900 bg-white transition-all duration-200;
+    border: 2px solid transparent;
+  }
+  
+  .newsletter-input:focus {
+    @apply outline-none ring-4;
+    ring-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .newsletter-input::placeholder {
+    @apply text-gray-500;
+  }
+  
+  /* Submit Button */
+  .newsletter-btn {
+    @apply px-8 py-4 bg-white rounded-xl transition-all duration-200 font-semibold flex items-center justify-center space-x-2;
+    color: var(--color-primary, #5b4b8a);
+  }
+  
+  .newsletter-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .newsletter-btn:active {
+    transform: translateY(0);
+  }
+  
+  .newsletter-btn-icon {
+    @apply text-xl transition-transform duration-200;
+  }
+  
+  .newsletter-btn:hover .newsletter-btn-icon {
+    transform: translateX(4px);
+  }
+  
+  /* Disclaimer Text */
+  .newsletter-disclaimer {
+    @apply flex items-center justify-center gap-2 text-sm mt-4;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .newsletter-disclaimer-icon {
+    @apply text-base;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Decorative Waves */
+  .newsletter-wave {
+    @apply absolute left-0 right-0;
+    color: var(--color-background, #f9f6f2);
+    height: 80px;
+  }
+  
+  .newsletter-wave--top {
+    @apply top-0;
+    transform: translateY(-1px);
+  }
+  
+  .newsletter-wave--bottom {
+    @apply bottom-0;
+    transform: translateY(1px) rotate(180deg);
+  }
+  
+  .newsletter-wave svg {
+    @apply w-full h-full;
+  }
+}
+
+/* ===================================
+   Utilities Layer - Variant Specific
+   =================================== */
+@layer utilities {
+  /* Rock Electric variant - Dark and bold */
+  [data-current-variant="rockelectric"] .newsletter-section {
+    background-color: var(--color-secondary, #23272a);
+  }
+  
+  [data-current-variant="rockelectric"] .newsletter-btn {
+    background-color: var(--color-accent, #ffd600);
+    color: var(--color-secondary, #23272a);
+  }
+  
+  [data-current-variant="rockelectric"] .newsletter-btn:hover {
+    background-color: var(--color-accent-dark, #c7a800);
+    box-shadow: 0 0 30px rgba(255, 214, 0, 0.4);
+  }
+  
+  [data-current-variant="rockelectric"] .newsletter-input:focus {
+    ring-color: rgba(255, 214, 0, 0.3);
+    border-color: var(--color-accent, #ffd600);
+  }
+  
+  /* EDM Neon variant - Glowing neon effects */
+  [data-current-variant="edmneon"] .newsletter-section {
+    background: linear-gradient(135deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+  }
+  
+  [data-current-variant="edmneon"] .newsletter-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  [data-current-variant="edmneon"] .newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  [data-current-variant="edmneon"] .newsletter-input:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-primary, #00ffb0);
+    box-shadow: 0 0 20px rgba(0, 255, 176, 0.4);
+  }
+  
+  [data-current-variant="edmneon"] .newsletter-btn {
+    background: linear-gradient(45deg, 
+      var(--color-primary) 0%, 
+      var(--color-accent) 100%
+    );
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 255, 176, 0.3);
+  }
+  
+  [data-current-variant="edmneon"] .newsletter-btn:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 176, 0.5),
+                0 0 60px rgba(0, 255, 176, 0.2);
+  }
+  
+  /* Pop Shine variant - Bright gradient */
+  [data-current-variant="popshine"] .newsletter-section {
+    background: linear-gradient(135deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+  }
+  
+  [data-current-variant="popshine"] .newsletter-btn {
+    background: linear-gradient(45deg, 
+      white 0%, 
+      rgba(255, 255, 255, 0.9) 100%
+    );
+    color: var(--color-primary, #ff4c98);
+  }
+  
+  [data-current-variant="popshine"] .newsletter-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
+  
+  [data-current-variant="popshine"] .newsletter-wave {
+    display: none; /* Clean gradient look */
+  }
+  
+  /* Classic Gold variant - Elegant style */
+  [data-current-variant="classicgold"] .newsletter-section {
+    background: linear-gradient(135deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 50%
+    );
+  }
+  
+  [data-current-variant="classicgold"] .newsletter-input {
+    @apply border border-gray-300;
+  }
+  
+  [data-current-variant="classicgold"] .newsletter-btn {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.95) 0%, 
+      rgba(255, 255, 255, 0.85) 100%
+    );
+    color: var(--color-primary, #a67c52);
+    @apply border border-gray-200;
+  }
+  
+  /* Rasta Vibes variant - Tricolor theme */
+  [data-current-variant="rastavibes"] .newsletter-section {
+    background: linear-gradient(90deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 50%, 
+      var(--color-accent) 100%
+    );
+  }
+  
+  [data-current-variant="rastavibes"] .newsletter-btn {
+    background-color: white;
+    color: var(--color-primary, #e02424);
+  }
+  
+  [data-current-variant="rastavibes"] .newsletter-btn:hover {
+    color: var(--color-accent, #00a651);
+  }
+  
+  /* Jazz Blue variant - Smooth animations */
+  [data-current-variant="jazzyblue"] .newsletter-wave {
+    animation: waveMotion 20s ease-in-out infinite;
+  }
+  
+  [data-current-variant="jazzyblue"] .newsletter-btn {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  [data-current-variant="jazzyblue"] .newsletter-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+/* ===================================
+   Form States & Validation
+   =================================== */
+/* Loading state */
+.newsletter-form--loading .newsletter-btn {
+  @apply opacity-75 cursor-not-allowed;
+}
+
+.newsletter-form--loading .newsletter-btn-icon {
+  animation: fly 1s ease-in-out infinite;
+}
+
+/* Success state */
+.newsletter-form--success .newsletter-input-wrapper {
+  @apply hidden;
+}
+
+.newsletter-form--success .newsletter-btn {
+  @apply bg-green-500;
+  pointer-events: none;
+}
+
+.newsletter-form--success .newsletter-btn-icon {
+  content: '';
+  @apply hidden;
+}
+
+.newsletter-form--success .newsletter-btn::before {
+  content: '✓';
+  @apply text-2xl mr-2;
+}
+
+/* Error state */
+.newsletter-input--error {
+  border-color: #ef4444 !important;
+  animation: shake 0.5s ease-in-out;
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes waveMotion {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-20px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(20px) translateY(0);
+  }
+  75% {
+    transform: translateX(-10px) translateY(5px);
+  }
+}
+
+@keyframes fly {
+  0%, 100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(5px) translateY(-5px) rotate(-10deg);
+  }
+  75% {
+    transform: translateX(-5px) translateY(5px) rotate(10deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply entrance animations */
+.newsletter-title,
+.newsletter-subtitle,
+.newsletter-form {
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.newsletter-title { animation-delay: 0.1s; }
+.newsletter-subtitle { animation-delay: 0.2s; }
+.newsletter-form { animation-delay: 0.3s; }
+
+/* Pulse animation for button */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.newsletter-btn {
+  animation: pulse 2s infinite;
+}
+
+/* ===================================
+   Interactive States
+   =================================== */
+/* Input focus glow */
+.newsletter-input:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Button active state */
+.newsletter-btn:active {
+  transform: scale(0.98);
+}
+
+/* Hover effect on disclaimer */
+.newsletter-disclaimer:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .newsletter-title {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  .newsletter-subtitle {
+    @apply text-lg;
+  }
+}
+
+@media (max-width: 640px) {
+  .newsletter-section {
+    @apply py-12;
+  }
+  
+  .newsletter-title {
+    @apply text-xl;
+  }
+  
+  .newsletter-subtitle {
+    @apply text-base mb-6;
+  }
+  
+  .newsletter-input {
+    @apply px-10 py-3 text-sm;
+  }
+  
+  .newsletter-input-icon {
+    @apply text-lg left-3;
+  }
+  
+  .newsletter-btn {
+    @apply px-6 py-3 text-sm;
+  }
+  
+  .newsletter-btn-icon {
+    @apply text-lg;
+  }
+  
+  .newsletter-disclaimer {
+    @apply text-xs;
+  }
+  
+  .newsletter-wave {
+    height: 40px;
+  }
+}
+
+/* ===================================
+   Accessibility & Focus States
+   =================================== */
+.newsletter-input:focus-visible,
+.newsletter-btn:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+/* Screen reader text */
+.newsletter-sr-only {
+  @apply sr-only;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .newsletter-section {
+    @apply border-y-4 border-white;
+  }
+  
+  .newsletter-input {
+    @apply border-2 border-gray-900;
+  }
+  
+  .newsletter-btn {
+    @apply border-2 border-gray-900;
+  }
+  
+  .newsletter-wave {
+    @apply hidden;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .newsletter-title,
+  .newsletter-subtitle,
+  .newsletter-form,
+  .newsletter-btn,
+  .newsletter-btn-icon,
+  .newsletter-wave,
+  .newsletter-input {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===================================
+   Dark Mode Support
+   =================================== */
+@media (prefers-color-scheme: dark) {
+  .newsletter-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+  .newsletter-section {
+    @apply py-8 bg-gray-100;
+    background: none !important;
+    color: black !important;
+  }
+  
+  .newsletter-title,
+  .newsletter-subtitle {
+    color: black !important;
+  }
+  
+  .newsletter-form,
+  .newsletter-wave {
+    @apply hidden;
+  }
+  
+  .newsletter-section::after {
+    content: 'Subscribe at: www.miwebmusicstore.com/newsletter';
+    @apply block text-center mt-4 text-sm;
+  }
+}

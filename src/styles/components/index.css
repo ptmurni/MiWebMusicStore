@@ -1,0 +1,32 @@
+/* ===========================================
+    MiWebMusicStore - Component Styles
+    =========================================== */
+/*== Header with variants ==*/
+@import "./header.css";
+@import "./headerOffCanvas.css";
+/*== Hero with variants ==*/
+@import "./hero.css";
+@import "./heroOneImage.css";
+
+/*== BreadCrumb ==*/
+@import "./breadcrumb.css";
+
+/*== Brands ==*/
+@import "./brands.css";
+
+
+/*== Sections ==*/
+@import "./about.css";
+@import "./features-strip.css";
+@import "./services.css";
+@import "./stats.css";
+@import "./cta.css";
+@import "./contact.css";
+@import "./footer.css";
+@import "./categories.css";
+@import "./products.css";
+@import "./testimonials.css";
+@import "./newsletter.css";
+
+/*== Content Area ==*/
+@import "./content-area.css";

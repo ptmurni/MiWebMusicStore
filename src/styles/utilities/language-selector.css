@@ -1,0 +1,284 @@
+/**
+ * Language Selector Component Styles
+ * Independent CSS for language switching functionality
+ */
+
+/* ===========================================
+   LANGUAGE SELECTOR COMPONENT
+   =========================================== */
+
+.language-dropdown {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+}
+
+.lang-toggle {
+    background: #4f46e5;
+    color: white;
+    padding: 16px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-toggle:hover {
+    background: #4338ca;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lang-toggle:active {
+    transform: scale(0.98);
+}
+
+/* Language Menu Dropdown */
+.lang-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e5e7eb;
+    min-width: 200px;
+    
+    /* Hidden by default */
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform-origin: bottom right;
+    
+    /* Prevent content overflow */
+    overflow: hidden;
+}
+
+/* Show state for menu */
+.lang-menu.show {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+
+/* Menu header */
+.lang-header {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px 12px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Language option buttons */
+.lang-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+}
+
+.lang-option:hover {
+    background: #f3f4f6;
+    transform: translateX(2px);
+}
+
+.lang-option:active {
+    background: #e5e7eb;
+}
+
+.lang-option.active {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    border-left: 3px solid #4f46e5;
+}
+
+/* Language flag */
+.lang-flag {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+/* Language info container */
+.lang-info {
+    flex: 1;
+    min-width: 0; /* Prevent flex item overflow */
+}
+
+.lang-name {
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.2;
+    margin-bottom: 2px;
+}
+
+.lang-code {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1;
+}
+
+/* Pulse animation for initial attention */
+@keyframes pulse-language {
+    0%, 100% {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(79, 70, 229, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0 10px rgba(79, 70, 229, 0);
+    }
+}
+
+.lang-toggle.pulse {
+    animation: pulse-language 2s infinite;
+}
+
+/* Scale animation for menu */
+@keyframes slideInScale {
+    0% {
+        transform: scale(0.8) translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.lang-menu.show {
+    animation: slideInScale 0.2s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .language-dropdown {
+        bottom: 16px;
+        right: 16px;
+    }
+    
+    .lang-toggle {
+        padding: 14px;
+        font-size: 14px;
+    }
+    
+    .lang-menu {
+        min-width: 180px;
+        bottom: 60px;
+        right: -10px;
+    }
+    
+    .lang-option {
+        padding: 10px 14px;
+    }
+    
+    .lang-flag {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-dropdown {
+        bottom: 12px;
+        right: 12px;
+    }
+    
+    .lang-menu {
+        min-width: 160px;
+        right: -20px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .lang-menu {
+        background: #1f2937;
+        border-color: #374151;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .lang-option:hover {
+        background: rgba(79, 70, 229, 0.1);
+    }
+    
+    .lang-option.active {
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(79, 70, 229, 0.1) 100%);
+    }
+    
+    .lang-name {
+        color: #f9fafb;
+    }
+    
+    .lang-code {
+        color: #9ca3af;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .lang-toggle {
+        border: 2px solid white;
+    }
+    
+    .lang-menu {
+        border: 2px solid #000;
+    }
+    
+    .lang-option:hover {
+        background: #000;
+        color: #fff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .lang-toggle,
+    .lang-menu,
+    .lang-option {
+        transition: none;
+    }
+    
+    .lang-toggle.pulse {
+        animation: none;
+    }
+    
+    .lang-menu.show {
+        animation: none;
+    }
+}
+
+/* Focus styles for accessibility */
+.lang-toggle:focus,
+.lang-option:focus {
+    outline: 2px solid #4f46e5;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .language-dropdown {
+        display: none;
+    }
+}

@@ -1,0 +1,349 @@
+/* src/styles/components/services.css */
+
+/* ===================================
+   Base Layer - Services Foundation
+   =================================== */
+@layer base {
+  .services {
+    @apply py-20;
+    background-color: var(--color-background);
+  }
+  
+  .services__container {
+    @apply container mx-auto px-4 lg:px-8;
+  }
+  
+  .services__header {
+    @apply text-center mb-12;
+  }
+  
+  .services__title {
+    @apply text-4xl font-bold mb-4;
+    color: var(--color-text);
+  }
+  
+  .services__subtitle {
+    @apply text-xl;
+    color: var(--color-text-muted);
+  }
+  
+  .services__grid {
+    @apply grid md:grid-cols-2 lg:grid-cols-4 gap-8;
+  }
+}
+
+/* ===================================
+   Component Layer - Service Card
+   =================================== */
+@layer components {
+  /* Service Card Base */
+  .services__card {
+    @apply rounded-2xl shadow-lg p-8 transition-all duration-300;
+    background-color: var(--color-surface);
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --icon-bg: var(--color-primary-light);
+    --icon-color: var(--color-primary);
+    box-shadow: var(--card-shadow);
+  }
+  
+  .services__card:hover {
+    --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+  }
+  
+  /* Icon Container */
+  .services__icon-wrapper {
+    @apply w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300;
+    background-color: color-mix(in srgb, var(--icon-color) 15%, transparent);
+  }
+  
+  .services__card:hover .services__icon-wrapper {
+    background-color: var(--icon-color);
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .services__icon {
+    @apply text-3xl transition-all duration-300;
+    color: var(--icon-color);
+  }
+  
+  .services__card:hover .services__icon {
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  /* Card Content */
+  .services__card-title {
+    @apply text-xl font-bold mb-3;
+    color: var(--color-text);
+  }
+  
+  .services__card-description {
+    @apply mb-4;
+    color: var(--color-text-muted);
+  }
+  
+  /* Card Link */
+  .services__card-link {
+    @apply font-semibold flex items-center space-x-2 transition-all duration-200;
+    color: var(--color-primary);
+    --link-spacing: 0.5rem;
+  }
+  
+  .services__card-link:hover {
+    --link-spacing: 0.75rem;
+    color: var(--color-primary-dark);
+  }
+  
+  .services__card-link-text {
+    margin-right: var(--link-spacing);
+  }
+  
+  .services__card-link-icon {
+    @apply transition-transform duration-200;
+  }
+  
+  .services__card-link:hover .services__card-link-icon {
+    transform: translateX(4px);
+  }
+  
+  /* Service-specific colors */
+  .services__card--express {
+    --icon-color: var(--color-primary);
+  }
+  
+  .services__card--cargo {
+    --icon-color: var(--color-success);
+  }
+  
+  .services__card--warehouse {
+    --icon-color: var(--color-secondary);
+  }
+  
+  .services__card--international {
+    --icon-color: var(--color-accent);
+  }
+}
+
+/* ===================================
+   Variant-Specific Adjustments
+   =================================== */
+@layer utilities {
+  /* SpeedYellow variant */
+  [data-current-variant="speedyellow"] .services__card--express {
+    --icon-color: var(--color-secondary);
+  }
+  
+  [data-current-variant="speedyellow"] .services__card-link {
+    color: var(--color-secondary);
+  }
+  
+  /* UnitBrown variant */
+  [data-current-variant="unitbrown"] .services__card {
+    background-color: var(--color-surface);
+    border: 1px solid color-mix(in srgb, var(--color-secondary) 20%, transparent);
+  }
+  
+  [data-current-variant="unitbrown"] .services__card--express {
+    --icon-color: var(--color-secondary);
+  }
+  
+  /* JetStream variant */
+  [data-current-variant="jetstream"] .services {
+    background-color: var(--color-surface);
+  }
+  
+  [data-current-variant="jetstream"] .services__card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-primary);
+  }
+  
+  /* TurboOrange variant */
+  [data-current-variant="turboorange"] .services__card--express {
+    --icon-color: var(--color-primary);
+  }
+  
+  [data-current-variant="turboorange"] .services__card--international {
+    --icon-color: var(--color-accent);
+  }
+  
+  /* SkyArrow variant */
+  [data-current-variant="skyarrow"] .services__card {
+    background: linear-gradient(to bottom, var(--color-surface), color-mix(in srgb, var(--color-accent) 5%, var(--color-surface)));
+  }
+  
+  /* PrimeLogix variant */
+  [data-current-variant="primelogix"] .services__card-link {
+    color: var(--color-primary);
+  }
+  
+  [data-current-variant="primelogix"] .services__card:hover {
+    border: 2px solid var(--color-primary);
+  }
+  
+  /* Nusantara variant */
+  [data-current-variant="nusantara"] .services__card--express {
+    --icon-color: var(--color-primary);
+  }
+  
+  [data-current-variant="nusantara"] .services__card--international {
+    --icon-color: var(--color-secondary);
+  }
+}
+
+/* ===================================
+   Animation Classes
+   =================================== */
+/* Stagger animation for cards */
+.services__card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: servicesCardFadeIn 0.6s ease-out forwards;
+}
+
+.services__card:nth-child(1) { animation-delay: 0.1s; }
+.services__card:nth-child(2) { animation-delay: 0.2s; }
+.services__card:nth-child(3) { animation-delay: 0.3s; }
+.services__card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes servicesCardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating animation for icons */
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.services__card:hover .services__icon-wrapper {
+  animation: floatIcon 2s ease-in-out infinite;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .services__title {
+    @apply text-3xl;
+  }
+  
+  .services__subtitle {
+    @apply text-lg;
+  }
+  
+  .services__grid {
+    @apply gap-6;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    @apply py-12;
+  }
+  
+  .services__card {
+    @apply p-6;
+  }
+  
+  .services__icon-wrapper {
+    @apply w-14 h-14;
+  }
+  
+  .services__icon {
+    @apply text-2xl;
+  }
+}
+
+@media (max-width: 640px) {
+  .services__grid {
+    @apply grid-cols-1;
+  }
+  
+  .services__header {
+    @apply mb-8;
+  }
+}
+
+/* ===================================
+   Dark Mode Support
+   =================================== */
+@media (prefers-color-scheme: dark) {
+  .services__card {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .services__card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* ===================================
+   Special Effects
+   =================================== */
+/* Gradient border on hover */
+.services__card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 1rem;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.services__card {
+  position: relative;
+}
+
+.services__card:hover::before {
+  opacity: 1;
+}
+
+/* ===================================
+   Accessibility Enhancements
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+  .services__card,
+  .services__icon-wrapper,
+  .services__icon,
+  .services__card-link,
+  .services__card-link-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Focus styles */
+.services__card-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+  .services {
+    @apply py-4;
+  }
+  
+  .services__card {
+    @apply shadow-none border border-gray-300;
+    break-inside: avoid;
+  }
+  
+  .services__icon-wrapper {
+    @apply border border-gray-400;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

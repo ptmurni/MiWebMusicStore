@@ -1,0 +1,404 @@
+/* src/styles/components/hero.css */
+
+/* ===================================
+   Base Layer - Hero Section Foundation
+   =================================== */
+@layer base {
+  .hero-section {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--color-primary) 5%, white) 0%,
+      white 50%,
+      color-mix(in srgb, var(--color-secondary) 5%, white) 100%
+    );
+  }
+  
+  .hero-container {
+    @apply container mx-auto px-4 py-20 lg:py-32;
+  }
+  
+  .hero-grid {
+    @apply grid lg:grid-cols-2 gap-12 items-center;
+  }
+  
+  .hero-content {
+    @apply space-y-8;
+  }
+  
+  .hero-title {
+    @apply text-4xl lg:text-6xl font-bold leading-tight;
+    color: var(--color-text, #232323);
+  }
+  
+  .hero-title-brand {
+    color: var(--color-primary, #5b4b8a);
+    position: relative;
+  }
+  
+  .hero-subtitle {
+    @apply text-xl lg:text-2xl;
+    color: var(--color-text-muted, #7c6baf);
+  }
+  
+  .hero-description {
+    @apply text-lg;
+    color: var(--color-text-muted, #888888);
+  }
+}
+
+/* ===================================
+   Component Layer - Hero Elements
+   =================================== */
+@layer components {
+  /* CTA Buttons Container */
+  .hero-buttons {
+    @apply flex flex-col sm:flex-row gap-4;
+  }
+  
+  /* Base Button Styles */
+  .hero-btn {
+    @apply px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 font-medium;
+    transform: translateY(0);
+  }
+  
+  .hero-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .hero-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Primary Button */
+  .hero-btn--primary {
+    @apply text-white shadow-lg;
+    background-color: var(--color-primary, #5b4b8a);
+  }
+  
+  .hero-btn--primary:hover {
+    @apply shadow-xl;
+    background-color: var(--color-primary-dark, #3c295a);
+  }
+  
+  /* Outline Button */
+  .hero-btn--outline {
+    @apply bg-white border-2;
+    border-color: var(--color-primary, #5b4b8a);
+  }
+  
+  .hero-btn--outline:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 5%, white);
+  }
+  
+  /* Button Icon */
+  .hero-btn-icon {
+    @apply text-xl transition-transform duration-300;
+  }
+  
+  .hero-btn:hover .hero-btn-icon {
+    transform: scale(1.1);
+  }
+  
+  /* Hero Image Section */
+  .hero-image-wrapper {
+    @apply relative;
+  }
+  
+  .hero-image-glow {
+    @apply absolute inset-0 rounded-3xl opacity-20 blur-3xl;
+    background: linear-gradient(135deg, 
+      var(--color-primary, #5b4b8a) 0%, 
+      var(--color-secondary, #ffd86b) 100%
+    );
+  }
+  
+  .hero-image {
+    @apply relative rounded-3xl shadow-2xl w-full h-auto;
+    animation: heroImageFloat 6s ease-in-out infinite;
+  }
+  
+  /* Decorative Elements */
+  .hero-decor {
+    @apply absolute rounded-full filter blur-3xl opacity-30;
+  }
+  
+  .hero-decor--top-left {
+    @apply top-20 left-10 w-32 h-32;
+    background-color: var(--color-primary, #5b4b8a);
+    animation: decorFloat 8s ease-in-out infinite;
+  }
+  
+  .hero-decor--bottom-right {
+    @apply bottom-20 right-10 w-40 h-40;
+    background-color: var(--color-secondary, #ffd86b);
+    animation: decorFloat 8s ease-in-out infinite reverse;
+  }
+}
+
+/* ===================================
+   Utilities Layer - Variant Specific
+   =================================== */
+@layer utilities {
+  /* Rock Electric variant - Dark theme */
+  [data-current-variant="rockelectric"] .hero-section {
+    background: linear-gradient(135deg, 
+      var(--color-background) 0%,
+      color-mix(in srgb, var(--color-primary) 20%, var(--color-background)) 100%
+    );
+  }
+  
+  [data-current-variant="rockelectric"] .hero-btn--primary {
+    background-color: var(--color-primary, #ffd600);
+    color: var(--color-background, #191b1f);
+  }
+  
+  [data-current-variant="rockelectric"] .hero-btn--outline {
+    border-color: var(--color-primary, #ffd600);
+    color: var(--color-primary, #ffd600);
+  }
+  
+  /* EDM Neon variant - Neon glow effects */
+  [data-current-variant="edmneon"] .hero-section {
+    background: var(--color-background, #18182b);
+  }
+  
+  [data-current-variant="edmneon"] .hero-image-glow {
+    opacity: 0.4;
+    filter: blur(60px);
+  }
+  
+  [data-current-variant="edmneon"] .hero-btn--primary {
+    background: linear-gradient(45deg, 
+      var(--color-primary) 0%, 
+      var(--color-accent) 100%
+    );
+    box-shadow: 0 0 30px rgba(0, 255, 176, 0.4);
+  }
+  
+  [data-current-variant="edmneon"] .hero-btn--primary:hover {
+    box-shadow: 0 0 40px rgba(0, 255, 176, 0.6);
+  }
+  
+  /* Pop Shine variant - Colorful gradients */
+  [data-current-variant="popshine"] .hero-section {
+    background: linear-gradient(135deg, 
+      #fff7fa 0%,
+      color-mix(in srgb, var(--color-primary) 10%, white) 50%,
+      color-mix(in srgb, var(--color-secondary) 10%, white) 100%
+    );
+  }
+  
+  [data-current-variant="popshine"] .hero-title-brand {
+    background: linear-gradient(45deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Classic Gold variant - Elegant style */
+  [data-current-variant="classicgold"] .hero-section {
+    background: linear-gradient(135deg, 
+      var(--color-background) 0%,
+      color-mix(in srgb, var(--color-secondary) 10%, var(--color-background)) 100%
+    );
+  }
+  
+  [data-current-variant="classicgold"] .hero-btn--primary {
+    background: linear-gradient(135deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+  }
+  
+  /* Rasta Vibes variant - Tricolor accents */
+  [data-current-variant="rastavibes"] .hero-decor--top-left {
+    background-color: var(--color-primary, #e02424);
+  }
+  
+  [data-current-variant="rastavibes"] .hero-decor--bottom-right {
+    background-color: var(--color-accent, #00a651);
+  }
+  
+  [data-current-variant="rastavibes"] .hero-title-brand::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      var(--color-primary) 33%, 
+      var(--color-secondary) 33%, 
+      var(--color-secondary) 66%, 
+      var(--color-accent) 66%
+    );
+  }
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes heroImageFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes decorFloat {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(20px, -10px); }
+  50% { transform: translate(-10px, 20px); }
+  75% { transform: translate(-20px, -10px); }
+}
+
+/* Text entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.hero-buttons {
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.hero-title { animation-delay: 0.1s; }
+.hero-subtitle { animation-delay: 0.2s; }
+.hero-description { animation-delay: 0.3s; }
+.hero-buttons { animation-delay: 0.4s; }
+
+/* Image entrance animation */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-image-wrapper {
+  animation: zoomIn 1s ease-out 0.5s;
+  animation-fill-mode: both;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .hero-container {
+    @apply py-16 lg:py-24;
+  }
+  
+  .hero-title {
+    @apply text-3xl lg:text-5xl;
+  }
+  
+  .hero-subtitle {
+    @apply text-lg lg:text-xl;
+  }
+  
+  .hero-description {
+    @apply text-base;
+  }
+  
+  .hero-grid {
+    @apply gap-8;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-container {
+    @apply py-12;
+  }
+  
+  .hero-title {
+    @apply text-2xl;
+  }
+  
+  .hero-subtitle {
+    @apply text-base;
+  }
+  
+  .hero-description {
+    @apply text-sm;
+  }
+  
+  .hero-btn {
+    @apply px-6 py-3 text-sm;
+  }
+  
+  .hero-btn-icon {
+    @apply text-lg;
+  }
+  
+  .hero-decor--top-left {
+    @apply w-20 h-20 top-10 left-5;
+  }
+  
+  .hero-decor--bottom-right {
+    @apply w-24 h-24 bottom-10 right-5;
+  }
+}
+
+/* ===================================
+   Accessibility & Focus States
+   =================================== */
+.hero-btn:focus-visible {
+  outline: 2px solid var(--color-primary, #5b4b8a);
+  outline-offset: 4px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .hero-btn--outline {
+    @apply border-4;
+  }
+  
+  .hero-title-brand {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image,
+  .hero-decor,
+  .hero-btn,
+  .hero-btn-icon,
+  .hero-title,
+  .hero-subtitle,
+  .hero-description,
+  .hero-buttons,
+  .hero-image-wrapper {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===================================
+   Dark Mode Support
+   =================================== */
+@media (prefers-color-scheme: dark) {
+  .hero-btn--outline {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .hero-btn--outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

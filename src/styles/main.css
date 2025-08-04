@@ -1,0 +1,25 @@
+/* ===========================================
+   TAILWIND CSS v4.1 - COMPANY PROFILE TEMPLATE
+   Standardized CSS Architecture with Theme System
+   
+   New Layered Structure:
+   1. Base Layer - Variables, typography, base styles
+   2. Components Layer - UI components and sections  
+   3. Utilities Layer - Helper classes and utilities
+   
+   Standards:
+   - BEM-like naming conventions
+   - CSS Variables for theming
+   - Mobile-first approach
+   - Accessibility compliant
+   =========================================== */
+
+/* Tailwind CSS v4.1 main import */
+@import "tailwindcss";
+@import "./base/button.css";
+@import "./utilities/language-selector.css";
+@import "./utilities/variant-selector.css";
+
+/* Index dari Component CSS */
+@import "./components/index.css";
+

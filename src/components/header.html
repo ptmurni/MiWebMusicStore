@@ -1,0 +1,35 @@
+<!-- ========== NAVIGATION SECTION ========== -->
+<!-- Navigation bar dengan logo, menu items, dan call to action button -->
+<nav class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <iconify-icon icon="heroicons:musical-note-solid" class="text-2xl text-indigo-600"></iconify-icon>
+        <span class="text-xl font-bold text-gray-900">MiWebMusic Store</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#" class="text-gray-700 hover:text-indigo-600 transition-colors">Beranda</a>
+        <a href="#products" class="text-gray-700 hover:text-indigo-600 transition-colors">Produk</a>
+        <a href="#categories" class="text-gray-700 hover:text-indigo-600 transition-colors">Kategori</a>
+        <a href="#about" class="text-gray-700 hover:text-indigo-600 transition-colors">Tentang</a>
+        <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition-colors">Kontak</a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="flex items-center space-x-4">
+        <button class="flex items-center space-x-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+          <iconify-icon icon="heroicons:shopping-cart" class="text-xl"></iconify-icon>
+          <span>Keranjang (0)</span>
+        </button>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" data-toggle="mobile-menu">
+          <iconify-icon icon="heroicons:bars-3" class="text-2xl"></iconify-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

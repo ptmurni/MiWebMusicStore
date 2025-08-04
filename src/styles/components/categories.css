@@ -1,0 +1,305 @@
+/* src/styles/components/categories.css */
+
+/* ===================================
+   Base Layer - Categories Section Foundation
+   =================================== */
+@layer base {
+  .categories-section {
+    @apply py-16 bg-gray-50;
+    background-color: var(--color-background, #f9f6f2);
+  }
+  
+  .categories-container {
+    @apply container mx-auto px-4;
+  }
+  
+  .categories-header {
+    @apply text-center mb-12;
+  }
+  
+  .categories-title {
+    @apply text-3xl lg:text-4xl font-bold mb-4;
+    color: var(--color-text, #232323);
+  }
+  
+  .categories-subtitle {
+    @apply text-xl mb-2;
+    color: var(--color-text-muted, #7c6baf);
+  }
+  
+  .categories-description {
+    @apply text-gray-600 max-w-2xl mx-auto;
+    color: var(--color-text-muted, #7c6baf);
+  }
+}
+
+/* ===================================
+   Component Layer - Categories Cards
+   =================================== */
+@layer components {
+  /* Grid Layout */
+  .categories-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
+  
+  /* Category Card */
+  .categories-card {
+    @apply bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 cursor-pointer;
+    background-color: var(--color-surface, #fff);
+    transform: translateY(0);
+  }
+  
+  .categories-card:hover {
+    @apply shadow-xl;
+    transform: translateY(-4px);
+  }
+  
+  /* Icon Wrapper */
+  .categories-icon-wrapper {
+    @apply w-20 h-20 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300;
+  }
+  
+  .categories-card:hover .categories-icon-wrapper {
+    transform: scale(1.1);
+  }
+  
+  /* Icon color variants */
+  .categories-icon-wrapper--indigo {
+    @apply bg-indigo-100;
+    background-color: color-mix(in srgb, var(--color-primary) 15%, white);
+  }
+  
+  .categories-icon-wrapper--purple {
+    @apply bg-purple-100;
+    background-color: color-mix(in srgb, var(--color-secondary) 15%, white);
+  }
+  
+  .categories-icon-wrapper--green {
+    @apply bg-green-100;
+    background-color: color-mix(in srgb, var(--color-success) 15%, white);
+  }
+  
+  .categories-icon-wrapper--orange {
+    @apply bg-orange-100;
+    background-color: color-mix(in srgb, var(--color-accent) 15%, white);
+  }
+  
+  /* Icon */
+  .categories-icon {
+    @apply text-4xl;
+  }
+  
+  .categories-icon-wrapper--indigo .categories-icon {
+    @apply text-indigo-600;
+    color: var(--color-primary, #5b4b8a);
+  }
+  
+  .categories-icon-wrapper--purple .categories-icon {
+    @apply text-purple-600;
+    color: var(--color-secondary, #ffd86b);
+  }
+  
+  .categories-icon-wrapper--green .categories-icon {
+    @apply text-green-600;
+    color: var(--color-success, #2ecc71);
+  }
+  
+  .categories-icon-wrapper--orange .categories-icon {
+    @apply text-orange-600;
+    color: var(--color-accent, #d72660);
+  }
+  
+  /* Card Content */
+  .categories-card-title {
+    @apply text-xl font-semibold mb-2;
+    color: var(--color-text, #232323);
+  }
+  
+  .categories-card-desc {
+    @apply text-gray-600 mb-4;
+    color: var(--color-text-muted, #7c6baf);
+  }
+  
+  /* Link */
+  .categories-link {
+    @apply font-medium flex items-center space-x-1 transition-colors;
+    color: var(--color-primary, #5b4b8a);
+  }
+  
+  .categories-link:hover {
+    color: var(--color-primary-dark, #3c295a);
+  }
+  
+  .categories-link-icon {
+    @apply text-lg transition-transform duration-200;
+  }
+  
+  .categories-link:hover .categories-link-icon {
+    transform: translateX(4px);
+  }
+}
+
+/* ===================================
+   Utilities Layer - Variant Specific
+   =================================== */
+@layer utilities {
+  /* EDM Neon variant - Dark theme */
+  [data-current-variant="edmneon"] .categories-section {
+    background-color: var(--color-background, #18182b);
+  }
+  
+  [data-current-variant="edmneon"] .categories-card {
+    background-color: var(--color-surface, #23234b);
+    @apply border border-gray-800;
+  }
+  
+  [data-current-variant="edmneon"] .categories-card:hover {
+    @apply border-purple-500;
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.3);
+  }
+  
+  /* Rock Electric variant */
+  [data-current-variant="rockelectric"] .categories-link {
+    color: var(--color-accent, #ffd600);
+  }
+  
+  [data-current-variant="rockelectric"] .categories-link:hover {
+    color: var(--color-accent-dark, #c7a800);
+  }
+  
+  /* Classic Gold variant */
+  [data-current-variant="classicgold"] .categories-card {
+    @apply border border-gray-200;
+  }
+  
+  [data-current-variant="classicgold"] .categories-icon-wrapper {
+    @apply border border-gray-300;
+  }
+  
+  /* Pop Shine variant - Colorful */
+  [data-current-variant="popshine"] .categories-card:hover {
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--color-primary) 5%, white) 0%, 
+      color-mix(in srgb, var(--color-secondary) 5%, white) 100%
+    );
+  }
+  
+  /* Rasta Vibes variant */
+  [data-current-variant="rastavibes"] .categories-card:nth-child(1) .categories-icon-wrapper {
+    background-color: color-mix(in srgb, var(--color-primary) 20%, white);
+  }
+  
+  [data-current-variant="rastavibes"] .categories-card:nth-child(2) .categories-icon-wrapper {
+    background-color: color-mix(in srgb, var(--color-secondary) 20%, white);
+  }
+  
+  [data-current-variant="rastavibes"] .categories-card:nth-child(3) .categories-icon-wrapper {
+    background-color: color-mix(in srgb, var(--color-accent) 20%, white);
+  }
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.categories-card {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.categories-card:nth-child(1) { animation-delay: 0.1s; }
+.categories-card:nth-child(2) { animation-delay: 0.2s; }
+.categories-card:nth-child(3) { animation-delay: 0.3s; }
+.categories-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .categories-title {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  .categories-subtitle {
+    @apply text-lg;
+  }
+  
+  .categories-grid {
+    @apply gap-5;
+  }
+}
+
+@media (max-width: 640px) {
+  .categories-title {
+    @apply text-xl;
+  }
+  
+  .categories-subtitle {
+    @apply text-base;
+  }
+  
+  .categories-description {
+    @apply text-sm;
+  }
+  
+  .categories-card {
+    @apply p-4;
+  }
+  
+  .categories-icon-wrapper {
+    @apply w-16 h-16;
+  }
+  
+  .categories-icon {
+    @apply text-3xl;
+  }
+  
+  .categories-card-title {
+    @apply text-lg;
+  }
+  
+  .categories-card-desc {
+    @apply text-sm;
+  }
+}
+
+/* ===================================
+   Accessibility & Focus States
+   =================================== */
+.categories-card:focus-visible {
+  outline: 2px solid var(--color-primary, #5b4b8a);
+  outline-offset: 4px;
+}
+
+.categories-link:focus-visible {
+  outline: 2px solid var(--color-primary, #5b4b8a);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .categories-card {
+    @apply border-2 border-gray-900;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .categories-card,
+  .categories-icon-wrapper,
+  .categories-link-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,626 @@
+/* src/styles/components/cta.css */
+
+/* ===================================
+   Base Layer - CTA Section Foundation
+   =================================== */
+@layer base {
+  .cta-section {
+    @apply py-16 relative overflow-hidden;
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--color-primary) 10%, white) 0%,
+      color-mix(in srgb, var(--color-secondary) 10%, white) 100%
+    );
+  }
+  
+  .cta-container {
+    @apply container mx-auto px-4;
+  }
+  
+  .cta-content {
+    @apply max-w-4xl mx-auto text-center relative z-10;
+  }
+  
+  .cta-title {
+    @apply text-3xl lg:text-4xl font-bold mb-4;
+    color: var(--color-text, #232323);
+  }
+  
+  .cta-subtitle {
+    @apply text-xl mb-4;
+    color: var(--color-text-muted, #7c6baf);
+  }
+  
+  .cta-description {
+    @apply text-lg mb-8;
+    color: var(--color-text-muted, #888888);
+    line-height: 1.6;
+  }
+}
+
+/* ===================================
+   Component Layer - CTA Components
+   =================================== */
+@layer components {
+  /* Button Container */
+  .cta-buttons {
+    @apply flex flex-col sm:flex-row gap-4 justify-center;
+  }
+  
+  /* Base Button Styles */
+  .cta-btn {
+    @apply px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 font-medium;
+    transform: translateY(0);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .cta-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Primary Button */
+  .cta-btn--primary {
+    @apply text-white shadow-lg;
+    background-color: var(--color-primary, #5b4b8a);
+  }
+  
+  .cta-btn--primary:hover {
+    @apply shadow-xl;
+    background-color: var(--color-primary-dark, #3c295a);
+  }
+  
+  /* Outline Button */
+  .cta-btn--outline {
+    @apply bg-white border-2;
+    color: var(--color-primary, #5b4b8a);
+    border-color: var(--color-primary, #5b4b8a);
+  }
+  
+  .cta-btn--outline:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 5%, white);
+    border-color: var(--color-primary-dark, #3c295a);
+  }
+  
+  /* Button Icon */
+  .cta-btn-icon {
+    @apply text-xl transition-transform duration-300;
+  }
+  
+  .cta-btn:hover .cta-btn-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  /* Decorative Patterns */
+  .cta-pattern {
+    @apply absolute w-64 h-64 rounded-full opacity-10;
+    background: radial-gradient(circle, 
+      var(--color-primary) 0%, 
+      transparent 70%
+    );
+  }
+  
+  .cta-pattern--left {
+    @apply -top-32 -left-32;
+    animation: patternFloat 20s ease-in-out infinite;
+  }
+  
+  .cta-pattern--right {
+    @apply -bottom-32 -right-32;
+    animation: patternFloat 20s ease-in-out infinite reverse;
+  }
+  
+  /* Musical Notes Decoration */
+  .cta-note {
+    @apply absolute opacity-10;
+  }
+  
+  .cta-note--top {
+    @apply top-8 right-12 lg:right-32;
+  }
+  
+  .cta-note--bottom {
+    @apply bottom-8 left-12 lg:left-32;
+  }
+  
+  .cta-note-icon {
+    @apply text-6xl lg:text-8xl;
+    color: var(--color-primary, #5b4b8a);
+    animation: noteFloat 6s ease-in-out infinite;
+  }
+  
+  .cta-note--bottom .cta-note-icon {
+    animation-delay: 3s;
+  }
+}
+
+/* ===================================
+   Utilities Layer - Variant Specific
+   =================================== */
+@layer utilities {
+  /* Rock Electric variant - Dark dramatic */
+  [data-current-variant="rockelectric"] .cta-section {
+    background: linear-gradient(135deg, 
+      var(--color-background) 0%,
+      color-mix(in srgb, var(--color-accent) 20%, var(--color-background)) 100%
+    );
+  }
+  
+  [data-current-variant="rockelectric"] .cta-btn--primary {
+    background-color: var(--color-accent, #ffd600);
+    color: var(--color-background, #191b1f);
+  }
+  
+  [data-current-variant="rockelectric"] .cta-btn--primary:hover {
+    background-color: var(--color-accent-dark, #c7a800);
+    box-shadow: 0 0 30px rgba(255, 214, 0, 0.4);
+  }
+  
+  [data-current-variant="rockelectric"] .cta-btn--outline {
+    border-color: var(--color-accent-dark, #ffd600);
+    color: var(--color-accent-dark, #ffd600);
+  }
+  
+  [data-current-variant="rockelectric"] .cta-pattern {
+    background: radial-gradient(circle, 
+      var(--color-accent) 0%, 
+      transparent 70%
+    );
+  }
+  
+  /* EDM Neon variant - Glowing effects */
+  [data-current-variant="edmneon"] .cta-section {
+    background: var(--color-background, #18182b);
+    position: relative;
+  }
+  
+  [data-current-variant="edmneon"] .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, 
+      color-mix(in srgb, var(--color-primary) 20%, transparent) 0%,
+      color-mix(in srgb, var(--color-accent) 20%, transparent) 50%,
+      color-mix(in srgb, var(--color-secondary) 20%, transparent) 100%
+    );
+    opacity: 0.3;
+  }
+  
+  [data-current-variant="edmneon"] .cta-btn--primary {
+    background: linear-gradient(45deg, 
+      var(--color-primary) 0%, 
+      var(--color-accent) 100%
+    );
+    box-shadow: 0 0 30px rgba(0, 255, 176, 0.4);
+  }
+  
+  [data-current-variant="edmneon"] .cta-btn--primary:hover {
+    box-shadow: 0 0 40px rgba(0, 255, 176, 0.6),
+                0 0 60px rgba(0, 255, 176, 0.3);
+  }
+  
+  [data-current-variant="edmneon"] .cta-btn--outline {
+    border-color: var(--color-primary, #00ffb0);
+    color: var(--color-primary, #00ffb0);
+    box-shadow: inset 0 0 20px rgba(0, 255, 176, 0.1);
+  }
+  
+  [data-current-variant="edmneon"] .cta-btn--outline:hover {
+    background-color: rgba(0, 255, 176, 0.1);
+    box-shadow: inset 0 0 30px rgba(0, 255, 176, 0.2),
+                0 0 20px rgba(0, 255, 176, 0.3);
+  }
+  
+  [data-current-variant="edmneon"] .cta-note-icon {
+    color: var(--color-primary, #00ffb0);
+    filter: drop-shadow(0 0 20px currentColor);
+    animation: neonPulse 2s ease-in-out infinite;
+  }
+  
+  /* Pop Shine variant - Colorful and playful */
+  [data-current-variant="popshine"] .cta-section {
+    background: linear-gradient(135deg, 
+      #fff7fa 0%,
+      color-mix(in srgb, var(--color-primary) 15%, white) 50%,
+      color-mix(in srgb, var(--color-secondary) 15%, white) 100%
+    );
+  }
+  
+  [data-current-variant="popshine"] .cta-title {
+    background: linear-gradient(45deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  [data-current-variant="popshine"] .cta-btn--primary {
+    background: linear-gradient(45deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+  }
+  
+  [data-current-variant="popshine"] .cta-btn--primary:hover {
+    background: linear-gradient(45deg, 
+      var(--color-primary-dark) 0%, 
+      var(--color-secondary-dark) 100%
+    );
+  }
+  
+  [data-current-variant="popshine"] .cta-pattern {
+    background: conic-gradient(
+      from 0deg,
+      var(--color-primary) 0deg,
+      var(--color-secondary) 90deg,
+      var(--color-accent) 180deg,
+      var(--color-primary) 360deg
+    );
+    animation: patternSpin 30s linear infinite;
+  }
+  
+  /* Classic Gold variant - Elegant and refined */
+  [data-current-variant="classicgold"] .cta-section {
+    background: linear-gradient(135deg, 
+      var(--color-background) 0%,
+      color-mix(in srgb, var(--color-secondary) 15%, var(--color-background)) 100%
+    );
+    @apply border-y border-gray-200;
+  }
+  
+  [data-current-variant="classicgold"] .cta-btn--primary {
+    background: linear-gradient(135deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+  }
+  
+  [data-current-variant="classicgold"] .cta-btn--outline {
+    @apply border-gray-400;
+    color: var(--color-primary, #a67c52);
+  }
+  
+  [data-current-variant="classicgold"] .cta-btn--outline:hover {
+    border-color: var(--color-secondary, #e3c16f);
+    background-color: color-mix(in srgb, var(--color-secondary) 10%, white);
+  }
+  
+  [data-current-variant="classicgold"] .cta-note-icon {
+    color: var(--color-secondary, #e3c16f);
+    opacity: 0.15;
+  }
+  
+  /* Rasta Vibes variant - Tricolor accents */
+  [data-current-variant="rastavibes"] .cta-section {
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--color-primary) 5%, white) 0%,
+      color-mix(in srgb, var(--color-secondary) 5%, white) 50%,
+      color-mix(in srgb, var(--color-accent) 5%, white) 100%
+    );
+  }
+  
+  [data-current-variant="rastavibes"] .cta-btn--primary {
+    background: linear-gradient(90deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 50%, 
+      var(--color-accent) 100%
+    );
+  }
+  
+  [data-current-variant="rastavibes"] .cta-btn--primary:hover {
+    background: linear-gradient(90deg, 
+      var(--color-primary-dark) 0%, 
+      var(--color-secondary-dark) 50%, 
+      var(--color-accent-dark) 100%
+    );
+  }
+  
+  [data-current-variant="rastavibes"] .cta-pattern--left {
+    background: radial-gradient(circle, 
+      var(--color-primary) 0%, 
+      transparent 70%
+    );
+  }
+  
+  [data-current-variant="rastavibes"] .cta-pattern--right {
+    background: radial-gradient(circle, 
+      var(--color-accent) 0%, 
+      transparent 70%
+    );
+  }
+  
+  /* Jazz Blue variant - Smooth and sophisticated */
+  [data-current-variant="jazzyblue"] .cta-btn {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  [data-current-variant="jazzyblue"] .cta-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+  
+  [data-current-variant="jazzyblue"] .cta-note-icon {
+    animation: jazzSwing 8s ease-in-out infinite;
+  }
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes patternFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -20px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(30px, 10px) scale(1.05);
+  }
+}
+
+@keyframes patternSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes noteFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.1;
+    filter: drop-shadow(0 0 20px currentColor);
+  }
+  50% {
+    opacity: 0.2;
+    filter: drop-shadow(0 0 40px currentColor);
+  }
+}
+
+@keyframes jazzSwing {
+  0%, 100% {
+    transform: rotate(-10deg) translateX(0);
+  }
+  25% {
+    transform: rotate(10deg) translateX(10px);
+  }
+  50% {
+    transform: rotate(-10deg) translateX(-10px);
+  }
+  75% {
+    transform: rotate(10deg) translateX(5px);
+  }
+}
+
+/* Text entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-title,
+.cta-subtitle,
+.cta-description,
+.cta-buttons {
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.cta-title { animation-delay: 0.1s; }
+.cta-subtitle { animation-delay: 0.2s; }
+.cta-description { animation-delay: 0.3s; }
+.cta-buttons { animation-delay: 0.4s; }
+
+/* Button ripple effect */
+.cta-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.cta-btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* ===================================
+   Interactive States
+   =================================== */
+/* Shimmer effect on primary button */
+.cta-btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    transparent 100%
+  );
+  transition: left 0.6s ease;
+}
+
+.cta-btn--primary:hover::before {
+  left: 100%;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .cta-title {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  .cta-subtitle {
+    @apply text-lg;
+  }
+  
+  .cta-description {
+    @apply text-base;
+  }
+  
+  .cta-note-icon {
+    @apply text-5xl lg:text-6xl;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-section {
+    @apply py-12;
+  }
+  
+  .cta-title {
+    @apply text-xl;
+  }
+  
+  .cta-subtitle {
+    @apply text-base;
+  }
+  
+  .cta-description {
+    @apply text-sm mb-6;
+  }
+  
+  .cta-btn {
+    @apply px-6 py-3 text-sm;
+  }
+  
+  .cta-btn-icon {
+    @apply text-lg;
+  }
+  
+  .cta-pattern {
+    @apply w-40 h-40;
+  }
+  
+  .cta-pattern--left {
+    @apply -top-20 -left-20;
+  }
+  
+  .cta-pattern--right {
+    @apply -bottom-20 -right-20;
+  }
+  
+  .cta-note {
+    @apply hidden;
+  }
+}
+
+/* ===================================
+   Accessibility & Focus States
+   =================================== */
+.cta-btn:focus-visible {
+  outline: 2px solid var(--color-primary, #5b4b8a);
+  outline-offset: 4px;
+}
+
+/* Skip link for screen readers */
+.cta-skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4;
+  background-color: var(--color-primary, #5b4b8a);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .cta-btn--outline {
+    @apply border-4;
+  }
+  
+  .cta-section {
+    background: var(--color-background, #f9f6f2);
+  }
+  
+  .cta-pattern,
+  .cta-note {
+    @apply hidden;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cta-title,
+  .cta-subtitle,
+  .cta-description,
+  .cta-buttons,
+  .cta-btn,
+  .cta-btn-icon,
+  .cta-pattern,
+  .cta-note-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .cta-btn::before,
+  .cta-btn::after {
+    display: none;
+  }
+}
+
+/* ===================================
+   Dark Mode Support
+   =================================== */
+@media (prefers-color-scheme: dark) {
+  .cta-btn--outline {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .cta-btn--outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+  .cta-section {
+    @apply py-8 bg-white;
+    background: none !important;
+  }
+  
+  .cta-pattern,
+  .cta-note {
+    @apply hidden;
+  }
+  
+  .cta-btn {
+    @apply border border-gray-400;
+  }
+  
+  .cta-btn--primary {
+    @apply bg-gray-200 text-gray-800;
+  }
+}

@@ -1,0 +1,611 @@
+/* src/styles/components/contact.css */
+
+/* ===================================
+   Base Layer - Contact Section Foundation
+   =================================== */
+@layer base {
+  .contact-section {
+    @apply py-16 bg-white relative overflow-hidden;
+    background-color: var(--color-surface, #fff);
+  }
+  
+  .contact-container {
+    @apply container mx-auto px-4;
+  }
+  
+  .contact-header {
+    @apply text-center mb-12;
+  }
+  
+  .contact-title {
+    @apply text-3xl lg:text-4xl font-bold mb-4;
+    color: var(--color-text, #232323);
+  }
+  
+  .contact-subtitle {
+    @apply text-xl mb-2;
+    color: var(--color-text-muted, #7c6baf);
+  }
+  
+  .contact-description {
+    @apply text-gray-600 max-w-2xl mx-auto;
+    color: var(--color-text-muted, #7c6baf);
+  }
+}
+
+/* ===================================
+   Component Layer - Contact Components
+   =================================== */
+@layer components {
+  /* Grid Layout */
+  .contact-grid {
+    @apply grid lg:grid-cols-2 gap-12;
+  }
+  
+  /* Contact Info Section */
+  .contact-info {
+    @apply space-y-8;
+  }
+  
+  .contact-info-item {
+    @apply flex space-x-4;
+  }
+  
+  .contact-info-icon {
+    @apply flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300;
+  }
+  
+  .contact-info-item:hover .contact-info-icon {
+    transform: translateY(-2px) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Icon variants */
+  .contact-info-icon--indigo {
+    @apply bg-indigo-100;
+    background-color: color-mix(in srgb, var(--color-primary) 15%, white);
+  }
+  
+  .contact-info-icon--green {
+    @apply bg-green-100;
+    background-color: color-mix(in srgb, var(--color-success) 15%, white);
+  }
+  
+  .contact-info-icon--purple {
+    @apply bg-purple-100;
+    background-color: color-mix(in srgb, var(--color-secondary) 15%, white);
+  }
+  
+  .contact-info-icon--orange {
+    @apply bg-orange-100;
+    background-color: color-mix(in srgb, var(--color-accent) 15%, white);
+  }
+  
+  .contact-icon {
+    @apply text-2xl;
+  }
+  
+  .contact-info-icon--indigo .contact-icon {
+    @apply text-indigo-600;
+    color: var(--color-primary, #5b4b8a);
+  }
+  
+  .contact-info-icon--green .contact-icon {
+    @apply text-green-600;
+    color: var(--color-success, #2ecc71);
+  }
+  
+  .contact-info-icon--purple .contact-icon {
+    @apply text-purple-600;
+    color: var(--color-secondary, #ffd86b);
+  }
+  
+  .contact-info-icon--orange .contact-icon {
+    @apply text-orange-600;
+    color: var(--color-accent, #d72660);
+  }
+  
+  .contact-info-content {
+    @apply flex-1;
+  }
+  
+  .contact-info-title {
+    @apply font-semibold mb-1;
+    color: var(--color-text, #232323);
+  }
+  
+  .contact-info-text {
+    @apply text-gray-600;
+    color: var(--color-text-muted, #7c6baf);
+  }
+  
+  /* Form Section */
+  .contact-form-wrapper {
+    @apply bg-gray-50 rounded-2xl p-8;
+    background-color: var(--color-background, #f9f6f2);
+  }
+  
+  .contact-form-title {
+    @apply text-2xl font-bold mb-2;
+    color: var(--color-text, #232323);
+  }
+  
+  .contact-form-subtitle {
+    @apply text-gray-600 mb-6;
+    color: var(--color-text-muted, #7c6baf);
+  }
+  
+  .contact-form {
+    @apply space-y-6;
+  }
+  
+  .contact-form-group {
+    @apply space-y-2;
+  }
+  
+  .contact-form-label {
+    @apply block text-sm font-medium;
+    color: var(--color-text, #232323);
+  }
+  
+  .contact-form-required {
+    @apply text-red-500;
+  }
+  
+  /* Form Inputs */
+  .contact-form-input,
+  .contact-form-select,
+  .contact-form-textarea {
+    @apply w-full px-4 py-3 rounded-xl border transition-all duration-200;
+    border-color: rgba(156, 163, 175, 0.5);
+    background-color: white;
+  }
+  
+  .contact-form-input:focus,
+  .contact-form-select:focus,
+  .contact-form-textarea:focus {
+    @apply outline-none ring-2;
+    border-color: var(--color-primary, #5b4b8a);
+    ring-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+  
+  .contact-form-textarea {
+    @apply resize-none;
+  }
+  
+  /* Agreement Checkbox */
+  .contact-form-agreement {
+    @apply flex items-start space-x-2;
+  }
+  
+  .contact-form-checkbox {
+    @apply mt-1 w-4 h-4 rounded;
+    accent-color: var(--color-primary, #5b4b8a);
+  }
+  
+  .contact-form-checkbox-label {
+    @apply text-sm text-gray-600;
+    color: var(--color-text-muted, #7c6baf);
+  }
+  
+  .contact-form-link {
+    @apply hover:underline transition-colors;
+    color: var(--color-primary, #5b4b8a);
+  }
+  
+  .contact-form-link:hover {
+    color: var(--color-primary-dark, #3c295a);
+  }
+  
+  /* Submit Button */
+  .contact-form-submit {
+    @apply w-full py-4 rounded-xl transition-all duration-200 font-semibold flex items-center justify-center space-x-2;
+    background-color: var(--color-primary, #5b4b8a);
+    color: white;
+  }
+  
+  .contact-form-submit:hover {
+    background-color: var(--color-primary-dark, #3c295a);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(91, 75, 138, 0.3);
+  }
+  
+  .contact-form-submit:active {
+    transform: translateY(0);
+  }
+  
+  .contact-form-submit-icon {
+    @apply text-xl transition-transform duration-200;
+  }
+  
+  .contact-form-submit:hover .contact-form-submit-icon {
+    transform: translateX(4px) rotate(-45deg);
+  }
+  
+  /* Map Pattern Background */
+  .contact-map-pattern {
+    @apply absolute inset-0 opacity-5 pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235b4b8a' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+/* ===================================
+   Form States & Validation
+   =================================== */
+/* Input states */
+.contact-form-input--error,
+.contact-form-select--error,
+.contact-form-textarea--error {
+  border-color: #ef4444 !important;
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Loading state */
+.contact-form--loading .contact-form-submit {
+  @apply opacity-75 cursor-not-allowed;
+}
+
+.contact-form--loading .contact-form-submit-icon {
+  animation: fly 1s ease-in-out infinite;
+}
+
+/* Success state */
+.contact-form--success {
+  @apply text-center py-12;
+}
+
+.contact-form--success::before {
+  content: '✓';
+  @apply block text-6xl text-green-500 mb-4;
+}
+
+/* ===================================
+   Utilities Layer - Variant Specific
+   =================================== */
+@layer utilities {
+  /* Rock Electric variant */
+  [data-current-variant="rockelectric"] .contact-section {
+    background-color: var(--color-background, #191b1f);
+  }
+  
+  [data-current-variant="rockelectric"] .contact-form-wrapper {
+    background-color: var(--color-surface, #23272a);
+    @apply border border-gray-800;
+  }
+  
+  [data-current-variant="rockelectric"] .contact-form-submit {
+    background-color: var(--color-accent, #ffd600);
+    color: var(--color-background, #191b1f);
+  }
+  
+  [data-current-variant="rockelectric"] .contact-form-submit:hover {
+    background-color: var(--color-accent-dark, #c7a800);
+  }
+  
+  /* EDM Neon variant */
+  [data-current-variant="edmneon"] .contact-section {
+    background-color: var(--color-background, #18182b);
+  }
+  
+  [data-current-variant="edmneon"] .contact-form-wrapper {
+    background-color: var(--color-surface, #23234b);
+    @apply border border-gray-800;
+    box-shadow: 0 0 30px rgba(0, 255, 176, 0.1);
+  }
+  
+  [data-current-variant="edmneon"] .contact-info-icon {
+    box-shadow: 0 0 20px rgba(0, 255, 176, 0.2);
+  }
+  
+  [data-current-variant="edmneon"] .contact-form-input:focus,
+  [data-current-variant="edmneon"] .contact-form-select:focus,
+  [data-current-variant="edmneon"] .contact-form-textarea:focus {
+    box-shadow: 0 0 20px rgba(0, 255, 176, 0.3);
+  }
+  
+  [data-current-variant="edmneon"] .contact-form-submit {
+    background: linear-gradient(45deg, 
+      var(--color-primary) 0%, 
+      var(--color-accent) 100%
+    );
+    box-shadow: 0 0 20px rgba(0, 255, 176, 0.3);
+  }
+  
+  [data-current-variant="edmneon"] .contact-form-submit:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 176, 0.5);
+  }
+  
+  /* Pop Shine variant */
+  [data-current-variant="popshine"] .contact-form-wrapper {
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--color-primary) 5%, white) 0%,
+      color-mix(in srgb, var(--color-secondary) 5%, white) 100%
+    );
+  }
+  
+  [data-current-variant="popshine"] .contact-form-submit {
+    background: linear-gradient(45deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+  }
+  
+  /* Classic Gold variant */
+  [data-current-variant="classicgold"] .contact-form-wrapper {
+    @apply border border-gray-200;
+  }
+  
+  [data-current-variant="classicgold"] .contact-form-submit {
+    background: linear-gradient(135deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 100%
+    );
+  }
+  
+  /* Rasta Vibes variant */
+  [data-current-variant="rastavibes"] .contact-info-icon--indigo {
+    background-color: color-mix(in srgb, var(--color-primary) 15%, white);
+  }
+  
+  [data-current-variant="rastavibes"] .contact-info-icon--green {
+    background-color: color-mix(in srgb, var(--color-accent) 15%, white);
+  }
+  
+  [data-current-variant="rastavibes"] .contact-info-icon--purple {
+    background-color: color-mix(in srgb, var(--color-secondary) 15%, white);
+  }
+  
+  [data-current-variant="rastavibes"] .contact-form-submit {
+    background: linear-gradient(90deg, 
+      var(--color-primary) 0%, 
+      var(--color-secondary) 50%, 
+      var(--color-accent) 100%
+    );
+  }
+  
+  /* Jazz Blue variant */
+  [data-current-variant="jazzyblue"] .contact-info-item {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  [data-current-variant="jazzyblue"] .contact-info-item:hover {
+    transform: translateX(8px);
+  }
+  
+  [data-current-variant="jazzyblue"] .contact-form-submit {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fly {
+  0%, 100% {
+    transform: translateX(0) translateY(0) rotate(-45deg);
+  }
+  25% {
+    transform: translateX(5px) translateY(-5px) rotate(-50deg);
+  }
+  75% {
+    transform: translateX(-5px) translateY(5px) rotate(-40deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(91, 75, 138, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(91, 75, 138, 0);
+  }
+}
+
+/* Apply entrance animations */
+.contact-info-item {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.contact-info-item:nth-child(1) { animation-delay: 0.1s; }
+.contact-info-item:nth-child(2) { animation-delay: 0.2s; }
+.contact-info-item:nth-child(3) { animation-delay: 0.3s; }
+.contact-info-item:nth-child(4) { animation-delay: 0.4s; }
+
+.contact-form-wrapper {
+  animation: fadeInUp 0.8s ease-out 0.5s;
+  animation-fill-mode: both;
+}
+
+/* Icon hover pulse */
+.contact-info-icon:hover {
+  animation: pulseGlow 1.5s infinite;
+}
+
+/* ===================================
+   Interactive States
+   =================================== */
+/* Form field focus glow */
+.contact-form-input:focus,
+.contact-form-select:focus,
+.contact-form-textarea:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+/* Hover effect on info items */
+.contact-info-item {
+  @apply cursor-pointer;
+}
+
+.contact-info-item:hover .contact-info-text {
+  color: var(--color-primary, #5b4b8a);
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 1024px) {
+  .contact-title {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  .contact-subtitle {
+    @apply text-lg;
+  }
+  
+  .contact-grid {
+    @apply gap-8;
+  }
+  
+  .contact-form-wrapper {
+    @apply p-6;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-title {
+    @apply text-xl;
+  }
+  
+  .contact-subtitle {
+    @apply text-base;
+  }
+  
+  .contact-description {
+    @apply text-sm;
+  }
+  
+  .contact-grid {
+    @apply grid-cols-1 gap-6;
+  }
+  
+  .contact-info {
+    @apply space-y-6;
+  }
+  
+  .contact-info-icon {
+    @apply w-10 h-10;
+  }
+  
+  .contact-icon {
+    @apply text-xl;
+  }
+  
+  .contact-form-wrapper {
+    @apply p-4;
+  }
+  
+  .contact-form-title {
+    @apply text-xl;
+  }
+  
+  .contact-form-input,
+  .contact-form-select,
+  .contact-form-textarea {
+    @apply px-3 py-2 text-sm;
+  }
+  
+  .contact-form-submit {
+    @apply py-3 text-sm;
+  }
+}
+
+/* ===================================
+   Accessibility & Focus States
+   =================================== */
+.contact-form-input:focus-visible,
+.contact-form-select:focus-visible,
+.contact-form-textarea:focus-visible,
+.contact-form-checkbox:focus-visible,
+.contact-form-submit:focus-visible,
+.contact-form-link:focus-visible {
+  outline: 2px solid var(--color-primary, #5b4b8a);
+  outline-offset: 2px;
+}
+
+.contact-info-item:focus-within {
+  @apply ring-2 ring-offset-2;
+  ring-color: var(--color-primary, #5b4b8a);
+}
+
+/* Screen reader text */
+.contact-sr-only {
+  @apply sr-only;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .contact-form-wrapper {
+    @apply border-2 border-gray-900;
+  }
+  
+  .contact-form-input,
+  .contact-form-select,
+  .contact-form-textarea {
+    @apply border-2;
+  }
+  
+  .contact-form-submit {
+    @apply border-2 border-gray-900;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .contact-info-item,
+  .contact-info-icon,
+  .contact-icon,
+  .contact-form-wrapper,
+  .contact-form-submit,
+  .contact-form-submit-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+  .contact-section {
+    @apply py-8;
+  }
+  
+  .contact-grid {
+    @apply grid-cols-1 gap-4;
+  }
+  
+  .contact-form-wrapper {
+    @apply border border-gray-300 shadow-none;
+  }
+  
+  .contact-form-submit {
+    @apply hidden;
+  }
+  
+  .contact-section::after {
+    content: 'Hubungi kami di: www.miwebmusicstore.com/contact';
+    @apply block text-center mt-4 text-sm;
+  }
+  
+  .contact-map-pattern {
+    @apply hidden;
+  }
+}
