@@ -3,8 +3,8 @@
 <section class="newsletter-section">
   <div class="newsletter-container">
     <div class="newsletter-content">
-      <h2 class="newsletter-title">Dapatkan Promo Terbaru</h2>
-      <p class="newsletter-subtitle">Subscribe newsletter untuk info diskon dan produk baru</p>
+      <h2 class="newsletter-title" data-translate="newsletter.title">Dapatkan Promo Terbaru</h2>
+      <p class="newsletter-subtitle" data-translate="newsletter.subtitle">Subscribe newsletter untuk info diskon dan produk baru</p>
       
       <form class="newsletter-form" id="newsletter-form">
         <div class="newsletter-form-group">
@@ -13,6 +13,7 @@
             <input 
               type="email" 
               placeholder="Masukkan email Anda" 
+              data-translate-placeholder="newsletter.emailPlaceholder"
               class="newsletter-input"
               id="newsletter-email"
               name="email"
@@ -23,12 +24,12 @@
           </div>
           <button type="submit" class="newsletter-btn" tabindex="0">
             <iconify-icon icon="heroicons:paper-airplane" class="newsletter-btn-icon"></iconify-icon>
-            <span>Subscribe</span>
+            <span data-translate="newsletter.subscribeBtn">Subscribe</span>
           </button>
         </div>
         <div class="newsletter-disclaimer">
           <iconify-icon icon="heroicons:shield-check" class="newsletter-disclaimer-icon"></iconify-icon>
-          <span>Kami menjaga privasi Anda. Unsubscribe kapan saja.</span>
+          <span data-translate="newsletter.disclaimer">Kami menjaga privasi Anda. Unsubscribe kapan saja.</span>
         </div>
       </form>
     </div>

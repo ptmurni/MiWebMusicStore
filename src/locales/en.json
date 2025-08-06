@@ -1,126 +1,353 @@
 {
   "meta": {
-    "title": "MiWebMusicStore - Trusted Shipping Solutions",
-    "description": "Trusted logistics platform with widest coverage, real-time tracking technology, and competitive pricing"
+    "title": "MiWebMusic Store - Indonesia's Most Complete Musical Instrument Store",
+    "description": "Quality musical instruments at the best prices. Guitars, keyboards, drums, and various other musical instruments. Official warranty and free consultation."
   },
   "navigation": {
-    "brand": "MiWebMusicStore",
+    "brand": "MiWebMusic Store",
     "home": "Home",
-    "services": "Services",
-    "tracking": "Tracking",
+    "products": "Products",
+    "categories": "Categories",
     "about": "About",
     "contact": "Contact",
     "callToAction": "Contact Us"
   },
   "hero": {
-    "title": "Ship Packages Throughout Indonesia with MiWebMusicStore",
-    "subtitle": "Fast & Secure Shipping",
-    "description": "Trusted logistics platform with widest coverage, real-time tracking technology, and competitive pricing.",
-    "titleHighlight": "MiWebMusicStore",
-    "checkRateBtn": "Check Rates",
-    "watchDemoBtn": "Watch Demo",
-    "heroImageTitle": "MiWebMusicStore",
-    "heroImageSubtitle": "Trusted Logistics Solution"
+    "title": "Find Your Dream Musical Instrument at MiWebMusic Store",
+    "subtitle": "Best Quality, Affordable Prices",
+    "description": "The most complete music store with thousands of quality products, official warranty, and best after-sales service.",
+    "titleHighlight": "MiWebMusic Store",
+    "shopNowBtn": "Shop Now",
+    "viewCatalogBtn": "View Catalog",
+    "heroImageTitle": "MiWebMusic Store",
+    "heroImageSubtitle": "Your Music Journey Starts Here"
   },
   "features": {
-    "title": "Our Service Excellence",
-    "subtitle": "Why choose MiWebMusicStore",
-    "description": "We provide the best logistics services with various advantages designed to meet your business needs.",
+    "title": "Why Shop at MiWebMusic Store?",
+    "subtitle": "Our Advantages",
+    "description": "We provide the best music shopping experience with various advantages designed for your satisfaction.",
     "items": {
-      "safe": "100% Safe",
-      "service247": "24/7 Service",
-      "cities": "8000+ Cities",
-      "bestPrice": "Best Price"
+      "authentic": "100% Original",
+      "warranty": "Official Warranty",
+      "freeShipping": "Free Shipping",
+      "expert": "Expert Consultation"
+    },
+    "descriptions": {
+      "authentic": "All products are guaranteed genuine with official warranty",
+      "warranty": "Official warranty from distributor for your peace of mind",
+      "freeShipping": "Free shipping throughout Indonesia",
+      "expert": "Expert team ready to help you choose the right musical instrument"
     }
   },
-  "tracking": {
-    "title": "Track Your Package",
-    "subtitle": "Enter tracking number to check delivery status",
-    "description": "Monitor your package journey in real-time with our advanced tracking system integrated directly with our entire fleet.",
-    "placeholder": "Example: MWL123456789",
-    "trackBtn": "Track Now",
-    "statusTitle": "Delivery Status",
-    "statusMessage": "Your package is on the way to the destination address."
-  },
-  "services": {
-    "title": "Our Premium Services",
-    "subtitle": "Shipping solutions for every business need",
-    "description": "MiWebMusicStore provides various logistics services tailored to modern business needs, from express delivery to warehousing services.",
+  "productCategories": {
+    "title": "Our Product Categories",
+    "subtitle": "Complete for all your musical needs",
+    "description": "MiWebMusic Store provides various musical instrument categories from renowned brands with guaranteed quality.",
     "items": [
       {
-        "title": "Express Same Day",
-        "description": "Same-day express delivery for Greater Jakarta area"
+        "title": "Guitars & Bass",
+        "description": "Acoustic guitars, electric guitars, bass, and complete accessories"
       },
       {
-        "title": "Regular Cargo",
-        "description": "Economic shipping for bulk goods"
+        "title": "Keyboards & Pianos",
+        "description": "Digital pianos, synthesizers, and keyboards for all levels"
       },
       {
-        "title": "Warehouse Service",
-        "description": "Warehousing service with modern management system"
+        "title": "Drums & Percussion",
+        "description": "Drum sets, cajons, cymbals, and other percussion instruments"
       },
       {
-        "title": "International",
-        "description": "International shipping to over 200 countries"
+        "title": "Audio & Recording",
+        "description": "Microphones, audio interfaces, and recording equipment"
       }
     ],
-    "learnMore": "Learn More"
+    "viewAll": "View All"
+  },
+  "products": {
+    "title": "Latest Products",
+    "subtitle": "Discover our latest musical instrument collection",
+    "description": "Selected products with the best quality and competitive prices",
+    "viewAllBtn": "View All Products",
+    "filters": {
+      "all": "All",
+      "new": "New",
+      "bestseller": "Bestseller",
+      "promo": "Promo"
+    },
+    "items": [
+      {
+        "id": "GTR-001",
+        "name": "Yamaha FG830 Acoustic Guitar",
+        "category": "Acoustic Guitar",
+        "brand": "Yamaha",
+        "image": {
+          "url": "/products/yamaha-fg830.jpg",
+          "alt": "Yamaha FG830 Acoustic Guitar"
+        },
+        "price": {
+          "original": 4500000,
+          "discount": 3850000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 14,
+        "rating": 4.8,
+        "reviewCount": 125,
+        "badges": ["Bestseller", "Free Shipping"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "KEY-002",
+        "name": "Roland FP-30X Digital Piano",
+        "category": "Digital Piano",
+        "brand": "Roland",
+        "image": {
+          "url": "/products/roland-fp30x.jpg",
+          "alt": "Roland FP-30X Digital Piano"
+        },
+        "price": {
+          "original": 12500000,
+          "discount": 11250000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 10,
+        "rating": 4.9,
+        "reviewCount": 89,
+        "badges": ["New", "2 Year Warranty"],
+        "isNew": true,
+        "inStock": true
+      },
+      {
+        "id": "DRM-003",
+        "name": "Pearl Export EXX725S Drum Set",
+        "category": "Drum Set",
+        "brand": "Pearl",
+        "image": {
+          "url": "/products/pearl-export-drum.jpg",
+          "alt": "Pearl Export Drum Set"
+        },
+        "price": {
+          "original": 15000000,
+          "discount": null,
+          "currency": "Rp"
+        },
+        "discountPercentage": 0,
+        "rating": 4.7,
+        "reviewCount": 67,
+        "badges": ["Ready Stock", "COD"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "MIC-004",
+        "name": "Shure SM58 Dynamic Microphone",
+        "category": "Microphone",
+        "brand": "Shure",
+        "image": {
+          "url": "/products/shure-sm58.jpg",
+          "alt": "Shure SM58 Microphone"
+        },
+        "price": {
+          "original": 1850000,
+          "discount": 1650000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 11,
+        "rating": 5.0,
+        "reviewCount": 234,
+        "badges": ["Best Seller", "Original"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "GTR-005",
+        "name": "Fender Player Stratocaster",
+        "category": "Electric Guitar",
+        "brand": "Fender",
+        "image": {
+          "url": "/products/fender-strat.jpg",
+          "alt": "Fender Player Stratocaster"
+        },
+        "price": {
+          "original": 13500000,
+          "discount": 12150000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 10,
+        "rating": 4.9,
+        "reviewCount": 156,
+        "badges": ["Limited Stock", "Free Setup"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "AMP-006",
+        "name": "Marshall MG15GR Guitar Amplifier",
+        "category": "Amplifier",
+        "brand": "Marshall",
+        "image": {
+          "url": "/products/marshall-mg15.jpg",
+          "alt": "Marshall MG15GR Amplifier"
+        },
+        "price": {
+          "original": 2250000,
+          "discount": 1950000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 13,
+        "rating": 4.6,
+        "reviewCount": 98,
+        "badges": ["Promo", "1 Year Warranty"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "UKL-007",
+        "name": "Kala KA-15S Soprano Ukulele",
+        "category": "Ukulele",
+        "brand": "Kala",
+        "image": {
+          "url": "/products/kala-ukulele.jpg",
+          "alt": "Kala Soprano Ukulele"
+        },
+        "price": {
+          "original": 850000,
+          "discount": null,
+          "currency": "Rp"
+        },
+        "discountPercentage": 0,
+        "rating": 4.5,
+        "reviewCount": 45,
+        "badges": ["New", "Free Pick"],
+        "isNew": true,
+        "inStock": true
+      },
+      {
+        "id": "ACC-008",
+        "name": "D'Addario EXL110 Guitar Strings",
+        "category": "Accessories",
+        "brand": "D'Addario",
+        "image": {
+          "url": "/products/daddario-strings.jpg",
+          "alt": "D'Addario Guitar Strings"
+        },
+        "price": {
+          "original": 85000,
+          "discount": 72000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 15,
+        "rating": 4.8,
+        "reviewCount": 312,
+        "badges": ["Bestseller", "Buy 3 Get 1 Free"],
+        "isNew": false,
+        "inStock": true
+      }
+    ],
+    "loadMoreBtn": "Load More",
+    "noProductsMessage": "No products available",
+    "outOfStockLabel": "Out of Stock",
+    "preOrderLabel": "Pre-order",
+    "comingSoonLabel": "Coming Soon"
   },
   "stats": {
-    "title": "Our Service Statistics",
+    "title": "Trusted by Indonesian Musicians",
     "subtitle": "Numbers that prove customer trust",
-    "description": "With over 13 years of experience, we have served thousands of customers throughout Indonesia with full dedication.",
+    "description": "Since 2015, we have served thousands of musicians throughout Indonesia with full dedication.",
     "items": {
-      "customers": "Active Customers",
-      "branches": "Branches & Agents",
-      "fleet": "Active Fleet",
-      "provinces": "Provinces Covered"
+      "products": "Products Available",
+      "customers": "Satisfied Customers",
+      "brands": "Brand Partners",
+      "cities": "Cities Reached"
     }
   },
+  "brands": {
+    "title": "Our Brand Partners",
+    "subtitle": "Partnering with world's leading music brands",
+    "brands": [
+      "Yamaha",
+      "Roland",
+      "Fender",
+      "Gibson",
+      "Pearl",
+      "Zildjian",
+      "Shure",
+      "Marshall"
+    ]
+  },
   "about": {
-    "title": "Trusted Logistics Partner Since 2010",
-    "subtitle": "About Us",
-    "description": "MiWebMusicStore has been a trusted partner for thousands of businesses in Indonesia. With more than 13 years of experience, we continue to innovate to provide the best logistics services.",
+    "title": "Trusted Music Store Since 2015",
+    "subtitle": "About MiWebMusic Store",
+    "description": "MiWebMusic Store has been the main destination for Indonesian musicians to get quality musical instruments. With more than 8 years of experience, we continue to commit to providing the best products and services.",
     "features": [
       {
-        "title": "Trusted & Licensed",
-        "description": "Has all official operational permits from the government"
+        "title": "Original & Warranted Products",
+        "description": "All products are guaranteed 100% original with official warranty"
       },
       {
-        "title": "Latest Technology",
-        "description": "Real-time GPS tracking system and API integration"
+        "title": "Experienced Expert Team",
+        "description": "Free consultation with professional musicians"
       },
       {
-        "title": "Customer Support 24/7",
-        "description": "Support team ready to help whenever you need"
+        "title": "Best After Sales Service",
+        "description": "Service center and spare parts available"
       }
     ],
-    "viewProfileBtn": "View Full Profile",
-    "imageTitle": "About MiWebMusicStore",
-    "imageSubtitle": "Trusted Logistics Company"
+    "viewStoryBtn": "View Our Story",
+    "imageTitle": "About MiWebMusic Store",
+    "imageSubtitle": "Your Trusted Music Partner"
+  },
+  "testimonials": {
+    "title": "What They Say?",
+    "subtitle": "Testimonials from our loyal customers",
+    "items": [
+      {
+        "name": "Andi Pratama",
+        "role": "Indie Band Guitarist",
+        "comment": "Very satisfying service, original products and competitive prices. Recommended!"
+      },
+      {
+        "name": "Sarah Wijaya",
+        "role": "Music Teacher",
+        "comment": "Been a customer for 3 years, always satisfied with product quality and service."
+      },
+      {
+        "name": "Budi Santoso",
+        "role": "Music Producer",
+        "comment": "Very complete collection, from musical instruments to recording equipment, everything is here."
+      }
+    ]
   },
   "cta": {
-    "title": "Ready to Grow Your Business?",
-    "subtitle": "Join thousands of businesses that have trusted their shipping to us",
-    "description": "Get the best logistics solutions at competitive prices and professional service from our experienced team.",
-    "registerBtn": "Register Now",
-    "consultationBtn": "Free Consultation"
+    "title": "Start Your Musical Journey",
+    "subtitle": "Get special discount for first purchase",
+    "description": "Register now and enjoy various member benefits, including exclusive discounts, free shipping, and access to music events.",
+    "registerBtn": "Register Member",
+    "browseBtn": "View Products"
+  },
+  "newsletter": {
+    "title": "Get Latest Promotions",
+    "subtitle": "Subscribe newsletter for discount info and new products",
+    "emailPlaceholder": "Enter your email",
+    "subscribeBtn": "Subscribe"
   },
   "contact": {
     "title": "Contact Us",
-    "subtitle": "Have questions? Our team is ready to help you",
-    "description": "Don't hesitate to contact us through various available communication channels. Our customer service team is ready to serve you 24/7.",
+    "subtitle": "Our team is ready to help you",
+    "description": "Have questions about products or need consultation? Don't hesitate to contact us.",
     "info": {
-      "officeTitle": "Head Office",
-      "officeAddress": "Jl. Logistik Raya No. 88\nSouth Jakarta 12345",
+      "storeTitle": "Main Store",
+      "storeAddress": "Jl. Musik Raya No. 88\nSouth Jakarta 12345",
       "phoneTitle": "Phone",
-      "phoneNumber": "(021) 1234-5678\n0812-3456-7890 (WhatsApp)",
+      "phoneNumber": "(021) 8765-4321\n0812-9876-5432 (WhatsApp)",
       "emailTitle": "Email",
-      "emailAddress": "info@MiWebMusicStore.id\nsupport@MiWebMusicStore.id"
+      "emailAddress": "info@MiWebMusic Store.id\nsupport@MiWebMusic Store.id",
+      "hoursTitle": "Operating Hours",
+      "hoursInfo": "Monday - Saturday: 09:00 - 21:00\nSunday: 10:00 - 18:00"
     },
     "form": {
       "title": "Send Message",
-      "subtitle": "Fill out the form below and we will contact you soon",
+      "subtitle": "We will respond within 24 hours",
       "fields": {
         "nameLabel": "Full Name",
         "namePlaceholder": "Enter your full name",
@@ -131,10 +358,10 @@
         "subjectLabel": "Subject",
         "subjectPlaceholder": "Select subject",
         "subjectOptions": {
-          "serviceInfo": "Service Information",
-          "shipping": "Shipping Issues",
-          "partnership": "Business Partnership",
-          "complaint": "Complaint",
+          "productInfo": "Product Information",
+          "orderStatus": "Order Status",
+          "technicalSupport": "Technical Support",
+          "warranty": "Warranty Claim",
           "other": "Other"
         },
         "messageLabel": "Message",
@@ -143,25 +370,35 @@
       "agreement": {
         "text": "I agree to the",
         "privacyPolicy": "privacy policy",
-        "termsOfService": "terms of service",
-        "suffix": "of MiWebMusicStore."
+        "termsOfService": "terms & conditions",
+        "suffix": "of MiWebMusic Store."
       },
       "submitBtn": "Send Message",
       "required": "*"
     }
   },
   "footer": {
-    "title": "MiWebMusicStore",
-    "subtitle": "Trusted Logistics Partner",
-    "description": "Trusted logistics partner for Indonesian business advancement",
+    "title": "MiWebMusic Store",
+    "subtitle": "Your Music Journey Starts Here",
+    "description": "Indonesia's most complete and trusted musical instrument store",
     "sections": {
+      "products": {
+        "title": "Products",
+        "items": [
+          "Guitars & Bass",
+          "Keyboards & Pianos",
+          "Drums & Percussion",
+          "Audio & Recording",
+          "Music Accessories"
+        ]
+      },
       "services": {
         "title": "Services",
         "items": [
-          "Express Same Day",
-          "Regular Cargo",
-          "Warehouse Service",
-          "International Shipping"
+          "Official Warranty",
+          "Service Center",
+          "Instrument Rental",
+          "Music Courses"
         ]
       },
       "company": {
@@ -169,23 +406,48 @@
         "items": [
           "About Us",
           "Careers",
-          "Business Partners",
+          "Music Blog",
           "Privacy Policy"
         ]
       },
-      "newsletter": {
-        "title": "Newsletter",
-        "description": "Get the latest updates from us",
-        "emailPlaceholder": "Your Email"
+      "support": {
+        "title": "Support",
+        "items": [
+          "How to Buy",
+          "Payment Methods",
+          "Shipping",
+          "FAQ"
+        ]
       }
     },
-    "copyright": "© 2025 MiWebMusicStore. All rights reserved. | Powered by Tailwind CSS 4.1.11"
+    "payment": {
+      "title": "Payment Methods",
+      "methods": ["Bank Transfer", "Credit Card", "E-Wallet", "COD"]
+    },
+    "shipping": {
+      "title": "Shipping Partners",
+      "partners": ["JNE", "J&T", "SiCepat", "GoSend", "GrabExpress"]
+    },
+    "social": {
+      "title": "Follow Us",
+      "links": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "youtube": "YouTube",
+        "tiktok": "TikTok"
+      }
+    },
+    "copyright": "© 2025 MiWebMusic Store. All rights reserved. | Powered by Modern Web Tech"
   },
-    "languages": {
+  "languages": {
     "en": "English",
-    "id": "Indonesia",
-    "ms": "Melayu"
+    "id": "Bahasa Indonesia"
   },
+  "retailLink": [
+    "Tokopedia",
+    "Shopee",
+    "Tiktok"
+  ],
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
@@ -201,6 +463,15 @@
     "next": "Next",
     "previous": "Previous",
     "submit": "Submit",
-    "reset": "Reset"
+    "reset": "Reset",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "outOfStock": "Out of Stock",
+    "inStock": "In Stock",
+    "price": "Price",
+    "discount": "Discount",
+    "new": "New",
+    "bestseller": "Bestseller",
+    "promo": "Promo"
   }
 }

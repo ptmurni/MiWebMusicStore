@@ -1,11 +1,11 @@
 // src/scripts/components/QuickViewModal.js
 
 /**
- * QuickViewModal Component
- * Handles product quick view modal functionality for products grid
- * @class QuickViewModal
+ * ProductsQuickViewModal Component
+ * Handles product quick view modal functionality for products.html page
+ * @class ProductsQuickViewModal
  */
-export class QuickViewModal {
+export class ProductsQuickViewModal {
   constructor() {
     this.isOpen = false;
     this.isInitialized = false;
@@ -26,11 +26,11 @@ export class QuickViewModal {
     this.handleOverlayClick = this.handleOverlayClick.bind(this);
     this.handleKeydown = this.handleKeydown.bind(this);
 
-    // Config
+    // Config - Specific to products.html
     this.config = {
-      modalId: 'qv-modal-standalone',
-      modalContentId: 'qv-modal-content',
-      closeBtnId: 'qv-modal-close',
+      modalId: 'products-qv-modal-standalone',
+      modalContentId: 'products-qv-modal-content',
+      closeBtnId: 'products-qv-modal-close',
       animationDuration: 200
     };
 
@@ -46,9 +46,9 @@ export class QuickViewModal {
       this.cacheElements();
       this.attachEventListeners();
       this.isInitialized = true;
-      console.log('✅ QuickViewModal initialized');
+      console.log('✅ ProductsQuickViewModal initialized');
     }).catch(error => {
-      console.error('❌ QuickViewModal initialization failed:', error);
+      console.error('❌ ProductsQuickViewModal initialization failed:', error);
     });
   }
 
@@ -62,11 +62,11 @@ export class QuickViewModal {
       const check = () => {
         const modal = document.getElementById(this.config.modalId);
         const modalContent = document.getElementById(this.config.modalContentId);
-        const productCards = document.querySelectorAll('.products-card');
+        const productCards = document.querySelectorAll('#products-component .products-card, .products-card');
         if (modal && modalContent && productCards.length) {
           resolve();
         } else if (attempts >= maxAttempts) {
-          reject(new Error('QuickViewModal elements not found after maximum attempts'));
+          reject(new Error('ProductsQuickViewModal elements not found after maximum attempts'));
         } else {
           attempts++;
           setTimeout(check, 100);
@@ -82,14 +82,14 @@ export class QuickViewModal {
   cacheElements() {
     this.elements.modal = document.getElementById(this.config.modalId);
     this.elements.modalContent = document.getElementById(this.config.modalContentId);
-    this.elements.productCards = Array.from(document.querySelectorAll('.products-card'));
+    this.elements.productCards = Array.from(document.querySelectorAll('#products-component .products-card, .products-card'));
     // Insert quick view buttons if not present
     this.elements.productCards.forEach(card => {
-      let btn = card.querySelector('.qv-btn-quickview');
+      let btn = card.querySelector('.products-qv-btn-quickview');
       if (!btn) {
         btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'qv-btn-quickview';
+        btn.className = 'products-qv-btn-quickview';
         btn.innerText = 'Quick View';
         btn.setAttribute('tabindex', '0');
         btn.style.cssText = `
@@ -101,7 +101,7 @@ export class QuickViewModal {
         card.querySelector('.products-card-image-wrapper').appendChild(btn);
       }
     });
-    this.elements.quickViewBtns = Array.from(document.querySelectorAll('.qv-btn-quickview'));
+    this.elements.quickViewBtns = Array.from(document.querySelectorAll('.products-qv-btn-quickview'));
     this.elements.closeBtn = document.getElementById(this.config.closeBtnId);
   }
 
@@ -258,7 +258,7 @@ export class QuickViewModal {
     }, this.config.animationDuration);
     this.isOpen = true;
     document.body.style.overflow = 'hidden';
-    this.dispatchEvent('quickview:open');
+    this.dispatchEvent('products-quickview:open');
   }
 
   /**
@@ -273,7 +273,7 @@ export class QuickViewModal {
     setTimeout(() => {
       if (this.elements.lastTrigger) this.elements.lastTrigger.focus();
     }, this.config.animationDuration);
-    this.dispatchEvent('quickview:close');
+    this.dispatchEvent('products-quickview:close');
   }
 
   /**
@@ -299,28 +299,28 @@ export class QuickViewModal {
     this.isInitialized = false;
     this.isOpen = false;
     this.elements = {};
-    console.log('🗑️ QuickViewModal destroyed');
+    console.log('🗑️ ProductsQuickViewModal destroyed');
   }
 }
 
 // Singleton instance
-let quickViewModalInstance = null;
+let productsQuickViewModalInstance = null;
 
 /**
- * Initialize QuickViewModal (singleton)
+ * Initialize ProductsQuickViewModal (singleton)
  */
 export function initQuickViewModal() {
-  if (!quickViewModalInstance) {
-    quickViewModalInstance = new QuickViewModal();
+  if (!productsQuickViewModalInstance) {
+    productsQuickViewModalInstance = new ProductsQuickViewModal();
   }
-  return quickViewModalInstance;
+  return productsQuickViewModalInstance;
 }
 
 /**
- * Get QuickViewModal instance
+ * Get ProductsQuickViewModal instance
  */
 export function getQuickViewModal() {
-  return quickViewModalInstance;
+  return productsQuickViewModalInstance;
 }
 
 // Auto-initialize when DOM is ready
@@ -332,10 +332,10 @@ if (document.readyState === 'loading') {
 
 // Also initialize when components are loaded
 window.addEventListener('componentsLoaded', () => {
-  if (!quickViewModalInstance) {
+  if (!productsQuickViewModalInstance) {
     initQuickViewModal();
   }
 });
 
 // Export default
-export default QuickViewModal;
+export default ProductsQuickViewModal;

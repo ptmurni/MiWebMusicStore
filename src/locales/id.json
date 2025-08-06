@@ -10,7 +10,7 @@
     "categories": "Kategori",
     "about": "Tentang",
     "contact": "Kontak",
-    "callToAction": "Keranjang (0)"
+    "callToAction": "Hubungi Kami"
   },
   "hero": {
     "title": "Temukan Alat Musik Impian Anda di MiWebMusic Store",
@@ -31,9 +31,15 @@
       "warranty": "Garansi Resmi",
       "freeShipping": "Gratis Ongkir",
       "expert": "Konsultasi Expert"
+    },
+    "descriptions": {
+      "authentic": "Semua produk dijamin asli dan bergaransi resmi",
+      "warranty": "Garansi resmi dari distributor untuk ketenangan Anda",
+      "freeShipping": "Pengiriman gratis ke seluruh Indonesia",
+      "expert": "Tim ahli siap membantu pilih alat musik yang tepat"
     }
   },
-  "categories": {
+  "productCategories": {
     "title": "Kategori Produk Kami",
     "subtitle": "Lengkap untuk semua kebutuhan musik Anda",
     "description": "MiWebMusic Store menyediakan berbagai kategori alat musik dari brand ternama dengan kualitas terjamin.",
@@ -437,6 +443,11 @@
     "en": "English",
     "id": "Bahasa Indonesia"
   },
+  "retailLink": [
+    "Tokopedia",
+    "Shopee",
+    "Tiktok"
+  ],
   "common": {
     "loading": "Memuat...",
     "error": "Terjadi kesalahan",

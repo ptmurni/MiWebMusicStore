@@ -1,12 +1,78 @@
-/* Variant Selector Styles */
+/**
+ * Variant Selector Component Styles
+ * Dynamic styles that respond to variant changes
+ */
+
+/* ===========================================
+   VARIANT SELECTOR COMPONENT - DYNAMIC VARIANTS
+   =========================================== */
+
+/* Default variables fallback */
+:root {
+  --variant-primary: #8b5cf6;
+  --variant-primary-hover: #7c3aed;
+  --variant-accent: rgba(139, 92, 246, 0.1);
+  --variant-accent-light: rgba(139, 92, 246, 0.2);
+}
+
+/* Dynamic variant-based styling */
+#variant-selector-component[data-current-variant="rockelectric"] {
+  --variant-primary: var(--color-primary, #D7263D);
+  --variant-primary-hover: var(--color-primary-dark, #A81D2B);
+  --variant-accent: rgba(215, 38, 61, 0.1);
+  --variant-accent-light: rgba(215, 38, 61, 0.2);
+}
+
+#variant-selector-component[data-current-variant="jazzyblue"] {
+  --variant-primary: var(--color-primary, #5B4B8A);
+  --variant-primary-hover: var(--color-primary-dark, #3C295A);
+  --variant-accent: rgba(91, 75, 138, 0.1);
+  --variant-accent-light: rgba(91, 75, 138, 0.2);
+}
+
+#variant-selector-component[data-current-variant="popshine"] {
+  --variant-primary: var(--color-primary, #FF4C98);
+  --variant-primary-hover: var(--color-primary-dark, #CC3A7A);
+  --variant-accent: rgba(255, 76, 152, 0.1);
+  --variant-accent-light: rgba(255, 76, 152, 0.2);
+}
+
+#variant-selector-component[data-current-variant="classicgold"] {
+  --variant-primary: var(--color-primary, #A67C52);
+  --variant-primary-hover: var(--color-primary-dark, #7C5A3C);
+  --variant-accent: rgba(166, 124, 82, 0.1);
+  --variant-accent-light: rgba(166, 124, 82, 0.2);
+}
+
+#variant-selector-component[data-current-variant="edmneon"] {
+  --variant-primary: var(--color-primary, #00FFB0);
+  --variant-primary-hover: var(--color-primary-dark, #00C987);
+  --variant-accent: rgba(0, 255, 176, 0.1);
+  --variant-accent-light: rgba(0, 255, 176, 0.2);
+}
+
+#variant-selector-component[data-current-variant="rastavibes"] {
+  --variant-primary: var(--color-primary, #E02424);
+  --variant-primary-hover: var(--color-primary-dark, #A61D1D);
+  --variant-accent: rgba(224, 36, 36, 0.1);
+  --variant-accent-light: rgba(224, 36, 36, 0.2);
+}
+
+/* Variant Selector */
 #variant-selector {
   z-index: 9999;
 }
 
 /* Variant Button */
 #variant-toggle-btn {
+  background: var(--variant-primary) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease !important;
+}
+
+#variant-toggle-btn:hover {
+  background: var(--variant-primary-hover) !important;
 }
 
 /* Variant Options Popup */
@@ -15,6 +81,11 @@
   -webkit-backdrop-filter: blur(20px);
   max-height: 400px;
   overflow-y: auto;
+}
+
+/* Header gradient based on current variant */
+#variant-options .bg-gradient-to-r {
+  background: linear-gradient(135deg, var(--variant-primary), var(--variant-primary-hover)) !important;
 }
 
 /* Show/Hide Animation */
@@ -48,11 +119,16 @@
 /* Variant Option Hover Effects */
 .variant-option:hover {
   transform: translateX(4px);
+  background: var(--variant-accent) !important;
+}
+
+.variant-option:hover .font-semibold {
+  color: var(--variant-primary) !important;
 }
 
 .variant-option.active {
-  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-  border: 2px solid #8b5cf6;
+  background: linear-gradient(135deg, var(--variant-accent) 0%, var(--variant-accent-light) 100%) !important;
+  border-left: 3px solid var(--variant-primary) !important;
 }
 
 .variant-option.active .variant-active {
@@ -70,12 +146,12 @@
 }
 
 #variant-options::-webkit-scrollbar-thumb {
-  background: #8b5cf6;
+  background: var(--variant-primary);
   border-radius: 2px;
 }
 
 #variant-options::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: var(--variant-primary-hover);
 }
 
 /* Mobile Responsive */
@@ -93,12 +169,12 @@
 
 /* Accessibility */
 #variant-toggle-btn:focus {
-  outline: 2px solid #8b5cf6;
+  outline: 2px solid var(--variant-primary);
   outline-offset: 2px;
 }
 
 .variant-option:focus {
-  outline: 2px solid #8b5cf6;
+  outline: 2px solid var(--variant-primary);
   outline-offset: 2px;
 }
 
@@ -115,7 +191,7 @@
   right: 1rem;
   width: 16px;
   height: 16px;
-  border: 2px solid #8b5cf6;
+  border: 2px solid var(--variant-primary);
   border-top: 2px solid transparent;
   border-radius: 50%;
   animation: variant-spin 1s linear infinite;
@@ -126,35 +202,45 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Dynamic Theme Button Colors */
-[data-current-variant="fastpurple"] #variant-toggle-btn {
-  background: linear-gradient(135deg, #4D148C 0%, #6B1FB2 100%);
+/* Pulse animation for initial attention */
+@keyframes pulse-variant {
+    0%, 100% {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0 0 color-mix(in srgb, var(--variant-primary) 40%, transparent);
+    }
+    50% {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0 10px color-mix(in srgb, var(--variant-primary) 0%, transparent);
+    }
 }
 
-[data-current-variant="speedyellow"] #variant-toggle-btn {
-  background: linear-gradient(135deg, #FFCC00 0%, #D40511 100%);
+#variant-toggle-btn.pulse {
+    animation: pulse-variant 2s infinite;
 }
 
-[data-current-variant="unitbrown"] #variant-toggle-btn {
-  background: linear-gradient(135deg, #351C15 0%, #FFB500 100%);
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    #variant-options {
+        background: #1f2937 !important;
+        border-color: #374151 !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .variant-option:hover {
+        background: color-mix(in srgb, var(--variant-primary) 10%, transparent) !important;
+    }
+    
+    .variant-option.active {
+        background: linear-gradient(135deg, color-mix(in srgb, var(--variant-primary) 20%, transparent) 0%, color-mix(in srgb, var(--variant-primary) 10%, transparent) 100%) !important;
+    }
 }
 
-[data-current-variant="turboorange"] #variant-toggle-btn {
-  background: linear-gradient(135deg, #FF6600 0%, #E64100 100%);
-}
-
-[data-current-variant="skyarrow"] #variant-toggle-btn {
-  background: linear-gradient(135deg, #0051A5 0%, #00AEEF 100%);
-}
-
-[data-current-variant="jetstream"] #variant-toggle-btn {
-  background: linear-gradient(135deg, #E11F26 0%, #1A1A1A 100%);
-}
-
-[data-current-variant="primelogix"] #variant-toggle-btn {
-  background: linear-gradient(135deg, #FF9900 0%, #232F3E 100%);
-}
-
-[data-current-variant="nusantara"] #variant-toggle-btn {
-  background: linear-gradient(135deg, #F26522 0%, #005BAA 100%);
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    #variant-toggle-btn,
+    .variant-option {
+        transition: none !important;
+    }
+    
+    #variant-toggle-btn.pulse {
+        animation: none;
+    }
 }

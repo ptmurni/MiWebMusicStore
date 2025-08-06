@@ -339,6 +339,14 @@ export class LanguageManager {
   }
 
   /**
+   * Get current language data/translations
+   * @returns {Object} - Current language translations object
+   */
+  static getCurrentLanguageData() {
+    return LanguageManager.translations.get(LanguageManager.currentLanguage) || {};
+  }
+
+  /**
    * Get language name
    * @param {string} langCode - Language code
    * @returns {string} - Language name

@@ -10,7 +10,9 @@ import { TrackingUtils } from './utils/tracking.js';
 import { StatsCounter } from './components/counter.js';
 import { AnimationUtils } from './components/animation.js';
 import { ComponentManager } from './components/component.js';
-import { initQuickViewModal } from './components/quickview-modal.js'; 
+import { HeroComponent } from './components/hero.js';
+import { initCatalogQuickViewModal } from './components/catalog-quickview-modal.js'; 
+// import { initQuickViewModal } from './components/products-quickview-modal.js'; 
 
 // Main application class
 class MiWebMusicStore {
@@ -58,6 +60,13 @@ class MiWebMusicStore {
         NavigationUtils.init();
         FormUtils.init();
         TrackingUtils.init();
+        
+        // Initialize component utilities
+        HeroComponent.init();
+        
+        // Initialize quickview modals
+        // initQuickViewModal(); // For products.html
+        initCatalogQuickViewModal(); // For productsCatalogue.html
         
         // Initialize animation utilities
         AnimationUtils.init();
@@ -127,6 +136,7 @@ class MiWebMusicStore {
       NavigationUtils.init();
       FormUtils.init();
       TrackingUtils.init();
+      HeroComponent.init();
       AnimationUtils.init();
       StatsCounter.init();
     }, 500);

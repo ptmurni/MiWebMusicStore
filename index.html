@@ -11,13 +11,14 @@
 </head>
 <body class="font-sans antialiased bg-gray-50" data-variant="" data-current-variant="">
     <!-- Component containers -->
-    <div id="language-selector-component" data-current-language=""></div>
-    <div id="variant-selector-component" data-current-variant=""></div>
+    <div id="language-selector-component" data-current-language="" data-current-variant=""></div>
+    <div id="variant-selector-component" data-current-language="" data-current-variant=""></div>
     <div id="headerOffCanvas-component"></div> <!-- Header dengan off-canvas menu -->
     <div id="hero-component"></div>
     <div id="features-component"></div>
-    <div id="categories-component"></div>
-    <div id="products-component"></div>
+    <div id="product-categories-component"></div>
+    <!-- <div id="products-component"></div> untuk module store/ecommerce -->
+    <div id="productcatalogue-component"></div>
     <div id="stats-component"></div>
     <div id="brands-component"></div>
     <div id="about-component"></div>
@@ -45,7 +46,7 @@
     <!-- Load main app (without language/variant dependencies) -->
     <script type="module" src="/src/scripts/main.js"></script>
     
-    <!-- Set Default Variant Script -->
+    <!-- Component State Updater Script -->
     <script type="module">
         import { variantConfig } from '/src/scripts/configs/variant.config.js';
         
@@ -56,13 +57,81 @@
             
             console.log(`🎨 Setting default variant: ${defaultVariant}`);
             body.setAttribute('data-variant', defaultVariant);
+            body.setAttribute('data-current-variant', defaultVariant);
+            
+            // Get current language (fallback to 'id' if not available)
+            const defaultLanguage = localStorage.getItem('MiWebMusicStore_language') || 'id';
+            console.log(`🌐 Setting default language: ${defaultLanguage}`);
+            
+            // Update component containers with default values
+            updateComponentAttributes(defaultLanguage, defaultVariant);
             
             // Also dispatch event for other components that might need to know
             window.dispatchEvent(new CustomEvent('defaultVariantSet', {
                 detail: { variant: defaultVariant }
             }));
         });
+
+        // Function to update component container attributes
+        function updateComponentAttributes(language, variant) {
+            const languageSelector = document.getElementById('language-selector-component');
+            const variantSelector = document.getElementById('variant-selector-component');
+            
+            if (languageSelector) {
+                if (language) languageSelector.setAttribute('data-current-language', language);
+                if (variant) languageSelector.setAttribute('data-current-variant', variant);
+            }
+            
+            if (variantSelector) {
+                if (language) variantSelector.setAttribute('data-current-language', language);
+                if (variant) variantSelector.setAttribute('data-current-variant', variant);
+            }
+            
+            console.log(`🔄 Updated component attributes - Language: ${language || 'unchanged'}, Variant: ${variant || 'unchanged'}`);
+        }
+
+        // Listen for language changes (from LanguageManager)
+        window.addEventListener('languageManagerChanged', function(event) {
+            const language = event.detail.newLanguage;
+            console.log(`🌐 Language changed event received: ${language}`);
+            updateComponentAttributes(language, null);
+        });
+
+        // Also listen for the LanguageSelector event (for compatibility)
+        window.addEventListener('languageChanged', function(event) {
+            const language = event.detail.language;
+            console.log(`🌐 Language selector event received: ${language}`);
+            updateComponentAttributes(language, null);
+        });
+
+        // Listen for variant changes (from VariantManager)
+        window.addEventListener('variantChanged', function(event) {
+            const variant = event.detail.variant;
+            console.log(`🎨 Variant changed event received: ${variant}`);
+            updateComponentAttributes(null, variant);
+        });
+
+        // Also listen for the body attribute changes as fallback
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes') {
+                    if (mutation.attributeName === 'data-current-variant') {
+                        const variant = document.body.getAttribute('data-current-variant');
+                        if (variant) {
+                            updateComponentAttributes(null, variant);
+                        }
+                    }
+                }
+            });
+        });
+
+        // Start observing the body element for attribute changes
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ['data-current-variant', 'data-current-language']
+        });
     </script>
+    
     
     <!-- Component Loader Script -->
     <script>
@@ -89,8 +158,9 @@
                 { name: 'headerOffCanvas', id: 'headerOffCanvas-component' },
                 { name: 'hero', id: 'hero-component' },
                 { name: 'features', id: 'features-component' },
-                { name: 'categories', id: 'categories-component' },
-                { name: 'products', id: 'products-component' },
+                { name: 'productCategories', id: 'product-categories-component' },
+                // { name: 'products', id: 'products-component' },
+                { name: 'productsCatalogue', id: 'productcatalogue-component' },
                 { name: 'stats', id: 'stats-component' },
                 { name: 'brands', id: 'brands-component' },
                 { name: 'about', id: 'about-component' },

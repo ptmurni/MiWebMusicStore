@@ -132,6 +132,17 @@ export class VariantManager {
   
   notifyListeners(variantName) {
     this.listeners.forEach(callback => callback(variantName));
+    
+    // Also dispatch global event for other components
+    window.dispatchEvent(new CustomEvent('variantChanged', {
+      detail: { 
+        variant: variantName,
+        config: this.getVariantConfig(),
+        inspiration: this.getVariantInspiration(variantName)
+      }
+    }));
+    
+    console.log(`🎨 Variant changed to: ${variantName}`);
   }
 }
 

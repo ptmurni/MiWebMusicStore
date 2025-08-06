@@ -1,167 +1,404 @@
 {
   "meta": {
-    "title": "MiWebMusicStore - Penyelesaian Penghantaran Dipercayai",
-    "description": "Platform logistik dipercayai dengan liputan terluas, teknologi penjejakan masa nyata, dan harga kompetitif"
+    "title": "MiWebMusic Store - Kedai Alat Muzik Terlengkap di Indonesia",
+    "description": "Jual alat muzik berkualiti dengan harga terbaik. Gitar, keyboard, drum, dan pelbagai alat muzik lain. Waranti rasmi dan konsultasi percuma."
   },
   "navigation": {
-    "brand": "MiWebMusicStore",
-    "home": "Laman Utama",
-    "services": "Perkhidmatan",
-    "tracking": "Penjejakan",
-    "about": "Tentang Kami",
+    "brand": "MiWebMusic Store",
+    "home": "Utama",
+    "products": "Produk",
+    "categories": "Kategori",
+    "about": "Tentang",
     "contact": "Hubungi",
     "callToAction": "Hubungi Kami"
   },
   "hero": {
-    "title": "Hantar Bungkusan ke Seluruh Indonesia dengan MiWebMusicStore",
-    "subtitle": "Penghantaran Pantas & Selamat",
-    "description": "Platform logistik dipercayai dengan liputan terluas, teknologi penjejakan masa nyata, dan harga kompetitif.",
-    "titleHighlight": "MiWebMusicStore",
-    "checkRateBtn": "Semak Kadar",
-    "watchDemoBtn": "Lihat Demo",
-    "heroImageTitle": "MiWebMusicStore",
-    "heroImageSubtitle": "Penyelesaian Logistik Dipercayai"
+    "title": "Temukan Alat Muzik Impian Anda di MiWebMusic Store",
+    "subtitle": "Kualiti Terbaik, Harga Berpatutan",
+    "description": "Kedai alat muzik terlengkap dengan ribuan produk berkualiti, waranti rasmi, dan perkhidmatan selepas jualan terbaik.",
+    "titleHighlight": "MiWebMusic Store",
+    "shopNowBtn": "Beli Sekarang",
+    "viewCatalogBtn": "Lihat Katalog",
+    "heroImageTitle": "MiWebMusic Store",
+    "heroImageSubtitle": "Your Music Journey Starts Here"
   },
   "features": {
-    "title": "Kecemerlangan Perkhidmatan Kami",
-    "subtitle": "Mengapa pilih MiWebMusicStore",
-    "description": "Kami menyediakan perkhidmatan logistik terbaik dengan pelbagai kelebihan yang direka untuk memenuhi keperluan perniagaan anda.",
+    "title": "Mengapa Beli di MiWebMusic Store?",
+    "subtitle": "Kelebihan Kami",
+    "description": "Kami menyediakan pengalaman membeli alat muzik terbaik dengan pelbagai kelebihan yang direka untuk kepuasan anda.",
     "items": {
-      "safe": "100% Selamat",
-      "service247": "Perkhidmatan 24/7",
-      "cities": "8000+ Bandar",
-      "bestPrice": "Harga Terbaik"
+      "authentic": "100% Asli",
+      "warranty": "Waranti Rasmi",
+      "freeShipping": "Penghantaran Percuma",
+      "expert": "Konsultasi Pakar"
+    },
+    "descriptions": {
+      "authentic": "Semua produk dijamin asli dengan waranti rasmi",
+      "warranty": "Waranti rasmi dari pengedar untuk ketenangan anda",
+      "freeShipping": "Penghantaran percuma ke seluruh Indonesia",
+      "expert": "Pasukan pakar sedia membantu anda memilih alat muzik yang sesuai"
     }
   },
-  "tracking": {
-    "title": "Jejak Bungkusan Anda",
-    "subtitle": "Masukkan nombor penjejakan untuk menyemak status penghantaran",
-    "description": "Pantau perjalanan bungkusan anda secara masa nyata dengan sistem penjejakan canggih kami yang disepadukan terus dengan seluruh armada.",
-    "placeholder": "Contoh: MWL123456789",
-    "trackBtn": "Jejak Sekarang",
-    "statusTitle": "Status Penghantaran",
-    "statusMessage": "Bungkusan anda sedang dalam perjalanan ke alamat destinasi."
-  },
-  "services": {
-    "title": "Perkhidmatan Unggul Kami",
-    "subtitle": "Penyelesaian penghantaran untuk setiap keperluan perniagaan",
-    "description": "MiWebMusicStore menyediakan pelbagai perkhidmatan logistik yang disesuaikan dengan keperluan perniagaan moden, dari penghantaran ekspres hingga perkhidmatan pergudangan.",
+  "productCategories": {
+    "title": "Kategori Produk Kami",
+    "subtitle": "Lengkap untuk semua keperluan muzik anda",
+    "description": "MiWebMusic Store menyediakan pelbagai kategori alat muzik dari jenama terkenal dengan kualiti terjamin.",
     "items": [
       {
-        "title": "Ekspres Hari Sama",
-        "description": "Penghantaran ekspres pada hari yang sama untuk kawasan Lembah Klang"
+        "title": "Gitar & Bass",
+        "description": "Gitar akustik, elektrik, bass, dan aksesori lengkap"
       },
       {
-        "title": "Kargo Biasa",
-        "description": "Penghantaran ekonomi untuk barangan dalam kuantiti besar"
+        "title": "Keyboard & Piano",
+        "description": "Piano digital, synthesizer, dan keyboard untuk semua tahap"
       },
       {
-        "title": "Perkhidmatan Gudang",
-        "description": "Perkhidmatan pergudangan dengan sistem pengurusan moden"
+        "title": "Drum & Perkusi",
+        "description": "Set drum, cajon, cymbal, dan alat perkusi lain"
       },
       {
-        "title": "Antarabangsa",
-        "description": "Penghantaran antarabangsa ke lebih 200 negara"
+        "title": "Audio & Rakaman",
+        "description": "Mikrofon, antara muka audio, dan peralatan rakaman"
       }
     ],
-    "learnMore": "Ketahui Lebih Lanjut"
+    "viewAll": "Lihat Semua"
+  },
+  "products": {
+    "title": "Produk Terbaru",
+    "subtitle": "Temui koleksi alat muzik terbaru kami",
+    "description": "Produk-produk pilihan dengan kualiti terbaik dan harga kompetitif",
+    "viewAllBtn": "Lihat Semua Produk",
+    "filters": {
+      "all": "Semua",
+      "new": "Terbaru",
+      "bestseller": "Terlaris",
+      "promo": "Promosi"
+    },
+    "items": [
+      {
+        "id": "GTR-001",
+        "name": "Yamaha FG830 Acoustic Guitar",
+        "category": "Gitar Akustik",
+        "brand": "Yamaha",
+        "image": {
+          "url": "/products/yamaha-fg830.jpg",
+          "alt": "Yamaha FG830 Acoustic Guitar"
+        },
+        "price": {
+          "original": 4500000,
+          "discount": 3850000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 14,
+        "rating": 4.8,
+        "reviewCount": 125,
+        "badges": ["Terlaris", "Penghantaran Percuma"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "KEY-002",
+        "name": "Roland FP-30X Digital Piano",
+        "category": "Piano Digital",
+        "brand": "Roland",
+        "image": {
+          "url": "/products/roland-fp30x.jpg",
+          "alt": "Roland FP-30X Digital Piano"
+        },
+        "price": {
+          "original": 12500000,
+          "discount": 11250000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 10,
+        "rating": 4.9,
+        "reviewCount": 89,
+        "badges": ["Baru", "Waranti 2 Tahun"],
+        "isNew": true,
+        "inStock": true
+      },
+      {
+        "id": "DRM-003",
+        "name": "Pearl Export EXX725S Drum Set",
+        "category": "Set Drum",
+        "brand": "Pearl",
+        "image": {
+          "url": "/products/pearl-export-drum.jpg",
+          "alt": "Pearl Export Drum Set"
+        },
+        "price": {
+          "original": 15000000,
+          "discount": null,
+          "currency": "Rp"
+        },
+        "discountPercentage": 0,
+        "rating": 4.7,
+        "reviewCount": 67,
+        "badges": ["Stok Sedia", "COD"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "MIC-004",
+        "name": "Shure SM58 Dynamic Microphone",
+        "category": "Mikrofon",
+        "brand": "Shure",
+        "image": {
+          "url": "/products/shure-sm58.jpg",
+          "alt": "Shure SM58 Microphone"
+        },
+        "price": {
+          "original": 1850000,
+          "discount": 1650000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 11,
+        "rating": 5.0,
+        "reviewCount": 234,
+        "badges": ["Best Seller", "Asli"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "GTR-005",
+        "name": "Fender Player Stratocaster",
+        "category": "Gitar Elektrik",
+        "brand": "Fender",
+        "image": {
+          "url": "/products/fender-strat.jpg",
+          "alt": "Fender Player Stratocaster"
+        },
+        "price": {
+          "original": 13500000,
+          "discount": 12150000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 10,
+        "rating": 4.9,
+        "reviewCount": 156,
+        "badges": ["Stok Terhad", "Setup Percuma"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "AMP-006",
+        "name": "Marshall MG15GR Guitar Amplifier",
+        "category": "Amplifier",
+        "brand": "Marshall",
+        "image": {
+          "url": "/products/marshall-mg15.jpg",
+          "alt": "Marshall MG15GR Amplifier"
+        },
+        "price": {
+          "original": 2250000,
+          "discount": 1950000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 13,
+        "rating": 4.6,
+        "reviewCount": 98,
+        "badges": ["Promosi", "Waranti 1 Tahun"],
+        "isNew": false,
+        "inStock": true
+      },
+      {
+        "id": "UKL-007",
+        "name": "Kala KA-15S Soprano Ukulele",
+        "category": "Ukulele",
+        "brand": "Kala",
+        "image": {
+          "url": "/products/kala-ukulele.jpg",
+          "alt": "Kala Soprano Ukulele"
+        },
+        "price": {
+          "original": 850000,
+          "discount": null,
+          "currency": "Rp"
+        },
+        "discountPercentage": 0,
+        "rating": 4.5,
+        "reviewCount": 45,
+        "badges": ["Baru", "Pick Percuma"],
+        "isNew": true,
+        "inStock": true
+      },
+      {
+        "id": "ACC-008",
+        "name": "D'Addario EXL110 Guitar Strings",
+        "category": "Aksesori",
+        "brand": "D'Addario",
+        "image": {
+          "url": "/products/daddario-strings.jpg",
+          "alt": "D'Addario Guitar Strings"
+        },
+        "price": {
+          "original": 85000,
+          "discount": 72000,
+          "currency": "Rp"
+        },
+        "discountPercentage": 15,
+        "rating": 4.8,
+        "reviewCount": 312,
+        "badges": ["Terlaris", "Beli 3 Percuma 1"],
+        "isNew": false,
+        "inStock": true
+      }
+    ],
+    "loadMoreBtn": "Muat Lebih Banyak",
+    "noProductsMessage": "Tiada produk tersedia",
+    "outOfStockLabel": "Stok Habis",
+    "preOrderLabel": "Pra-tempah",
+    "comingSoonLabel": "Akan Datang"
   },
   "stats": {
-    "title": "Statistik Perkhidmatan Kami",
+    "title": "Dipercayai Pemuzik Indonesia",
     "subtitle": "Angka yang membuktikan kepercayaan pelanggan",
-    "description": "Dengan pengalaman lebih dari 13 tahun, kami telah melayani ribuan pelanggan di seluruh Indonesia dengan dedikasi penuh.",
+    "description": "Sejak tahun 2015, kami telah melayani ribuan pemuzik di seluruh Indonesia dengan dedikasi penuh.",
     "items": {
-      "customers": "Pelanggan Aktif",
-      "branches": "Cawangan & Ejen",
-      "fleet": "Armada Aktif",
-      "provinces": "Wilayah Terliputi"
+      "products": "Produk Tersedia",
+      "customers": "Pelanggan Berpuas Hati",
+      "brands": "Rakan Jenama",
+      "cities": "Bandar Terjangkau"
     }
   },
+  "brands": {
+    "title": "Rakan Jenama Kami",
+    "subtitle": "Bekerjasama dengan jenama muzik terkemuka dunia",
+    "brands": [
+      "Yamaha",
+      "Roland",
+      "Fender",
+      "Gibson",
+      "Pearl",
+      "Zildjian",
+      "Shure",
+      "Marshall"
+    ]
+  },
   "about": {
-    "title": "Rakan Logistik Dipercayai Sejak 2010",
-    "subtitle": "Tentang Kami",
-    "description": "MiWebMusicStore telah menjadi rakan dipercayai bagi ribuan perniagaan di Indonesia. Dengan pengalaman lebih dari 13 tahun, kami terus berinovasi untuk memberikan perkhidmatan logistik terbaik.",
+    "title": "Kedai Muzik Dipercayai Sejak 2015",
+    "subtitle": "Tentang MiWebMusic Store",
+    "description": "MiWebMusic Store telah menjadi destinasi utama para pemuzik Indonesia untuk mendapatkan alat muzik berkualiti. Dengan pengalaman lebih dari 8 tahun, kami terus komited memberikan produk dan perkhidmatan terbaik.",
     "features": [
       {
-        "title": "Dipercayai & Berlesen",
-        "description": "Memiliki semua permit operasi rasmi dari kerajaan"
+        "title": "Produk Asli & Berwaranti",
+        "description": "Semua produk dijamin 100% asli dengan waranti rasmi"
       },
       {
-        "title": "Teknologi Terkini",
-        "description": "Sistem penjejakan GPS masa nyata dan integrasi API"
+        "title": "Pasukan Pakar Berpengalaman",
+        "description": "Konsultasi percuma dengan pemuzik profesional"
       },
       {
-        "title": "Sokongan Pelanggan 24/7",
-        "description": "Pasukan sokongan sedia membantu bila-bila masa anda perlukan"
+        "title": "Perkhidmatan Selepas Jualan Terbaik",
+        "description": "Pusat servis dan alat ganti tersedia"
       }
     ],
-    "viewProfileBtn": "Lihat Profil Penuh",
-    "imageTitle": "Tentang MiWebMusicStore",
-    "imageSubtitle": "Syarikat Logistik Dipercayai"
+    "viewStoryBtn": "Lihat Cerita Kami",
+    "imageTitle": "Tentang MiWebMusic Store",
+    "imageSubtitle": "Your Trusted Music Partner"
+  },
+  "testimonials": {
+    "title": "Apa Kata Mereka?",
+    "subtitle": "Testimoni dari pelanggan setia kami",
+    "items": [
+      {
+        "name": "Andi Pratama",
+        "role": "Gitaris Band Indie",
+        "comment": "Perkhidmatan sangat memuaskan, produk asli dan harga berpatutan. Disyorkan!"
+      },
+      {
+        "name": "Sarah Wijaya",
+        "role": "Guru Muzik",
+        "comment": "Sudah menjadi pelanggan 3 tahun, sentiasa berpuas hati dengan kualiti produk dan servis."
+      },
+      {
+        "name": "Budi Santoso",
+        "role": "Penerbit Muzik",
+        "comment": "Koleksi sangat lengkap, dari alat muzik hingga peralatan rakaman ada semua."
+      }
+    ]
   },
   "cta": {
-    "title": "Sedia Meningkatkan Perniagaan Anda?",
-    "subtitle": "Sertai ribuan perniagaan yang telah mempercayakan penghantaran mereka kepada kami",
-    "description": "Dapatkan penyelesaian logistik terbaik dengan harga kompetitif dan perkhidmatan profesional dari pasukan berpengalaman kami.",
-    "registerBtn": "Daftar Sekarang",
-    "consultationBtn": "Konsultasi Percuma"
+    "title": "Mulakan Perjalanan Muzik Anda",
+    "subtitle": "Dapatkan diskaun istimewa untuk pembelian pertama",
+    "description": "Daftar sekarang dan nikmati pelbagai faedah ahli, termasuk diskaun eksklusif, penghantaran percuma, dan akses ke acara muzik.",
+    "registerBtn": "Daftar Ahli",
+    "browseBtn": "Lihat Produk"
+  },
+  "newsletter": {
+    "title": "Dapatkan Promosi Terkini",
+    "subtitle": "Langgan surat berita untuk info diskaun dan produk baru",
+    "emailPlaceholder": "Masukkan emel anda",
+    "subscribeBtn": "Langgan"
   },
   "contact": {
     "title": "Hubungi Kami",
-    "subtitle": "Ada soalan? Pasukan kami sedia membantu anda",
-    "description": "Jangan teragak-agak untuk menghubungi kami melalui pelbagai saluran komunikasi yang tersedia. Pasukan khidmat pelanggan kami sedia melayani anda 24/7.",
+    "subtitle": "Pasukan kami sedia membantu anda",
+    "description": "Ada soalan tentang produk atau perlukan konsultasi? Jangan ragu untuk menghubungi kami.",
     "info": {
-      "officeTitle": "Pejabat Pusat",
-      "officeAddress": "Jl. Logistik Raya No. 88\nJakarta Selatan 12345",
+      "storeTitle": "Kedai Utama",
+      "storeAddress": "Jl. Musik Raya No. 88\nJakarta Selatan 12345",
       "phoneTitle": "Telefon",
-      "phoneNumber": "(021) 1234-5678\n0812-3456-7890 (WhatsApp)",
-      "emailTitle": "E-mel",
-      "emailAddress": "info@MiWebMusicStore.id\nsupport@MiWebMusicStore.id"
+      "phoneNumber": "(021) 8765-4321\n0812-9876-5432 (WhatsApp)",
+      "emailTitle": "Emel",
+      "emailAddress": "info@MiWebMusic Store.id\nsupport@MiWebMusic Store.id",
+      "hoursTitle": "Waktu Operasi",
+      "hoursInfo": "Isnin - Sabtu: 09:00 - 21:00\nAhad: 10:00 - 18:00"
     },
     "form": {
       "title": "Hantar Mesej",
-      "subtitle": "Isi borang di bawah dan kami akan menghubungi anda segera",
+      "subtitle": "Kami akan membalas dalam masa 24 jam",
       "fields": {
         "nameLabel": "Nama Penuh",
         "namePlaceholder": "Masukkan nama penuh anda",
-        "emailLabel": "E-mel",
+        "emailLabel": "Emel",
         "emailPlaceholder": "nama@email.com",
         "phoneLabel": "Nombor Telefon",
         "phonePlaceholder": "08xxxxxxxxxx",
         "subjectLabel": "Subjek",
         "subjectPlaceholder": "Pilih subjek",
         "subjectOptions": {
-          "serviceInfo": "Maklumat Perkhidmatan",
-          "shipping": "Isu Penghantaran",
-          "partnership": "Perkongsian Perniagaan",
-          "complaint": "Aduan",
+          "productInfo": "Maklumat Produk",
+          "orderStatus": "Status Pesanan",
+          "technicalSupport": "Bantuan Teknikal",
+          "warranty": "Tuntutan Waranti",
           "other": "Lain-lain"
         },
         "messageLabel": "Mesej",
-        "messagePlaceholder": "Tulis mesej anda di sini..."
+        "messagePlaceholder": "Tuliskan mesej anda di sini..."
       },
       "agreement": {
         "text": "Saya bersetuju dengan",
         "privacyPolicy": "dasar privasi",
-        "termsOfService": "terma perkhidmatan",
-        "suffix": "MiWebMusicStore."
+        "termsOfService": "syarat & terma",
+        "suffix": "MiWebMusic Store."
       },
       "submitBtn": "Hantar Mesej",
       "required": "*"
     }
   },
   "footer": {
-    "title": "MiWebMusicStore",
-    "subtitle": "Rakan Logistik Dipercayai",
-    "description": "Rakan logistik dipercayai untuk kemajuan perniagaan Indonesia",
+    "title": "MiWebMusic Store",
+    "subtitle": "Your Music Journey Starts Here",
+    "description": "Kedai alat muzik terlengkap dan dipercayai di Indonesia",
     "sections": {
+      "products": {
+        "title": "Produk",
+        "items": [
+          "Gitar & Bass",
+          "Keyboard & Piano",
+          "Drum & Perkusi",
+          "Audio & Rakaman",
+          "Aksesori Muzik"
+        ]
+      },
       "services": {
         "title": "Perkhidmatan",
         "items": [
-          "Ekspres Hari Sama",
-          "Kargo Biasa",
-          "Perkhidmatan Gudang",
-          "Penghantaran Antarabangsa"
+          "Waranti Rasmi",
+          "Pusat Servis",
+          "Sewa Alat Muzik",
+          "Kursus Muzik"
         ]
       },
       "company": {
@@ -169,23 +406,48 @@
         "items": [
           "Tentang Kami",
           "Kerjaya",
-          "Rakan Perniagaan",
+          "Blog Muzik",
           "Dasar Privasi"
         ]
       },
-      "newsletter": {
-        "title": "Surat Berita",
-        "description": "Dapatkan kemas kini terkini dari kami",
-        "emailPlaceholder": "E-mel Anda"
+      "support": {
+        "title": "Bantuan",
+        "items": [
+          "Cara Pembelian",
+          "Kaedah Pembayaran",
+          "Penghantaran",
+          "Soalan Lazim"
+        ]
       }
     },
-    "copyright": "© 2025 MiWebMusicStore. Hak cipta terpelihara. | Dikuasakan oleh Tailwind CSS 4.1.11"
+    "payment": {
+      "title": "Kaedah Pembayaran",
+      "methods": ["Pindahan Bank", "Kad Kredit", "E-Wallet", "COD"]
+    },
+    "shipping": {
+      "title": "Rakan Penghantaran",
+      "partners": ["JNE", "J&T", "SiCepat", "GoSend", "GrabExpress"]
+    },
+    "social": {
+      "title": "Ikuti Kami",
+      "links": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "youtube": "YouTube",
+        "tiktok": "TikTok"
+      }
+    },
+    "copyright": "© 2025 MiWebMusic Store. Hak cipta terpelihara. | Dikuasakan oleh Modern Web Tech"
   },
   "languages": {
     "en": "English",
-    "id": "Indonesia",
-    "ms": "Melayu"
+    "id": "Bahasa Indonesia"
   },
+  "retailLink": [
+    "Tokopedia",
+    "Shopee",
+    "Tiktok"
+  ],
   "common": {
     "loading": "Memuatkan...",
     "error": "Ralat berlaku",
@@ -195,12 +457,21 @@
     "close": "Tutup",
     "save": "Simpan",
     "delete": "Padam",
-    "edit": "Sunting",
+    "edit": "Edit",
     "view": "Lihat",
     "back": "Kembali",
     "next": "Seterusnya",
     "previous": "Sebelumnya",
     "submit": "Hantar",
-    "reset": "Set Semula"
+    "reset": "Set Semula",
+    "addToCart": "Tambah ke Troli",
+    "buyNow": "Beli Sekarang",
+    "outOfStock": "Stok Habis",
+    "inStock": "Stok Tersedia",
+    "price": "Harga",
+    "discount": "Diskaun",
+    "new": "Baru",
+    "bestseller": "Terlaris",
+    "promo": "Promosi"
   }
 }
